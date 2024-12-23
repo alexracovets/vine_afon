@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { VinelandLayout } from "@/src/ui/components/templates/VineLayout";
+import { VinelandLayout } from "@/src/ui/components/templates";
 import "./globals.scss";
 
 export const metadata: Metadata = {
