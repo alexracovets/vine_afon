@@ -1,0 +1,44 @@
+@import 'styles/variables.scss';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/base';
+
+html {
+  scroll-behavior: smooth;
+  font-size: calc(100vw / 1512 * 10);
+
+  @media (max-width: $tablet) {
+    font-size: calc(100vw / 744 * 10);
+  }
+
+  @media (max-width: $mobile) {
+    font-size: calc(100vw / 320 * 10);
+  }
+
+  body {
+    background-color: $base-color-white;
+    color: $base-color-black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100dvh;
+
+    header,
+    main,
+    footer {
+      width: 100%;
+    }
+
+    main {
+      flex-grow: 1;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
