@@ -29,9 +29,7 @@ export const Navigation = () => {
 
     return (
         <nav>
-            <ul
-                className="flex "
-            >
+            <ul className="flex">
                 {links.map((link, idx) => (
                     <NavigationLink key={idx} name={link.name} href={link.href} frame={link.frame} />
                 ))}

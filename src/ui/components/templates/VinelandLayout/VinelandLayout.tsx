@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 
 import { Footer, Header } from "@/src/ui/components/organisms";
+import { CheckResponsive } from "@/src/utils/CheckResponsive";
 import { montserrat } from "@/src/ui/foundation/fonts";
 
 interface VinelandLayoutProps {
@@ -18,6 +19,7 @@ export const VinelandLayout = ({ children }: VinelandLayoutProps) => {
                     {children}
                 </main>
                 <Footer />
+                <CheckResponsive />
             </body>
         </html>
     );

@@ -14,6 +14,7 @@ export const Container = ({ children, className }: ContainerProps) => {
             className={cn(
                 "w-full px-[8.8rem]",
                 "max-tablet:px-[3rem]",
+                "max-mobile:px-[2rem]",
                 className)
             }
         >

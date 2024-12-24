@@ -17,7 +17,8 @@ const buttonVariants = cva(
                 outline: cn(
                     "transition-all duration-300 ease-in-out hover:text-regalWhite hover:bg-regalMain",
                     "text-[2.2rem] font-[600] px-[3rem] py-[1.65rem] rounded-[1rem]",
-                    "max-tablet:text-[1.8rem] max-tablet:px-[1.6rem] max-tablet:py-[.8rem] max-tablet:rounded-[.6rem]"
+                    "max-tablet:text-[1.8rem] max-tablet:px-[1.6rem] max-tablet:py-[.8rem] max-tablet:rounded-[.6rem]",
+                    "max-mobile:text-[1.4rem] max-mobile:p-[1rem] max-mobile:rounded-[.6rem]",
                 ),
                 secondary: "",
                 ghost: "",
@@ -48,9 +49,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 ref={ref}>
                 <span
                     className={cn(
-                        'transition-all duration-300 ease-in',
-                        'max-mobile:text-regalWhite',
-                        isHover ? 'translate-x-[1.8rem] text-regalWhite max-tablet:translate-x-[1.2rem] max-mobile:translate-x-[.9rem]' : 'translate-x-[0rem]',
+                        'transition-all duration-300 ease-in translate-x-0',
+                        isHover && 'translate-x-[1.8rem] text-regalWhite max-tablet:translate-x-[1rem] max-mobile:translate-x-[.8rem]',
                     )}
                 >
                     {props.children}
@@ -59,9 +59,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                     color={isHover ? variant === 'default' ? '#FFFFFF' : '' : variant === 'default' ? '#171717' : ''}
                     className={cn(
                         'w-[2.8rem] h-[2.8rem] ml-[.8rem] transition-all duration-300 ease-out delay-300',
-                        'max-tablet:w-[1.6rem] max-tablet:h-[1.6rem] max-tablet:ml-[.4rem] max-mobile:text-regalWhite',
+                        'max-tablet:w-[1.6rem] max-tablet:h-[1.6rem] max-tablet:ml-[.4rem]',
                         'max-mobile:w-[1.4rem] max-mobile:h-[1.4rem] max-mobile:ml-[.2rem]',
-                        isHover ? 'opacity-[0] text-regalWhite translate-x-[3rem] translate-y-[-3rem]' : 'opacity-[1] translate-x-[0rem] translate-y-[0rem]'
+                        isHover ? 'opacity-0 text-regalWhite translate-x-[3rem] translate-y-[-3rem]' : 'opacity-100 translate-x-0 translate-y-0'
                     )} />
             </Comp>
         )

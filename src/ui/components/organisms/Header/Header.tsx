@@ -1,22 +1,22 @@
 "use client";
 
-import { Container, Logo } from "@/src/ui/components/atoms";
-import { Navigation } from "@/src/ui/components/molecules";
-import { cn } from "@/src/utils/cn";
+import { Container, HeaderWrapper, Logo } from "@/src/ui/components/atoms";
+import { Navigation, Burger } from "@/src/ui/components/molecules";
+
+import useResponsive from '@/store/useResponsive';
 
 export const Header = () => {
+    const responsive = useResponsive(state => state.responsive);
 
     return (
-        <header className='absolute left-0 top-0 w-full'>
-            <Container className="pt-[1rem]">
-                <div className={cn(
-                    "flex justify-between items-center bg-regalWhite rounded-[3rem] px-[4.6rem] py-[2rem]",
-                    "max-tablet:px-[2.2rem] max-tablet:py-[1.5rem] max-tablet:rounded-[2rem]"
-                )}>
+        <header className='absolute left-0 top-0 w-full max-mobile:relative'>
+            <Container className="pt-[1rem] max-mobile:pt-0 max-mobile:px-0">
+                <HeaderWrapper>
                     <Logo header />
-                    <Navigation />
-                </div>
+                    {(responsive === "desktop" || responsive === "tablet") && <Navigation />}
+                    {responsive === "mobile" && <Burger />}
+                </HeaderWrapper>
             </Container>
-        </header>
+        </header >
     )
 };

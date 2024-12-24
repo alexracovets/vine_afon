@@ -2,11 +2,16 @@
 
 import { ImageAtom } from "@/src/ui/components/atoms";
 
+import useResponsive from '@/store/useResponsive';
+
 export const Frame = () => {
+    const responsive = useResponsive(state => state.responsive);
+
     return (
         <>
-            <ImageAtom src="/StartSection/frame/frame.svg" alt="frame" className="max-tablet:hidden" />
-            <ImageAtom src="/StartSection/frame/frame_tablet.svg" alt="frame" className="hidden max-tablet:block" />
+            {responsive === "desktop" && <ImageAtom src="/StartSection/frame/frame.svg" alt="frame" />}
+            {responsive === "tablet" && <ImageAtom src="/StartSection/frame/frame_tablet.svg" alt="frame" />}
+            {responsive === "mobile" && <ImageAtom src="/StartSection/frame/frame_mobile.svg" alt="frame" />}
         </>
     )
 };

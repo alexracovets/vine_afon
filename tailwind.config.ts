@@ -8,7 +8,7 @@ const config: Config = {
 		extend: {
 			screens: {
 				tablet: '1024px',
-				mobile: '540px'
+				mobile: '768px'
 			},
 			fontFamily: {
 				dm: ["var(--font-dm)"],
