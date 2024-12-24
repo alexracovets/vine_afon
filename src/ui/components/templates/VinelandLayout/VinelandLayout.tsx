@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 
-import { Footer, Header } from "@/src/ui/components/organisms";
+import { Footer, Header, OverlayMobileMenu } from "@/src/ui/components/organisms";
 import { CheckResponsive } from "@/src/utils/CheckResponsive";
 import { montserrat } from "@/src/ui/foundation/fonts";
 
@@ -17,6 +17,7 @@ export const VinelandLayout = ({ children }: VinelandLayoutProps) => {
                 <Header />
                 <main>
                     {children}
+                    <OverlayMobileMenu />
                 </main>
                 <Footer />
                 <CheckResponsive />

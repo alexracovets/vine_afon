@@ -1,3 +1,4 @@
+export { OverlayMobileMenu } from './OverlayMobileMenu';
 export { StartSection } from './StartSection';
 export { MainFrame } from './MainFrame';
 export { Header } from './Header';
