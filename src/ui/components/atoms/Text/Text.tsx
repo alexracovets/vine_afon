@@ -14,11 +14,11 @@ const textVariants = cva(
         variants: {
             variant: {
                 default: "",
-                destructive: "",
-                outline: "",
-                secondary: "",
-                ghost: "",
-                link: ""
+                frame: cn(
+                    "text-[2.5rem] font-[300] leading-[1.3]",
+                    "max-tablet:text-[1.4rem]",
+                    "max-mobile:text-[1.2rem]"
+                ),
             }
         },
         defaultVariants: {
