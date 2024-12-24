@@ -1,32 +1,25 @@
 "use client";
 
-import { Button, Logo } from "@/src/ui/components/atoms";
+import { Button, FrameInfoWrapper, FrameWrapper, Logo } from "@/src/ui/components/atoms";
 import { Frame } from "@/src/ui/components/molecules";
 
 import { cn } from "@/src/utils/cn";
 
 export const MainFrame = () => {
     return (
-        <div
-            className={cn(
-                "relative flex flex-col justify-end items-start",
-                "w-[54.5rem] h-[33.7rem] pb-[5.8rem] px-[11rem] gap-y-[2rem]",
-                "max-tablet:w-[32.8rem] max-tablet:h-[17rem] max-tablet:pl-[7rem] max-tablet:pr-[3rem] max-tablet:pb-[2rem] max-tablet:gap-y-[1rem]",
-                "max-mobile:w-[25rem] max-mobile:h-[16rem] max-mobile:px-[3rem] max-mobile:pb-[2.4rem]"
-            )}
-        >
+        <FrameWrapper>
             <Frame />
-            <div
-                className="flex justify-between items-center gap-x-[3rem] max-tablet:gap-x-[2rem] max-mobile:gap-x-[1rem]"
-            >
+            <FrameInfoWrapper>
                 <p className={cn(
                     "text-[2.5rem] font-[300] leading-[1.3]",
                     "max-tablet:text-[1.4rem]",
                     "max-mobile:text-[1.2rem]"
-                )}>Винороби Афону у Відбудові</p>
+                )}>
+                    Винороби Афону у Відбудові
+                </p>
                 <Logo />
-            </div>
+            </FrameInfoWrapper>
             <Button variant="outline">Посадити лозу</Button>
-        </div>
+        </FrameWrapper>
     )
 }

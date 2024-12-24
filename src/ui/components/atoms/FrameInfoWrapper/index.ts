@@ -1,0 +1,1 @@
+export { FrameInfoWrapper } from './FrameInfoWrapper';
