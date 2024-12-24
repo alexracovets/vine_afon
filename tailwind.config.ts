@@ -6,6 +6,10 @@ const config: Config = {
 	content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./src/ui/components/**/*.{js,ts,jsx,tsx,mdx}"],
 	theme: {
 		extend: {
+			screens: {
+				tablet: '1024px',
+				mobile: '540px'
+			},
 			fontFamily: {
 				dm: ["var(--font-dm)"],
 				bebas: ["var(--font-bebas)"],
@@ -13,7 +17,8 @@ const config: Config = {
 			},
 			colors: {
 				regalWhite: "#FFFFFF",
-				regalBlack: "#292929"
+				regalBlack: "#292929",
+				regalMain: "#6a2841"
 			},
 		}
 	},
