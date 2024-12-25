@@ -15,7 +15,6 @@ export const ProgressStepsItem = ({ number, value }: ProgressStepsItemProps) => 
             <Text variant="progress">
                 {value}
             </Text>
-
         </ProgressStepsItemWrapper>
     );
 };

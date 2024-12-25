@@ -11,6 +11,7 @@ interface HeaderHeadroomProps {
 interface HeadroomRef extends Headroom {
     pin: () => void;
     unpin: () => void;
+    ref: HeadroomRef;
 }
 
 export const HeaderHeadroom: React.FC<HeaderHeadroomProps> = ({ children }) => {
