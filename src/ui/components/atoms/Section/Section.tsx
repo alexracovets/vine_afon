@@ -28,6 +28,7 @@ export const Section = ({ children, start, rounded, className }: SectionProps) =
             className={
                 cn(
                     "w-full py-[10rem]",
+                    "max-tablet:py-[5rem]",
                     className,
                     rounded && roudedStyle,
                     start && startStyle

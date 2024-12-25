@@ -19,6 +19,11 @@ const textVariants = cva(
                     "max-tablet:text-[1.4rem]",
                     "max-mobile:text-[1.2rem]"
                 ),
+                progress: cn(
+                    "text-[2.2rem] font-[600] leading-[1.2]",
+                    "max-tablet:text-[1.2rem]",
+                    "max-mobile:text-[1.6rem]"
+                ),
             }
         },
         defaultVariants: {

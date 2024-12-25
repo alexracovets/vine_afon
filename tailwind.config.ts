@@ -17,7 +17,7 @@ const config: Config = {
 			},
 			colors: {
 				regalWhite: "#FFFFFF",
-				regalBlack: "#292929",
+				regalBlack: "#171717",
 				regalMain: "#6a2841"
 			},
 		}

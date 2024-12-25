@@ -13,7 +13,7 @@ interface HeadroomRef extends Headroom {
     unpin: () => void;
 }
 
-export const HeaderHeadroom = ({ children }: HeaderHeadroomProps) => {
+export const HeaderHeadroom: React.FC<HeaderHeadroomProps> = ({ children }) => {
     const headroomRef = useRef<HeadroomRef | null>(null);
     const isOpenedMobileMenu = useMobileMenu((state) => state.isOpenedMobileMenu);
 
