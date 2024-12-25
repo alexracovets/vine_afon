@@ -12,7 +12,10 @@ export const ProgressStepsItem = ({ number, value }: ProgressStepsItemProps) => 
     return (
         <ProgressStepsItemWrapper>
             <ProgressItemsQuad value={number} />
-            <Text variant="progress" children={value} />
+            <Text variant="progress">
+                {value}
+            </Text>
+
         </ProgressStepsItemWrapper>
     );
 };
