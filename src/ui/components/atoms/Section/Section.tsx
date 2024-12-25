@@ -4,20 +4,33 @@ import { cn } from "@/src/utils/cn";
 
 interface SectionProps {
     children: React.ReactNode;
-    startSection?: boolean;
+    start?: boolean;
+    rounded?: boolean;
     className?: string;
 }
 
-export const Section = ({ children, startSection, className }: SectionProps) => {
+export const Section = ({ children, start, rounded, className }: SectionProps) => {
+
+    const roudedStyle = cn(
+        "mt-[-5rem] rounded-t-[4rem] bg-regalWhite",
+        "max-tablet:mt-[-2rem] max-tablet:rounded-t-[2rem]",
+        "max-mobile:mt-[-1rem] max-mobile:rounded-t-[1rem]"
+    );
+
+    const startStyle = cn(
+        "relative w-full min-h-[calc(100dvh+5rem)] flex justify-end items-end pr-[8.8rem] pb-[12.5rem] pt-[13rem]",
+        "max-tablet:min-h-[60.8rem] max-tablet:pr-[3rem] max-tablet:pb-[6.2rem] max-tablet:pt-0",
+        "max-mobile:min-h-[33.9rem] max-mobile:pr-[2rem] max-mobile:pb-[4.7rem]"
+    );
+
     return (
         <section
             className={
                 cn(
-                    "w-full",
+                    "w-full py-[10rem]",
                     className,
-                    startSection && "relative w-full min-h-[100dvh] flex justify-end items-end pr-[8.8rem] pb-[12.5rem] pt-[13rem]",
-                    startSection && "max-tablet:min-h-[60.8rem] max-tablet:pr-[3rem] max-tablet:pb-[6.2rem] max-tablet:pt-0",
-                    startSection && "max-mobile:min-h-[33.9rem] max-mobile:pr-[2rem] max-mobile:pb-[4.7rem]"
+                    rounded && roudedStyle,
+                    start && startStyle
                 )}
         >
             {children}

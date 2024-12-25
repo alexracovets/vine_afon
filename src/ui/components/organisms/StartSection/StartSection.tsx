@@ -6,9 +6,9 @@ import { MainFrame } from "@/src/ui/components/organisms";
 export const StartSection = () => {
 
     return (
-        <Section startSection>
+        <Section start>
             <ImageAtom src="/StartSection/bg.jpg" alt="bg" cover />
             <MainFrame />
         </Section>
-    )
+    );
 };
