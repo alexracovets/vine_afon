@@ -1,1 +1,0 @@
-export { CheckResponsive } from './CheckResponsive';

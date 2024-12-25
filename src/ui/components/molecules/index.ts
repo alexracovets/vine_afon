@@ -1,3 +1,4 @@
+export { HeaderHeadroom } from './HeaderHeadroom';
 export { MenuOverlay } from './MenuOverlay';
 export { Navigation } from './Navigation';
 export { Burger } from './Burger';

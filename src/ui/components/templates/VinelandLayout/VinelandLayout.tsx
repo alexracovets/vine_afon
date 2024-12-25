@@ -3,14 +3,18 @@
 import { ReactNode } from "react";
 
 import { Footer, Header, OverlayMobileMenu } from "@/src/ui/components/organisms";
-import { CheckResponsive } from "@/src/utils/CheckResponsive";
 import { montserrat } from "@/src/ui/foundation/fonts";
+import { useCheckModal, useCheckResponsive } from "@/src/hooks";
 
 interface VinelandLayoutProps {
     children: ReactNode;
 }
 
 export const VinelandLayout = ({ children }: VinelandLayoutProps) => {
+
+    useCheckResponsive();
+    useCheckModal();
+    
     return (
         <html lang="en">
             <body className={`${montserrat.variable} ${montserrat.className} antialiased`}>
@@ -20,7 +24,6 @@ export const VinelandLayout = ({ children }: VinelandLayoutProps) => {
                     <OverlayMobileMenu />
                 </main>
                 <Footer />
-                <CheckResponsive />
             </body>
         </html>
     );
