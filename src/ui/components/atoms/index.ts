@@ -1,7 +1,10 @@
 export { ProgressStepsItemWrapper } from './ProgressStepsItemWrapper';
 export { ProgressStepsWrapper } from './ProgressStepsWrapper';
+export { SupportInfoWrapper } from './SupportInfoWrapper';
+export { InfoContentWrapper } from './InfoContentWrapper';
 export { ProgressItemsQuad } from './ProgressItemsQuad';
 export { FrameInfoWrapper } from './FrameInfoWrapper';
+export { InfoTitleWrapper } from './InfoTitleWrapper';
 export { NavigationLink } from './NavigationLink';
 export { HeaderWrapper } from './HeaderWrapper';
 export { FrameWrapper } from './FrameWrapper';

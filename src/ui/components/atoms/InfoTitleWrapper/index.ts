@@ -1,0 +1,1 @@
+export { InfoTitleWrapper } from './InfoTitleWrapper';

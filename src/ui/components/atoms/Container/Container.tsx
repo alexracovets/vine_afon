@@ -12,7 +12,7 @@ export const Container = ({ children, className }: ContainerProps) => {
     return (
         <div
             className={cn(
-                "w-full px-[8.8rem]",
+                "w-full px-[8.8rem] flex flex-col",
                 "max-tablet:px-[3rem]",
                 "max-mobile:px-[2rem]",
                 className)

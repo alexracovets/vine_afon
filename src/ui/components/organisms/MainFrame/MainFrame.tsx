@@ -13,7 +13,7 @@ export const MainFrame = () => {
                 </Text>
                 <Logo />
             </FrameInfoWrapper>
-            <Button variant="outline">Посадити лозу</Button>
+            <Button>Посадити лозу</Button>
         </FrameWrapper>
     )
 }

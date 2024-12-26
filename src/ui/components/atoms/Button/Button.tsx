@@ -8,18 +8,18 @@ import * as React from "react";
 import { cn } from "@/src/utils/cn";
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center border-[0.1rem] border-regalBlack bg-transperant",
+    "inline-flex items-center justify-center border-[0.1rem] border-regalBlack bg-transperant w-fit",
     {
         variants: {
             variant: {
-                default: "",
-                destructive: "",
-                outline: cn(
+                default: cn(
                     "transition-all duration-300 ease-in-out hover:text-regalWhite hover:bg-regalMain",
                     "text-[2.2rem] font-[600] px-[3rem] py-[1.65rem] rounded-[1rem]",
                     "max-tablet:text-[1.8rem] max-tablet:px-[1.6rem] max-tablet:py-[.8rem] max-tablet:rounded-[.6rem]",
                     "max-mobile:text-[1.4rem] max-mobile:p-[1rem] max-mobile:rounded-[.6rem]",
                 ),
+                destructive: "",
+                outline: "",
                 secondary: "",
                 ghost: "",
                 link: ""
@@ -27,7 +27,7 @@ const buttonVariants = cva(
         },
         defaultVariants: {
             variant: "default"
-        },
+        }
     }
 );
 
@@ -39,8 +39,10 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant, asChild = false, ...props }, ref) => {
+
         const [isHover, setIsHover] = React.useState(false);
-        const Comp = asChild ? Slot : "button"
+        const Comp = asChild ? Slot : "button";
+
         return (
             <Comp
                 className={cn(buttonVariants({ variant, className }))}
@@ -64,9 +66,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                         isHover ? 'opacity-0 text-regalWhite translate-x-[3rem] translate-y-[-3rem]' : 'opacity-100 translate-x-0 translate-y-0'
                     )} />
             </Comp>
-        )
+        );
     }
-)
+);
 Button.displayName = "Button"
 
 export { Button, buttonVariants }
