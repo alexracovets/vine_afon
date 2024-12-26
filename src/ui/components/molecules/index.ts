@@ -1,4 +1,6 @@
+export { SupportInfoContent } from './SupportInfoContent';
 export { ProgressStepsItem } from './ProgressStepsItem';
+export { SupportInfoTitle } from './SupportInfoTitle';
 export { HeaderHeadroom } from './HeaderHeadroom';
 export { ProgressSteps } from './ProgressSteps';
 export { MenuOverlay } from './MenuOverlay';
