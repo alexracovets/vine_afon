@@ -1,0 +1,1 @@
+export { InfoCase } from './InfoCase';

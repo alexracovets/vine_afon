@@ -1,8 +1,8 @@
 "use client";
 
-import { SupportInfoContent, ProgressSteps, SupportInfoTitle } from "@/src/ui/components/molecules";
-import { Container, Section, SupportInfoWrapper } from "@/src/ui/components/atoms";
-import { ShowCase } from "@/src/ui/components/organisms";
+import { InfoCase, ShowCase } from "@/src/ui/components/organisms";
+import { Container, Section } from "@/src/ui/components/atoms";
+import { ProgressSteps } from "@/src/ui/components/molecules";
 
 export const WorkSection = () => {
 
@@ -10,10 +10,7 @@ export const WorkSection = () => {
         <Section rounded>
             <Container className="gap-y-[10rem] max-tablet:gap-y-[5rem]">
                 <ProgressSteps />
-                <SupportInfoWrapper>
-                    <SupportInfoTitle />
-                    <SupportInfoContent />
-                </SupportInfoWrapper>
+                <InfoCase />
                 <ShowCase />
             </Container>
         </Section>
