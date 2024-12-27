@@ -8,6 +8,7 @@ export { InfoTitleWrapper } from './InfoTitleWrapper';
 export { NavigationLink } from './NavigationLink';
 export { HeaderWrapper } from './HeaderWrapper';
 export { FrameWrapper } from './FrameWrapper';
+export { YouTubeVideo } from './YouTubeVideo';
 export { Container } from './Container';
 export { ImageAtom } from './ImageAtom';
 export { Section } from './Section';

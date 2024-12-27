@@ -32,10 +32,15 @@ const textVariants = cva(
                     "max-mobile:mb-[3rem]"
                 ),
                 info: cn(
-                    "text-[1.8rem] leading-[1.22]",
+                    "text-[1.8rem] leading-[1.3]",
                     "max-tablet:text-[1rem]",
                     "max-mobile:text-[1.2rem]"
                 ),
+                acordionTitle: cn(
+                    "text-[3rem] font-[600] leading-[1.1]",
+                    "max-tablet:text-[2rem]",
+                    "max-mobile:text-[1.6rem]"
+                )
             }
         },
         defaultVariants: {
