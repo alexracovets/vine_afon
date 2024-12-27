@@ -1,0 +1,1 @@
+export { usePrevNextButtons } from './usePrevNextButtons';

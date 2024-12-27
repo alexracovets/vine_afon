@@ -18,10 +18,18 @@ export const List = ({ list }: ListProps) => {
                     key={idx}
                     className={cn(
                         "relative",
-                        "before:content-[''] before:absolute before:left-0 before:bg-regalBlack before:rounded-[50%]",
-                        "pl-[1rem] before:w-[.4rem] before:h-[.4rem] before:top-[1rem]"
+                        "pl-[1rem]",
+                        "max-tablet:pl-[.8rem]",
                     )}
                 >
+                    <div
+                        className={cn(
+                            "w-[.4rem] h-[.4rem] min-w-[.4rem] min-h-[.4rem] absolute left-0 top-[.8rem] bg-regalBlack rounded-[50%] will-change-contents",
+                            "max-tablet:w-[.3rem] max-tablet:min-w-[.3rem] max-tablet:h-[.3rem] max-tablet:min-h-[.3rem] max-tablet:w-top-[.5rem] max-tablet:top-[.5rem]"
+                        )}
+                    >
+
+                    </div>
                     <Text variant="info">
                         {item}
                     </Text>

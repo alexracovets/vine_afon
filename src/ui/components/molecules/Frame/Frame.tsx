@@ -9,9 +9,9 @@ export const Frame = () => {
 
     return (
         <>
-            {responsive === "desktop" && <ImageAtom src="/StartSection/frame/frame.svg" alt="frame" />}
-            {responsive === "tablet" && <ImageAtom src="/StartSection/frame/frame_tablet.svg" alt="frame" />}
-            {responsive === "mobile" && <ImageAtom src="/StartSection/frame/frame_mobile.svg" alt="frame" />}
+            {responsive === "desktop" && <ImageAtom src="/startSection/frame/frame.svg" alt="frame" />}
+            {responsive === "tablet" && <ImageAtom src="/startSection/frame/frame_tablet.svg" alt="frame" />}
+            {responsive === "mobile" && <ImageAtom src="/startSection/frame/frame_mobile.svg" alt="frame" />}
         </>
     )
 };

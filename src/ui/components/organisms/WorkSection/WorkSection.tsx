@@ -1,7 +1,8 @@
 "use client";
 
-import { Container, Section, SupportInfoWrapper } from "@/src/ui/components/atoms";
 import { SupportInfoContent, ProgressSteps, SupportInfoTitle } from "@/src/ui/components/molecules";
+import { Container, Section, SupportInfoWrapper } from "@/src/ui/components/atoms";
+import { ShowCase } from "@/src/ui/components/organisms";
 
 export const WorkSection = () => {
 
@@ -13,6 +14,7 @@ export const WorkSection = () => {
                     <SupportInfoTitle />
                     <SupportInfoContent />
                 </SupportInfoWrapper>
+                <ShowCase />
             </Container>
         </Section>
     );
