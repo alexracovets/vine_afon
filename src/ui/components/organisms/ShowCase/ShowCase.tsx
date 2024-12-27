@@ -58,7 +58,7 @@ export const ShowCase = () => {
                                     className={cn(
                                         "relative w-[130rem] h-[50rem] rounded-[4rem] mx-auto overflow-hidden",
                                         "max-tablet:w-full max-tablet:h-[30rem] max-tablet:rounded-[2rem]",
-                                        "max-mobile:h-[20rem] max-mobile:rounded-[1rem]"
+                                        "max-mobile:h-[15.5rem] max-mobile:rounded-[1rem]"
                                     )}
                                 >
                                     <ImageAtom src={`/showCaseSection/${slide.image}`} alt={slide.name} cover />
