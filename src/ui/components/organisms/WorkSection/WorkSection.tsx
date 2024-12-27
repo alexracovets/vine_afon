@@ -1,6 +1,6 @@
 "use client";
 
-import { InfoCase, ShowCase } from "@/src/ui/components/organisms";
+import { HowWorks, InfoCase, ShowCase } from "@/src/ui/components/organisms";
 import { Container, Section } from "@/src/ui/components/atoms";
 import { ProgressSteps } from "@/src/ui/components/molecules";
 
@@ -12,6 +12,7 @@ export const WorkSection = () => {
                 <ProgressSteps />
                 <InfoCase />
                 <ShowCase />
+                <HowWorks />
             </Container>
         </Section>
     );
