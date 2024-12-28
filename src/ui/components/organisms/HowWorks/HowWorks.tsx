@@ -54,18 +54,16 @@ export const HowWorks = () => {
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
-            <Button
-                className="mx-auto"
-            >
-                Посадити лозу
-            </Button>
+            <Button className="mx-auto">Посадити лозу</Button>
             <Text variant="info">
                 <b>
                     Мета збору “Vine of Athos” – це відбудова 1033-літньої Келії Св. Архангелів, розбудова осередку та приведення до ладу всієї території навколо неї (ландшафту) загальним кошторисом в 3 млн євро.
                     “Vine of Athos” формується в період з 1.01.25 по 1.01.2026 року.
                 </b>
             </Text>
-            <YouTubeVideo url="https://youtu.be/TdaKvO8tYuQ" />
+            <div id="video">
+                <YouTubeVideo url="https://youtu.be/TdaKvO8tYuQ" />
+            </div>
             <div
                 className={cn(
                     "flex flex-col w-full gap-y-[2.4rem]",

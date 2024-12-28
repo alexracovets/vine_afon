@@ -7,9 +7,10 @@ interface SectionProps {
     start?: boolean;
     rounded?: boolean;
     className?: string;
+    id?: string;
 }
 
-export const Section = ({ children, start, rounded, className }: SectionProps) => {
+export const Section = ({ children, start, rounded, className, id }: SectionProps) => {
 
     const roudedStyle = cn(
         "mt-[-5rem] rounded-t-[4rem] bg-regalWhite",
@@ -25,6 +26,7 @@ export const Section = ({ children, start, rounded, className }: SectionProps) =
 
     return (
         <section
+            id={id}
             className={
                 cn(
                     "w-full py-[10rem]",

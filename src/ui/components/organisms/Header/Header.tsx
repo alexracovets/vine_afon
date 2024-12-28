@@ -4,6 +4,7 @@ import { Navigation, Burger, HeaderHeadroom } from "@/src/ui/components/molecule
 import { Container, HeaderWrapper, Logo } from "@/src/ui/components/atoms";
 
 import useResponsive from '@/store/useResponsive';
+import Link from "next/link";
 
 export const Header = () => {
     const responsive = useResponsive(state => state.responsive);
@@ -13,7 +14,9 @@ export const Header = () => {
             <HeaderHeadroom>
                 <Container className="pt-[1rem] max-mobile:pt-0 max-mobile:px-0 relative">
                     <HeaderWrapper>
-                        <Logo isHeader />
+                        <Link href="/#home">
+                            <Logo isHeader />
+                        </Link>
                         {responsive !== "mobile" && <Navigation />}
                         {responsive === "mobile" && <Burger />}
                     </HeaderWrapper>

@@ -7,7 +7,7 @@ import { ProgressSteps } from "@/src/ui/components/molecules";
 export const WorkSection = () => {
 
     return (
-        <Section rounded>
+        <Section rounded id="work">
             <Container className="gap-y-[10rem] max-tablet:gap-y-[5rem]">
                 <ProgressSteps />
                 <InfoCase />

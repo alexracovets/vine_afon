@@ -3,6 +3,7 @@
 import { Container, Logo } from "@/src/ui/components/atoms";
 import { FooterLinks } from "@/src/ui/components/molecules";
 import { cn } from "@/src/utils/cn";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const Footer = () => {
@@ -16,13 +17,15 @@ export const Footer = () => {
     return (
         <>
             {
-                !isMapaPage && <footer>
+                !isMapaPage && <footer id="contacts">
                     <Container rounded className={footerWrapperStyles} >
-                        <Logo isFooter />
+                        <Link href="/#home">
+                            <Logo isFooter />
+                        </Link>
                         <FooterLinks />
                     </Container>
                 </footer>
             }
         </>
-    )
+    );
 };

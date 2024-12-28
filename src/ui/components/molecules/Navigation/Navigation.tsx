@@ -7,22 +7,22 @@ export const Navigation = () => {
     const links = [
         {
             name: "Лоза",
-            href: "#",
+            href: "/vine",
             frame: false
         },
         {
             name: "Як це працює",
-            href: "#",
+            href: "/#work",
             frame: false
         },
         {
             name: "Відео",
-            href: "#",
+            href: "/#video",
             frame: false
         },
         {
             name: "Контакти",
-            href: "#",
+            href: "/#contacts",
             frame: true
         }
     ];
