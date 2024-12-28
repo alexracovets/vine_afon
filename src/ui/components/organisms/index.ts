@@ -7,3 +7,4 @@ export { HowWorks } from './HowWorks';
 export { InfoCase } from './InfoCase';
 export { Header } from './Header';
 export { Footer } from './Footer';
+export { Loader } from './Loader';

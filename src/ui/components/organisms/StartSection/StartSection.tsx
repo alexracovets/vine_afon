@@ -7,7 +7,7 @@ export const StartSection = () => {
 
     return (
         <Section start>
-            <ImageAtom src="/startSection/bg.jpg" alt="bg" cover />
+            <ImageAtom src="/startSection/bg.jpg" alt="bg" cover priority />
             <MainFrame />
         </Section>
     );
