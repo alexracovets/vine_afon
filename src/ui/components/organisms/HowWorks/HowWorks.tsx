@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/src/ui/components/molecules";
 import { Text, Button, YouTubeVideo } from "@/src/ui/components/atoms";
 import { useEffect, useState } from "react";
@@ -54,7 +56,7 @@ export const HowWorks = () => {
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
-            <Button className="mx-auto">Посадити лозу</Button>
+            <Link href="/vine" className="mx-auto"><Button>Посадити лозу</Button></Link>
             <Text variant="info">
                 <b>
                     Мета збору “Vine of Athos” – це відбудова 1033-літньої Келії Св. Архангелів, розбудова осередку та приведення до ладу всієї території навколо неї (ландшафту) загальним кошторисом в 3 млн євро.

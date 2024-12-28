@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { InfoContentWrapper, Text, Button } from "@/src/ui/components/atoms";
 import { List } from "@/src/ui/components/molecules";
 
@@ -29,7 +31,7 @@ export const SupportInfoContent = () => {
                 Відбудований осередок створить:
             </Text>
             <List list={contentList} />
-            {responsive === "mobile" && <Button className="mt-[3rem]">Посадити лозу</Button>}
+            {responsive === "mobile" && <Link href="/vine"><Button>Посадити лозу</Button></Link>}
         </InfoContentWrapper>
     );
 };

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { Button, FrameInfoWrapper, FrameWrapper, Logo, Text } from "@/src/ui/components/atoms";
 import { Frame } from "@/src/ui/components/molecules";
 
@@ -13,7 +15,7 @@ export const MainFrame = () => {
                 </Text>
                 <Logo isDefault />
             </FrameInfoWrapper>
-            <Button>Посадити лозу</Button>
+            <Link href="/vine"><Button>Посадити лозу</Button></Link>
         </FrameWrapper>
     )
 }
