@@ -23,6 +23,7 @@ html {
     align-items: flex-start;
     flex-direction: column;
     width: 100%;
+    min-height: 100dvh;
 
     &.overflow-hidden {
       overflow: hidden;
@@ -40,6 +41,10 @@ html {
 
     main {
       z-index: 0;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
   }
 
