@@ -1,5 +1,6 @@
 export { ProgressStepsItemWrapper } from './ProgressStepsItemWrapper';
 export { ProgressStepsWrapper } from './ProgressStepsWrapper';
+export { FooterLinksWrapper } from './FooterLinksWrapper';
 export { SupportInfoWrapper } from './SupportInfoWrapper';
 export { InfoContentWrapper } from './InfoContentWrapper';
 export { ProgressItemsQuad } from './ProgressItemsQuad';

@@ -56,8 +56,8 @@ export const ShowCase = () => {
                             <CarouselItem key={idx}>
                                 <div
                                     className={cn(
-                                        "relative w-[130rem] h-[50rem] rounded-[4rem] mx-auto overflow-hidden",
-                                        "max-tablet:w-full max-tablet:h-[30rem] max-tablet:rounded-[2rem]",
+                                        "relative w-full h-[50rem] rounded-[4rem] mx-auto overflow-hidden",
+                                        "max-tablet:h-[30rem] max-tablet:rounded-[2rem]",
                                         "max-mobile:h-[15.5rem] max-mobile:rounded-[1rem]"
                                     )}
                                 >

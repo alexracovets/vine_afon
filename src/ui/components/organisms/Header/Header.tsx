@@ -13,7 +13,7 @@ export const Header = () => {
             <HeaderHeadroom>
                 <Container className="pt-[1rem] max-mobile:pt-0 max-mobile:px-0 relative">
                     <HeaderWrapper>
-                        <Logo header />
+                        <Logo isHeader />
                         {responsive !== "mobile" && <Navigation />}
                         {responsive === "mobile" && <Burger />}
                     </HeaderWrapper>

@@ -5,6 +5,7 @@ export { ProgressStepsItem } from './ProgressStepsItem';
 export { SupportInfoTitle } from './SupportInfoTitle';
 export { HeaderHeadroom } from './HeaderHeadroom';
 export { ProgressSteps } from './ProgressSteps';
+export { FooterLinks } from './FooterLinks';
 export { MenuOverlay } from './MenuOverlay';
 export { Navigation } from './Navigation';
 export { Burger } from './Burger';

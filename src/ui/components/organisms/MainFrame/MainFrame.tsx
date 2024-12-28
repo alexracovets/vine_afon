@@ -11,7 +11,7 @@ export const MainFrame = () => {
                 <Text variant="frame">
                     Винороби Афону у Відбудові
                 </Text>
-                <Logo />
+                <Logo isDefault />
             </FrameInfoWrapper>
             <Button>Посадити лозу</Button>
         </FrameWrapper>

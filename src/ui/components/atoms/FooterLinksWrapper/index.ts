@@ -1,0 +1,1 @@
+export { FooterLinksWrapper } from './FooterLinksWrapper';
