@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 export const Footer = () => {
     const pathName = usePathname();
-    const isMapaPage = pathName.includes('mapa');
+    const isMapaPage = pathName.includes('vine');
     const footerWrapperStyles = cn(
         'bg-regalBlack py-[5rem] max-tablet:py-[3rem] max-mobile:py-[3rem] flex-row justify-between items-center w-full',
         'max-mobile:flex-col max-mobile:justify-start max-mobile:items-start max-mobile:gap-y-[1.5rem]'
