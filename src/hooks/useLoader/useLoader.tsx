@@ -13,7 +13,7 @@ export const useLoader = () => {
         } else {
             const timer = setTimeout(() => {
                 setLoading(false);
-            }, 4000);
+            }, 1);
 
             return () => clearTimeout(timer);
         }
