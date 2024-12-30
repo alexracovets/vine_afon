@@ -9,3 +9,7 @@ export { ShowCase } from './ShowCase';
 export { Header } from './Header';
 export { Footer } from './Footer';
 export { Loader } from './Loader';
+
+
+export { PumpsThree } from './PumpsThree';
+export { SVGTubes } from './SVGTubes';

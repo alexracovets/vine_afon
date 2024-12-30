@@ -1,7 +1,11 @@
 "use client";
-import { Canvas } from "@react-three/fiber";
-import * as THREE from "three";
-import { Box, OrbitControls } from "@react-three/drei";
+
+import { SVGTubes } from "@/src/ui/components/organisms";
+
+// import { Canvas } from "@react-three/fiber";
+// import * as THREE from "three";
+// import { OrbitControls } from "@react-three/drei";
+// import { PumpsThree } from "@/src/ui/components/organisms/PumpsThree";
 
 export const MapaSection = () => {
 
@@ -9,17 +13,25 @@ export const MapaSection = () => {
         <div
             className="flex flex-col justify-start items-start flex-grow bg-regalMain"
         >
-            <Canvas
+            {/* <Canvas
                 linear={false}
                 onCreated={({ gl }) => {
                     gl.toneMapping = THREE.NoToneMapping;
                     gl.outputColorSpace = THREE.SRGBColorSpace;
                 }}
+                camera={{ position: [0, 0, 5], near: 0.1, far: 1000 }}
             >
-                <Box />
-                <OrbitControls />
+                <OrbitControls
+                    enableRotate={false}
+                />
+                <PumpsThree />
+            </Canvas> */}
 
-            </Canvas>
+            <div
+                className="flex-grow w-full h-full flex justify-center items-center"
+            >
+                <SVGTubes />
+            </div>
         </div>
     );
 };
