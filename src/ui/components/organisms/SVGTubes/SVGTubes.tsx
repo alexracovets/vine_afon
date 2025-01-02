@@ -17,7 +17,7 @@ export const SVGTubes = () => {
     const lineHeight_2Normal = lineHeight_2 + (borderHeight - tubeHeight) - 3;
 
     const dashStyle = cn(
-        "fill-[#26386c] stroke-[2px] stroke-[#172b4e]",
+        "fill-[#23315a] stroke-[2px] stroke-[#172b4e]",
         "hover:fill-red-500",
     );
     const activeTubesStyle = cn(
@@ -67,6 +67,11 @@ export const SVGTubes = () => {
             width="100vw" viewBox="0 0 1920 342"
 
         >
+            <linearGradient id="tube-highlight" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="transparent" />
+            </linearGradient>
+
             <filter id="drop-shadow" x="-50%" y="-50%" width="200%" height="200%">
                 <feDropShadow dx="3" dy="3" stdDeviation="3" floodColor="black" floodOpacity="0.5" />
             </filter>
@@ -79,138 +84,143 @@ export const SVGTubes = () => {
                 <feComposite in="shadow" in2="SourceGraphic" operator="over" />
             </filter>
             <g filter="url(#drop-shadow)" transform="translate(0, 8)">
-                <Tube
-                    x={0} y={lineHeight_0}
-                    width={midleTubeWidth / 2}
-                    tubeHeight={tubeHeight}
-                    borderHeight={borderHeight}
-                    className={testStyle}
-                />
-                <Tube
-                    x={0.5 * midleTubeWidth} y={lineHeight_0}
-                    width={midleTubeWidth * 2}
-                    tubeHeight={tubeHeight}
-                    borderHeight={borderHeight}
-                    className={testStyle}
-                />
-                <Tube
-                    x={2.5 * midleTubeWidth} y={lineHeight_0}
-                    width={midleTubeWidth}
-                    tubeHeight={tubeHeight}
-                    borderHeight={borderHeight}
-                    className={testStyle}
-                />
-                <Bend
-                    x={3.5 * midleTubeWidth - 2} y={lineHeight_0 + 1}
-                    rotate={270}
-                    className={testStyle}
-                />
-                <Bend
-                    x={3.5 * midleTubeWidth - 2} y={(borderHeight - tubeHeight) / 2 + bendHeight - 1}
-                    rotate={0}
-                    className={testStyle}
-                />
-                <Tube
-                    x={3 * midleTubeWidth} y={lineHeight_1 - 2}
-                    width={midleTubeWidth / 2}
-                    tubeHeight={tubeHeight}
-                    borderHeight={borderHeight}
-                    className={testStyle}
-                />
-                <Bend
-                    x={3 * midleTubeWidth - bendWidth} y={lineHeight_1 - 1}
-                    rotate={180}
-                    className={testStyle}
-                />
-                <Bend
-                    x={3 * midleTubeWidth - bendWidth} y={lineHeight_2 - 3}
-                    rotate={90}
-                    className={testStyle}
-                />
-                <Tube
-                    x={3 * midleTubeWidth} y={lineHeight_2Normal}
-                    width={midleTubeWidth * 1.5}
-                    tubeHeight={tubeHeight}
-                    borderHeight={borderHeight}
-                    className={testStyle}
-                />
-                <Tube
-                    x={4.5 * midleTubeWidth} y={lineHeight_2Normal}
-                    width={midleTubeWidth * 1.5}
-                    tubeHeight={tubeHeight}
-                    borderHeight={borderHeight}
-                    className={testStyle}
-                />
-                <Dash
-                    x={0} y={0}
-                    width={borderWidth * 4}
-                    height={borderHeight}
-                    rounded={borderWidth / 2}
-                    className={dashStyle}
-                />
-                <Dash
-                    x={0.5 * midleTubeWidth - borderWidth / 2} y={0}
-                    width={borderWidth * 2}
-                    height={borderHeight}
-                    rounded={borderWidth / 2}
-                    className={dashStyle}
-                />
-                <Dash
-                    x={2.5 * midleTubeWidth - borderWidth / 2} y={0}
-                    width={borderWidth * 2}
-                    height={borderHeight}
-                    rounded={borderWidth / 2}
-                    className={dashStyle}
-                />
-                <Dash
-                    x={3.5 * midleTubeWidth - borderWidth} y={0}
-                    width={borderWidth}
-                    height={borderHeight}
-                    rounded={borderWidth / 2}
-                    className={dashStyle}
-                />
-                <Dash
-                    x={3.5 * midleTubeWidth + borderWidth} y={(borderHeight - tubeHeight) / 2 + bendHeight - borderWidth}
-                    width={borderHeight}
-                    height={borderWidth}
-                    rounded={borderWidth / 2}
-                    className={dashStyle}
-                />
-                <Dash
-                    x={3.5 * midleTubeWidth - borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + bendHeight + borderWidth}
-                    width={borderWidth}
-                    height={borderHeight}
-                    rounded={borderWidth / 2}
-                    className={dashStyle}
-                />
-                <Dash
-                    x={3 * midleTubeWidth - borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + bendHeight + borderWidth}
-                    width={borderWidth}
-                    height={borderHeight}
-                    rounded={borderWidth / 2}
-                    className={dashStyle}
-                />
-                <Dash
-                    x={2 * midleTubeWidth + borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + 2 * bendHeight + borderWidth}
-                    width={borderHeight}
-                    height={borderWidth}
-                    rounded={borderWidth / 2}
-                    className={dashStyle}
-                />
-                <Dash
-                    x={3 * midleTubeWidth - borderWidth / 2} y={lineHeight_2Normal - (borderHeight - tubeHeight) / 2}
-                    width={borderWidth}
-                    height={borderHeight}
-                    rounded={borderWidth / 2}
-                    className={dashStyle}
-                />
-                <Dash
-                    x={4.5 * midleTubeWidth - borderWidth} y={lineHeight_2Normal - (borderHeight - tubeHeight) / 2}
-                    width={borderWidth * 1.5}
-                    height={borderHeight}
-                    rounded={borderWidth / 2}
-                    className={dashStyle}
-                />
+                <g
+
+                    filter="url(#roughness)"
+                >
+                    <Tube
+                        x={0} y={lineHeight_0}
+                        width={midleTubeWidth / 2}
+                        tubeHeight={tubeHeight}
+                        borderHeight={borderHeight}
+                        className={testStyle}
+                    />
+                    <Tube
+                        x={0.5 * midleTubeWidth} y={lineHeight_0}
+                        width={midleTubeWidth * 2}
+                        tubeHeight={tubeHeight}
+                        borderHeight={borderHeight}
+                        className={testStyle}
+                    />
+                    <Tube
+                        x={2.5 * midleTubeWidth} y={lineHeight_0}
+                        width={midleTubeWidth}
+                        tubeHeight={tubeHeight}
+                        borderHeight={borderHeight}
+                        className={testStyle}
+                    />
+                    <Bend
+                        x={3.5 * midleTubeWidth - 2} y={lineHeight_0 + 1}
+                        rotate={270}
+                        className={testStyle}
+                    />
+                    <Bend
+                        x={3.5 * midleTubeWidth - 2} y={(borderHeight - tubeHeight) / 2 + bendHeight - 1}
+                        rotate={0}
+                        className={testStyle}
+                    />
+                    <Tube
+                        x={3 * midleTubeWidth} y={lineHeight_1 - 2}
+                        width={midleTubeWidth / 2}
+                        tubeHeight={tubeHeight}
+                        borderHeight={borderHeight}
+                        className={testStyle}
+                    />
+                    <Bend
+                        x={3 * midleTubeWidth - bendWidth} y={lineHeight_1 - 1}
+                        rotate={180}
+                        className={testStyle}
+                    />
+                    <Bend
+                        x={3 * midleTubeWidth - bendWidth} y={lineHeight_2 - 3}
+                        rotate={90}
+                        className={testStyle}
+                    />
+                    <Tube
+                        x={3 * midleTubeWidth} y={lineHeight_2Normal}
+                        width={midleTubeWidth * 1.5}
+                        tubeHeight={tubeHeight}
+                        borderHeight={borderHeight}
+                        className={testStyle}
+                    />
+                    <Tube
+                        x={4.5 * midleTubeWidth} y={lineHeight_2Normal}
+                        width={midleTubeWidth * 1.5}
+                        tubeHeight={tubeHeight}
+                        borderHeight={borderHeight}
+                        className={testStyle}
+                    />
+                    <Dash
+                        x={0} y={0}
+                        width={borderWidth * 4}
+                        height={borderHeight}
+                        rounded={borderWidth / 2}
+                        className={dashStyle}
+                    />
+                    <Dash
+                        x={0.5 * midleTubeWidth - borderWidth / 2} y={0}
+                        width={borderWidth * 2}
+                        height={borderHeight}
+                        rounded={borderWidth / 2}
+                        className={dashStyle}
+                    />
+                    <Dash
+                        x={2.5 * midleTubeWidth - borderWidth / 2} y={0}
+                        width={borderWidth * 2}
+                        height={borderHeight}
+                        rounded={borderWidth / 2}
+                        className={dashStyle}
+                    />
+                    <Dash
+                        x={3.5 * midleTubeWidth - borderWidth} y={0}
+                        width={borderWidth}
+                        height={borderHeight}
+                        rounded={borderWidth / 2}
+                        className={dashStyle}
+                    />
+                    <Dash
+                        x={3.5 * midleTubeWidth + borderWidth} y={(borderHeight - tubeHeight) / 2 + bendHeight - borderWidth}
+                        width={borderHeight}
+                        height={borderWidth}
+                        rounded={borderWidth / 2}
+                        className={dashStyle}
+                    />
+                    <Dash
+                        x={3.5 * midleTubeWidth - borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + bendHeight + borderWidth}
+                        width={borderWidth}
+                        height={borderHeight}
+                        rounded={borderWidth / 2}
+                        className={dashStyle}
+                    />
+                    <Dash
+                        x={3 * midleTubeWidth - borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + bendHeight + borderWidth}
+                        width={borderWidth}
+                        height={borderHeight}
+                        rounded={borderWidth / 2}
+                        className={dashStyle}
+                    />
+                    <Dash
+                        x={2 * midleTubeWidth + borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + 2 * bendHeight + borderWidth}
+                        width={borderHeight}
+                        height={borderWidth}
+                        rounded={borderWidth / 2}
+                        className={dashStyle}
+                    />
+                    <Dash
+                        x={3 * midleTubeWidth - borderWidth / 2} y={lineHeight_2Normal - (borderHeight - tubeHeight) / 2}
+                        width={borderWidth}
+                        height={borderHeight}
+                        rounded={borderWidth / 2}
+                        className={dashStyle}
+                    />
+                    <Dash
+                        x={4.5 * midleTubeWidth - borderWidth} y={lineHeight_2Normal - (borderHeight - tubeHeight) / 2}
+                        width={borderWidth * 1.5}
+                        height={borderHeight}
+                        rounded={borderWidth / 2}
+                        className={dashStyle}
+                    />
+                </g>
                 {activeTubes.map((tube, idx) => {
                     return (
                         <g key={idx}>
