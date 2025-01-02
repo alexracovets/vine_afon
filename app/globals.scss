@@ -74,3 +74,12 @@ html {
     }
   }
 }
+
+.wave-mask-rect {
+  transition: transform 1.5s ease-in-out;
+  transform: translateY(100%);
+}
+
+.wave-mask-rect.active {
+  transform: translateY(0%);
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/src/utils/cn";
-import { Tube, Bend, Crane, Dash, Lines } from "./tubes";
+import { Tube, Bend, Crane, Dash, Lines, ActiveTube } from "./tubes";
 
 export const SVGTubes = () => {
     const midleTubeWidth = 100;
@@ -17,16 +17,14 @@ export const SVGTubes = () => {
     const lineHeight_2Normal = lineHeight_2 + (borderHeight - tubeHeight) - 3;
 
     const dashStyle = cn(
-        "fill-[#23315a] stroke-[2px] stroke-[#172b4e]",
-        "hover:fill-red-500",
+        "fill-[#23315a] stroke-[2px] stroke-[#091428]"
     );
     const activeTubesStyle = cn(
-        "fill-white stroke-[3px] stroke-[#172b4e] fill-[#b4c6e9]"
+        "fill-white stroke-[3px] stroke-[#091428] fill-[#b4c6e9]"
     );
 
     const testStyle = cn(
-        "fill-[#26386c] stroke-[3px] stroke-[#172b4e]",
-        "hover:fill-red-500",
+        "fill-[#28456e] stroke-[3px] stroke-[#091428]"
     );
     const activeTubesWidth = 1.3;
     const activeTubes = [
@@ -229,24 +227,13 @@ export const SVGTubes = () => {
                 {activeTubes.map((tube, idx) => {
                     return (
                         <g key={idx}>
-                            <Tube
+                            <ActiveTube
+                                idx={idx}
                                 x={(6 + idx * activeTubesWidth) * midleTubeWidth} y={lineHeight_2Normal}
                                 width={midleTubeWidth * activeTubesWidth}
-                                tubeHeight={tubeHeight}
+                                height={tubeHeight}
                                 borderHeight={borderHeight}
                                 className={activeTubesStyle}
-                            />
-                            <rect
-                                transform={`translate(${(6 + idx * activeTubesWidth) * midleTubeWidth} ${lineHeight_2Normal})`}
-                                width={midleTubeWidth * activeTubesWidth}
-                                height={tubeHeight / 3}
-                                fill="url(#tube-gradient)"
-                            />
-                            <rect
-                                transform={`translate(${(6 + idx * activeTubesWidth) * midleTubeWidth} ${lineHeight_2Normal + (tubeHeight * 2) / 3})`}
-                                width={midleTubeWidth * activeTubesWidth}
-                                height={tubeHeight / 3}
-                                fill="url(#tube-gradient-revers)"
                             />
                             <Dash
                                 x={(6 + idx * activeTubesWidth) * midleTubeWidth - borderWidth} y={lineHeight_2Normal - (borderHeight - tubeHeight) / 2}
