@@ -87,27 +87,12 @@ export const SVGTubes = () => {
                     <stop offset="100%" stopColor="rgba(0, 20, 50, 0)" />
                 </linearGradient>
             </defs>
-            <linearGradient id="tube-highlight" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="transparent" />
-            </linearGradient>
-
             <filter id="drop-shadow" x="-50%" y="-50%" width="200%" height="200%">
                 <feDropShadow dx="3" dy="3" stdDeviation="3" floodColor="black" floodOpacity="0.5" />
             </filter>
-            <filter id="inner-shadow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
-                <feOffset dx="0" dy="0" result="offset" />
-                <feComposite in="offset" in2="SourceAlpha" operator="out" result="inverse" />
-                <feFlood floodColor="black" floodOpacity="0.5" result="shadowColor" />
-                <feComposite in="shadowColor" in2="inverse" operator="in" result="shadow" />
-                <feComposite in="shadow" in2="SourceGraphic" operator="over" />
-            </filter>
-            <g filter="url(#drop-shadow)" transform="translate(0, 8)">
-                <g
 
-                    filter="url(#roughness)"
-                >
+            <g filter="url(#drop-shadow)" transform="translate(0, 8)">
+                <g filter="url(#roughness)" >
                     <Tube
                         x={0} y={lineHeight_0}
                         width={midleTubeWidth / 2}
