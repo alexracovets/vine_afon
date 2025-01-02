@@ -61,12 +61,32 @@ export const SVGTubes = () => {
 
         }
     ];
-    { console.log(lineHeight_1) }
     return (
-        <svg
-            width="100vw" viewBox="0 0 1920 342"
-
-        >
+        <svg width="100vw" viewBox="0 0 1920 342">
+            <defs>
+                <linearGradient id="tube-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="rgba(38, 56, 108, .6)" />
+                    <stop offset="100%" stopColor="rgba(38, 56, 108, 0)" />
+                </linearGradient>
+            </defs>
+            <defs>
+                <linearGradient id="tube-gradient-revers" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stopColor="rgba(38, 56, 108, .6)" />
+                    <stop offset="100%" stopColor="rgba(38, 56, 108, 0)" />
+                </linearGradient>
+            </defs>
+            <defs>
+                <linearGradient id="dash-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="rgba(0, 20, 50, .6)" />
+                    <stop offset="100%" stopColor="rgba(0, 20, 50, 0)" />
+                </linearGradient>
+            </defs>
+            <defs>
+                <linearGradient id="dash-gradient-revers" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stopColor="rgba(0, 20, 50, .6)" />
+                    <stop offset="100%" stopColor="rgba(0, 20, 50, 0)" />
+                </linearGradient>
+            </defs>
             <linearGradient id="tube-highlight" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
                 <stop offset="100%" stopColor="transparent" />
@@ -230,6 +250,18 @@ export const SVGTubes = () => {
                                 tubeHeight={tubeHeight}
                                 borderHeight={borderHeight}
                                 className={activeTubesStyle}
+                            />
+                            <rect
+                                transform={`translate(${(6 + idx * activeTubesWidth) * midleTubeWidth} ${lineHeight_2Normal})`}
+                                width={midleTubeWidth * activeTubesWidth}
+                                height={tubeHeight / 3}
+                                fill="url(#tube-gradient)"
+                            />
+                            <rect
+                                transform={`translate(${(6 + idx * activeTubesWidth) * midleTubeWidth} ${lineHeight_2Normal + (tubeHeight * 2) / 3})`}
+                                width={midleTubeWidth * activeTubesWidth}
+                                height={tubeHeight / 3}
+                                fill="url(#tube-gradient-revers)"
                             />
                             <Dash
                                 x={(6 + idx * activeTubesWidth) * midleTubeWidth - borderWidth} y={lineHeight_2Normal - (borderHeight - tubeHeight) / 2}
