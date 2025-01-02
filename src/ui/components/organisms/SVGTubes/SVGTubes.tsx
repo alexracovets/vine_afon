@@ -3,7 +3,11 @@
 import { cn } from "@/src/utils/cn";
 import { Tube, Bend, Crane, Dash, Lines, ActiveTube, Leaf } from "./tubes";
 
-export const SVGTubes = () => {
+interface SVGTubesProps {
+    num: number;
+}
+
+export const SVGTubes = ({ num }: SVGTubesProps) => {
     const midleTubeWidth = 100;
     const bendHeight = 90.94;
     const bendWidth = 89.73;
@@ -234,6 +238,7 @@ export const SVGTubes = () => {
                                 height={tubeHeight}
                                 borderHeight={borderHeight}
                                 className={activeTubesStyle}
+                                num={num}
                             />
                             <Dash
                                 x={(6 + idx * activeTubesWidth) * midleTubeWidth - borderWidth} y={lineHeight_2Normal - (borderHeight - tubeHeight) / 2}

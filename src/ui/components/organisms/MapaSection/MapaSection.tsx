@@ -31,9 +31,9 @@ export const MapaSection = () => {
                 className="flex-grow w-full h-full flex justify-center items-center"
             >
                 <div className="w-[50%] flex flex-col">
-                    <SVGTubes />
-                    <SVGTubes />
-                    <SVGTubes />
+                    <SVGTubes num={0} />
+                    <SVGTubes num={1} />
+                    <SVGTubes num={2} />
                 </div>
                 <div className="w-[50%]">
 

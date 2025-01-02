@@ -5,10 +5,9 @@ import { useState } from "react";
 import { ActiveType } from "@/src/types";
 import { Tube } from "./Tube";
 
-export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className }: ActiveType) => {
+export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className, num }: ActiveType) => {
     const [isActive, setIsActive] = useState(false);
     const [isHover, setIsHover] = useState(false);
-
 
     return (
         <g
@@ -35,11 +34,11 @@ export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className }
                 strokeWidth="2"
             />
             <defs>
-                <linearGradient id={`wave-gradient_${idx}`} x1="0%" y1="100%" x2="0%" y2="0%">
+                <linearGradient id={`wave-gradient_${num}-${idx}`} x1="0%" y1="100%" x2="0%" y2="0%">
                     <stop offset="0%" stopColor="#3986fd" />
                     <stop offset="100%" stopColor="#009fff" />
                 </linearGradient>
-                <mask id={`wave-mask_${idx}`}>
+                <mask id={`wave-mask_${num}-${idx}`}>
                     <rect
                         x={x}
                         y={isActive ? y : (isHover ? y + height / 1.5 : y + height)}
@@ -57,8 +56,8 @@ export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className }
                 y={y}
                 width={width}
                 height={height}
-                fill={`url(#wave-gradient_${idx})`}
-                mask={`url(#wave-mask_${idx})`}
+                fill={`url(#wave-gradient_${num}-${idx})`}
+                mask={`url(#wave-mask_${num}-${idx})`}
                 style={{
                     transition: isHover ? "y .5s ease-in-out" : "y 1.5s ease-in-out",
                 }}

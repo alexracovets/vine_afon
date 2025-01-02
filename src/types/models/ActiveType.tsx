@@ -6,4 +6,5 @@ export interface ActiveType {
     height: number;
     borderHeight: number;
     className: string;
+    num: number;
 }
