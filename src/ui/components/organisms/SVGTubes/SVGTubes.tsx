@@ -17,12 +17,15 @@ export const SVGTubes = () => {
     const lineHeight_2Normal = lineHeight_2 + (borderHeight - tubeHeight) - 3;
 
     const dashStyle = cn(
-        "fill-blue-900 stroke-[2px] stroke-[#0a1528]",
+        "fill-[#26386c] stroke-[2px] stroke-[#172b4e]",
         "hover:fill-red-500",
+    );
+    const activeTubesStyle = cn(
+        "fill-white stroke-[3px] stroke-[#172b4e] fill-[#b4c6e9]"
     );
 
     const testStyle = cn(
-        "fill-blue-900 stroke-[3px] stroke-blue-500",
+        "fill-[#26386c] stroke-[3px] stroke-[#172b4e]",
         "hover:fill-red-500",
     );
     const activeTubesWidth = 1.3;
@@ -216,7 +219,7 @@ export const SVGTubes = () => {
                                 width={midleTubeWidth * activeTubesWidth}
                                 tubeHeight={tubeHeight}
                                 borderHeight={borderHeight}
-                                className={testStyle}
+                                className={activeTubesStyle}
                             />
                             <Dash
                                 x={(6 + idx * activeTubesWidth) * midleTubeWidth - borderWidth} y={lineHeight_2Normal - (borderHeight - tubeHeight) / 2}
@@ -230,6 +233,13 @@ export const SVGTubes = () => {
                 })}
                 <Crane
                     x={4.5 * midleTubeWidth} y={lineHeight_2Normal - 160}
+                    className={dashStyle}
+                />
+                <Dash
+                    x={(6 + 10 * activeTubesWidth) * midleTubeWidth - borderWidth} y={lineHeight_2Normal - (borderHeight - tubeHeight) / 2}
+                    width={borderWidth * 2.5}
+                    height={borderHeight}
+                    rounded={borderWidth / 2}
                     className={dashStyle}
                 />
             </g>
