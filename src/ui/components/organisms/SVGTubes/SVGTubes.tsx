@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/src/utils/cn";
-import { Tube, Bend, Crane, Dash } from "./tubes";
+import { Tube, Bend, Crane, Dash, Lines } from "./tubes";
 
 export const SVGTubes = () => {
     const midleTubeWidth = 100;
@@ -61,7 +61,7 @@ export const SVGTubes = () => {
 
         }
     ];
-
+    { console.log(lineHeight_1) }
     return (
         <svg
             width="100vw" viewBox="0 0 1920 342"
@@ -252,6 +252,8 @@ export const SVGTubes = () => {
                     rounded={borderWidth / 2}
                     className={dashStyle}
                 />
+                <Lines />
+
             </g>
         </svg>
     );
