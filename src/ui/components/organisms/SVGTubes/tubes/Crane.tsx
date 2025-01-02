@@ -8,7 +8,7 @@ export const Crane = ({ x, y, className }: CraneProps) => {
 
     return (
         <g
-            transform={`translate(${x}, ${y}) scale(1.5)`}
+            transform={`translate(${x}, ${y}) scale(1)`}
             className={cn(className, "stroke-[2px]")}
         >
             <rect x="25.324" y="98.804" width="50.749" height="10.151" rx="1.484" ry="1.484" fill={whiteFill} />

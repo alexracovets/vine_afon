@@ -47,7 +47,7 @@ export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className }
                         height={height - 2}
                         fill="white"
                         style={{
-                            transition: "y 1.5s ease-in-out",
+                            transition: isHover ? "y .5s ease-in-out" : "y 1.5s ease-in-out",
                         }}
                     />
                 </mask>
@@ -60,7 +60,7 @@ export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className }
                 fill={`url(#wave-gradient_${idx})`}
                 mask={`url(#wave-mask_${idx})`}
                 style={{
-                    transition: "y 1.5s ease-in-out",
+                    transition: isHover ? "y .5s ease-in-out" : "y 1.5s ease-in-out",
                 }}
             />
             <rect

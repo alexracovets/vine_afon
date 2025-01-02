@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/src/utils/cn";
-import { Tube, Bend, Crane, Dash, Lines, ActiveTube } from "./tubes";
+import { Tube, Bend, Crane, Dash, Lines, ActiveTube, Leaf } from "./tubes";
 
 export const SVGTubes = () => {
     const midleTubeWidth = 100;
@@ -60,7 +60,7 @@ export const SVGTubes = () => {
         }
     ];
     return (
-        <svg width="100vw" viewBox="0 0 1920 342">
+        <svg width="100%" viewBox="0 0 1920 342">
             <defs>
                 <linearGradient id="tube-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="rgba(38, 56, 108, .6)" />
@@ -242,11 +242,12 @@ export const SVGTubes = () => {
                                 rounded={borderWidth / 2}
                                 className={dashStyle}
                             />
+                            <Leaf x={(5.14 + idx * activeTubesWidth) * midleTubeWidth} y={15} />
                         </g>
                     )
                 })}
                 <Crane
-                    x={4.5 * midleTubeWidth} y={lineHeight_2Normal - 160}
+                    x={4.5 * midleTubeWidth + 25} y={lineHeight_2Normal - 106}
                     className={dashStyle}
                 />
                 <Dash
@@ -257,7 +258,6 @@ export const SVGTubes = () => {
                     className={dashStyle}
                 />
                 <Lines />
-
             </g>
         </svg>
     );

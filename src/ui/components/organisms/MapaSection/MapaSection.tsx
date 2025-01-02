@@ -30,7 +30,14 @@ export const MapaSection = () => {
             <div
                 className="flex-grow w-full h-full flex justify-center items-center"
             >
-                <SVGTubes />
+                <div className="w-[50%] flex flex-col">
+                    <SVGTubes />
+                    <SVGTubes />
+                    <SVGTubes />
+                </div>
+                <div className="w-[50%]">
+
+                </div>
             </div>
         </div>
     );
