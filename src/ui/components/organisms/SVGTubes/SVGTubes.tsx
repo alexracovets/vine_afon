@@ -92,6 +92,9 @@ export const SVGTubes = ({ num }: SVGTubesProps) => {
             <filter id="drop-shadow" x="-50%" y="-50%" width="200%" height="200%">
                 <feDropShadow dx="3" dy="3" stdDeviation="3" floodColor="black" floodOpacity="0.5" />
             </filter>
+            <filter id="grayscale">
+                <feColorMatrix type="luminanceToAlpha" values="0.10" />
+            </filter>
 
             <g filter="url(#drop-shadow)" transform="translate(0, 8)">
                 <g filter="url(#roughness)" >
@@ -247,7 +250,7 @@ export const SVGTubes = ({ num }: SVGTubesProps) => {
                                 rounded={borderWidth / 2}
                                 className={dashStyle}
                             />
-                            <Leaf x={(5.14 + idx * activeTubesWidth) * midleTubeWidth} y={15} />
+                            <Leaf x={(6.1 + idx * activeTubesWidth) * midleTubeWidth} y={100} />
                         </g>
                     )
                 })}
