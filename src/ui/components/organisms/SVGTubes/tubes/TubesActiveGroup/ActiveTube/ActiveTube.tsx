@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { ActiveType } from "@/src/types";
-import { Tube } from "./Tube";
+import { Tube } from "../../Tube";
 
 export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className, num }: ActiveType) => {
     const [isActive, setIsActive] = useState(false);
@@ -43,7 +43,7 @@ export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className, 
                         x={x}
                         y={isActive ? y : (isHover ? y + height / 1.5 : y + height)}
                         width={width}
-                        height={height - 2}
+                        height={height}
                         fill="white"
                         style={{
                             transition: isHover ? "y .5s ease-in-out" : "y 1.5s ease-in-out",

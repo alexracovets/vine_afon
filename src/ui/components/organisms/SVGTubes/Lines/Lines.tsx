@@ -1,22 +1,25 @@
+"use client";
+
 export const Lines = () => {
     const color = "#172b4e";
     const whiteColor = "#96b8d5";
+
     return (
         <g>
             <g>
                 <rect
-                    x="10" y="10"
-                    width={20}
-                    height={3}
+                    x="5" y="5"
+                    width={10}
+                    height={1.5}
                     fill={color}
-                    transform="rotate(220 0 60) translate (0 76)"
+                    transform="rotate(220 0 60) translate (0 50)"
                 />
                 <rect
                     x="10" y="10"
                     width={10}
                     height={3}
                     fill={color}
-                    transform="rotate(220 0 60) translate (0 80)"
+                    transform="rotate(220 0 60) translate (0 40)"
                 />
             </g>
             <g>

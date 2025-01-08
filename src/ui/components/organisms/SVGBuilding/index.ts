@@ -1,0 +1,1 @@
+export { SVGBuilding } from './SVGBuilding';

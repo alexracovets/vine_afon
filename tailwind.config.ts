@@ -49,9 +49,9 @@ const config: Config = {
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
 			dropShadow: {
-				'svg': '2px 0px 5px black',
-				'leaf': "2px 4px 0 black",
-				'leaf-active': "0 0 0 black"
+				'svg': '3px 4px 4px #00000040',
+				'leaf': "2px 4px 0 #00000040",
+				'leaf-active': "2px 4px 0 #00000000"
 			}
 		}
 	},
