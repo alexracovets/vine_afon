@@ -11,7 +11,7 @@ export const MapaSection = () => {
 
     return (
         <div
-            className="flex flex-col justify-start items-start flex-grow bg-regalMain"
+            className="flex flex-col justify-start items-start flex-grow bg-[#96d55a]"
         >
             {/* <Canvas
                 linear={false}

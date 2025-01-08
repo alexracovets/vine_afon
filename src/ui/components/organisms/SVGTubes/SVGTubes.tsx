@@ -21,14 +21,14 @@ export const SVGTubes = ({ num }: SVGTubesProps) => {
     const lineHeight_2Normal = lineHeight_2 + (borderHeight - tubeHeight) - 3;
 
     const dashStyle = cn(
-        "fill-[#23315a] stroke-[2px] stroke-[#091428]"
+        "fill-[#2d5b9d] stroke-[2px] stroke-[#091428]"
     );
     const activeTubesStyle = cn(
         "fill-white stroke-[3px] stroke-[#091428] fill-[#b4c6e9]"
     );
 
     const testStyle = cn(
-        "fill-[#28456e] stroke-[3px] stroke-[#091428]"
+        "fill-[#2d5b9d] stroke-[3px] stroke-[#091428]"
     );
     const activeTubesWidth = 1.3;
     const activeTubes = [
@@ -67,13 +67,13 @@ export const SVGTubes = ({ num }: SVGTubesProps) => {
         <svg width="100%" viewBox="0 0 1920 342">
             <defs>
                 <linearGradient id="tube-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="rgba(38, 56, 108, .6)" />
+                    <stop offset="0%" stopColor="rgba(45, 91, 157, .6)" />
                     <stop offset="100%" stopColor="rgba(38, 56, 108, 0)" />
                 </linearGradient>
             </defs>
             <defs>
                 <linearGradient id="tube-gradient-revers" x1="0%" y1="100%" x2="0%" y2="0%">
-                    <stop offset="0%" stopColor="rgba(38, 56, 108, .6)" />
+                    <stop offset="0%" stopColor="rgba(45, 91, 157, .6)" />
                     <stop offset="100%" stopColor="rgba(38, 56, 108, 0)" />
                 </linearGradient>
             </defs>

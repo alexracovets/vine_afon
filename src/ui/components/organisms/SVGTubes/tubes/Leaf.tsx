@@ -4,7 +4,7 @@ import { LeafType } from "@/src/types";
 import { cn } from "@/src/utils/cn";
 
 export const Leaf = ({ x, y }: LeafType) => {
-    const border = "#091428";
+    const border = "#6a2841";
 
     return (
         <g transform={`translate(${x} ${y})`} filter="url(#grayscale)"
@@ -27,7 +27,7 @@ export const Leaf = ({ x, y }: LeafType) => {
                         <circle cx="50" cy="50" r="50" />
                     </clipPath>
                 </defs>
-                <circle cx="50" cy="50" r="50" fill="white" stroke={border} strokeWidth="5" filter="url(#dash-gradient)" />
+                <circle cx="50" cy="50" r="50" fill="white" stroke={border} strokeWidth="6" filter="url(#dash-gradient)" />
                 <g clipPath="url(#leaf-clip)">
                     <g transform="matrix(1, 0, 0, 1, -220.000005, -53.338998)">
                         <path
