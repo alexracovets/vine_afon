@@ -1,4 +1,4 @@
-import { MapaSection} from "@/src/ui/components/organisms";
+import { MapaSection } from "@/src/ui/components/organisms";
 
 export default function Mapa() {
   return (
@@ -6,4 +6,4 @@ export default function Mapa() {
       <MapaSection />
     </>
   );
-}
+};
