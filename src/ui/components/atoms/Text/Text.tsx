@@ -53,6 +53,9 @@ const textVariants = cva(
                 activeBlock: cn(
                     "text-[1rem] font-[600] textShadow leading-[1]",
                 ),
+                popUpError: cn(
+                    "text-[1.5rem] font-[600] text-red-500 leading-[1]",
+                ),
             }
         },
         defaultVariants: {

@@ -8,7 +8,7 @@ import * as React from "react";
 import { cn } from "@/src/utils/cn";
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center border-[0.1rem] border-regalBlack bg-transperant w-fit",
+    "inline-flex items-center justify-center border-[0.1rem] border-regalBlack bg-transperant w-fit disabled:grayscale-[50%]",
     {
         variants: {
             variant: {
@@ -40,11 +40,13 @@ const buttonVariants = cva(
 export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-    asChild?: boolean
+    asChild?: boolean,
+    disabled?: boolean
+    onClick?: () => void
 };
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, variant, asChild = false, ...props }, ref) => {
+    ({ className, variant, asChild = false, onClick, disabled, ...props }, ref) => {
 
         const [isHover, setIsHover] = React.useState(false);
         const Comp = asChild ? Slot : "button";
@@ -54,6 +56,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 className={cn(buttonVariants({ variant, className }))}
                 onPointerEnter={() => setIsHover(true)}
                 onPointerLeave={() => setIsHover(false)}
+                onClick={onClick}
+                disabled={disabled}
                 ref={ref}>
                 <span
                     className={cn(

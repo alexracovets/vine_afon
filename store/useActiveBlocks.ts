@@ -1,17 +1,10 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
-interface Arguments {
-    status: string;
-    name: string;
-    index: number;
-    row: number;
-    col: number;
-    isDeformed: boolean;
-}
+import { BlockData } from "@/src/types";
 
 interface MobileMenuState {
-    activeBlocks: Arguments[];
+    activeBlocks: BlockData[];
 }
 
 const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
@@ -22,7 +15,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: true,
             row: 1,
             col: 11,
-            index: 1
+            id: 1
         },
         {
             status: "reserved",
@@ -30,7 +23,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: false,
             row: 1,
             col: 10,
-            index: 2
+            id: 2
         },
         {
             status: "buyed",
@@ -38,7 +31,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: false,
             row: 2,
             col: 10,
-            index: 3
+            id: 3
         },
         {
             status: "active",
@@ -46,7 +39,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: true,
             row: 1,
             col: 9,
-            index: 4
+            id: 4
         },
         {
             status: "active",
@@ -54,7 +47,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: false,
             row: 1,
             col: 8,
-            index: 5
+            id: 5
         },
         {
             status: "active",
@@ -62,7 +55,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: false,
             row: 2,
             col: 8,
-            index: 6
+            id: 6
         },
         {
             status: "active",
@@ -70,7 +63,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: true,
             row: 1,
             col: 7,
-            index: 7
+            id: 7
         },
         {
             status: "active",
@@ -78,7 +71,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: false,
             row: 1,
             col: 6,
-            index: 8
+            id: 8
         },
         {
             status: "active",
@@ -86,7 +79,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: false,
             row: 2,
             col: 6,
-            index: 9
+            id: 9
         },
         {
             status: "active",
@@ -94,7 +87,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: true,
             row: 1,
             col: 5,
-            index: 10
+            id: 10
         },
         {
             status: "active",
@@ -102,7 +95,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: false,
             row: 1,
             col: 4,
-            index: 11
+            id: 11
         },
         {
             status: "active",
@@ -110,7 +103,7 @@ const useActiveBlocks = create<MobileMenuState>()(immer(() => ({
             isDeformed: false,
             row: 2,
             col: 4,
-            index: 12
+            id: 12
         }
     ]
 })))

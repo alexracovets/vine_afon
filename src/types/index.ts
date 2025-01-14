@@ -7,3 +7,5 @@ export { type LeafType } from './models';
 export { type TubeData } from './models';
 export { type LeafData } from './models';
 export { type DataTubeLeaf } from './models';
+export { type BlockData } from './models';
+export { type BlockPositionType } from './models';

@@ -38,9 +38,9 @@ export const SVGTubes = () => {
     const activeTubesWidth = 1.3;
 
     return (
-        <svg width="100%" className="relative flex-grow h-full max-h-full overflow-visible z-[0]">
+        <svg width="100%" height="100%" viewBox="0 0 960 540" className="relative flex-grow h-full max-h-full overflow-visible z-[0]">
             <Filters />
-            <g transform="translate(0, 100) scale(.99)">
+            <g transform="translate(0, 0)">
                 {
                     currentActiveBlock.map((row, idx) => {
                         return (

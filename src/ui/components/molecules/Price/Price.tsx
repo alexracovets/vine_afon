@@ -4,12 +4,29 @@ import { cn } from "@/src/utils/cn";
 import { Button } from "@/src/ui/components/atoms";
 import { useEffect, useState } from "react";
 
+import useCardShop from "@/store/useCardShop";
+
 export const Price = () => {
+    const blocks = useCardShop((state) => state.blocks);
+    const tubes = useCardShop((state) => state.tubes);
+    const leafs = useCardShop((state) => state.leafs);
+    const priceBlock = useCardShop((state) => state.priceBlock);
+    const priceTube = useCardShop((state) => state.priceTube);
+    const priceLeaf = useCardShop((state) => state.priceLeaf);
+
     const [priceTotal, setPriceTotal] = useState(0);
 
     useEffect(() => {
         setPriceTotal(0);
     }, []);
+
+    useEffect(() => {
+        setPriceTotal(
+            blocks.length * priceBlock +
+            tubes.length * priceTube +
+            leafs.length * priceLeaf
+        );
+    }, [blocks, tubes, leafs, priceBlock, priceTube, priceLeaf])
 
     return (
         <div

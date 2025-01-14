@@ -5,8 +5,8 @@ import { Building, DoorBuilding, DownBuilding, ActiveBlocks, BuildingBlocks } fr
 export const SVGBuilding = () => {
 
     return (
-        <svg width="100%" className="flex-grow h-full max-h-full overflow-visible">
-            <g transform="translate(0, -100)">
+        <svg width="100%" viewBox="0 0 960 540" className="flex-grow h-full max-h-full overflow-visible">
+            <g transform="translate(0, -270)">
                 <g clipPath="url(#buildingClip)">
                     <BuildingBlocks />
                     <DoorBuilding />

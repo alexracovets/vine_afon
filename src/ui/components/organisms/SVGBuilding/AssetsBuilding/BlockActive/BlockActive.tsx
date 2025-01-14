@@ -10,19 +10,20 @@ interface BlockProps {
     second?: boolean;
     name: string;
     status: string;
-    index: number;
+    id: number;
 };
 
-export const BlockActive = ({ row, col, second, name, status, index }: BlockProps) => {
+export const BlockActive = ({ row, col, second, name, status, id }: BlockProps) => {
     const setPosition = useBlockPosition((state) => state.setPosition);
 
     const rectRef = useRef<SVGRectElement>(null);
     const widthBlock = 87;
     const heightBlock = 27;
 
-    useEffect(() => {
-        if (rectRef.current && name && status && index) {
+    const updatePosition = () => {
+        if (rectRef.current && name && status && id) {
             const rect = rectRef.current.getBoundingClientRect();
+            console.log("Updating position:", rect); // Дебаг
             setPosition({
                 x: rect.x,
                 y: rect.y,
@@ -30,11 +31,19 @@ export const BlockActive = ({ row, col, second, name, status, index }: BlockProp
                 height: rect.height,
                 name: name,
                 status: status,
-                idx: index
+                id: id
             });
         }
+    };
 
-    }, [setPosition, name, status, index]);
+    useEffect(() => {
+        updatePosition();
+
+        window.addEventListener("resize", updatePosition);
+        return () => {
+            window.removeEventListener("resize", updatePosition);
+        };
+    }, [setPosition, name, status, id]);
 
     return (
         <rect

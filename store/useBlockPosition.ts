@@ -1,21 +1,12 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
-
-interface Arguments {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    name: string;
-    status: string;
-    idx: number;
-}
+import { BlockPositionType } from "@/src/types";
 
 interface MobileMenuState {
-    blocks: Arguments[];
+    blocks: BlockPositionType[];
     isActive: boolean;
     currentActiveBlock: number;
-    setPosition: (value: Arguments) => void;
+    setPosition: (value: BlockPositionType) => void;
     setIsActive: (value: boolean) => void;
     setCurrentActiveBlock: (value: number) => void;
 }
@@ -24,9 +15,9 @@ const useBlockPosition = create<MobileMenuState>()(immer((set) => ({
     blocks: [],
     isActive: false,
     currentActiveBlock: 0,
-    setPosition: (value: Arguments) =>
+    setPosition: (value: BlockPositionType) =>
         set((state) => {
-            const existingIndex = state.blocks.findIndex((block) => block.idx === value.idx);
+            const existingIndex = state.blocks.findIndex((block) => block.id === value.id);
             if (existingIndex !== -1) {
                 state.blocks[existingIndex] = value;
             } else {

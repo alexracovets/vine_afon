@@ -12,13 +12,13 @@ export const ActiveBlocks = () => {
                 activeBlocks.map((block) => {
                     return (
                         <BlockActive
-                            key={block.index}
+                            key={block.id}
                             row={block.row}
                             col={block.col}
                             second={block.isDeformed}
                             name={block.name}
                             status={block.status}
-                            index={block.index}
+                            id={block.id}
                         />
                     );
                 })
