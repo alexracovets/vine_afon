@@ -36,13 +36,6 @@ export const BlockPopUp = () => {
 
     return (
         <>
-            <dialog
-                onClick={closePopUp}
-                className={cn(
-                    "w-full h-[100dvh] left-0 top-0 absolute flex justify-center items-center",
-                    isActive ? "bg-bgDialog z-[0]" : "bg-transparent z-[-1]"
-                )}
-            />
             {
                 currentArguments.map((block, idx) => {
                     const isActiveBlock = currentActiveBlock === idx && isActive;
@@ -117,11 +110,17 @@ export const BlockPopUp = () => {
                                     </Text>
                                 </div>
                             }
-
                         </dialog >
                     )
                 })
             }
+            <dialog
+                onClick={closePopUp}
+                className={cn(
+                    "w-full h-[100dvh] left-0 top-0 absolute flex justify-center items-center",
+                    isActive ? "bg-bgDialog z-[0]" : "bg-transparent z-[-1]"
+                )}
+            />
         </>
     );
 };

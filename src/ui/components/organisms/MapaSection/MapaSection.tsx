@@ -12,9 +12,7 @@ export const MapaSection = () => {
                 className="flex-grow w-full h-[100dvh] flex justify-center items-center"
             >
                 <div className="w-[50%] h-full flex flex-col justify-center">
-                    <SVGTubes num={0} />
-                    <SVGTubes num={1} />
-                    <SVGTubes num={2} />
+                    <SVGTubes />
                 </div>
                 <div className="w-[50%] flex h-full">
                     <SVGBuilding />
