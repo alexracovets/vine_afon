@@ -11,3 +11,5 @@ export { Navigation } from './Navigation';
 export { Burger } from './Burger';
 export { Frame } from './Frame';
 export { List } from './List';
+export { Price } from './Price';
+export { CardsIems } from './CardsIems';

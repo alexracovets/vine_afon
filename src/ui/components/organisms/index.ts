@@ -14,3 +14,4 @@ export { Loader } from './Loader';
 export { SVGBuilding } from './SVGBuilding';
 export { PumpsThree } from './PumpsThree';
 export { SVGTubes } from './SVGTubes';
+export { CardShop } from './CardShop';
