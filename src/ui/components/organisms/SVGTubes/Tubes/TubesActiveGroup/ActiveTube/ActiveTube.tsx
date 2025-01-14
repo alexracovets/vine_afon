@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 
-import { ActiveType } from "@/src/types";
 import { Tube } from "../../Tube";
+import { ActiveType } from "@/src/types";
 import useCardShop from "@/store/useCardShop";
 
-export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className, tube }: ActiveType) => {
+export const ActiveTube = memo(({ x, y, width, idx, height, borderHeight, className, tube }: ActiveType) => {
     const addTube = useCardShop((state) => state.addTube);
     const removeTube = useCardShop((state) => state.removeTube);
     const [isActive, setIsActive] = useState(false);
@@ -93,4 +93,6 @@ export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className, 
             />
         </g>
     );
-};
+});
+
+ActiveTube.displayName = "ActiveTube";

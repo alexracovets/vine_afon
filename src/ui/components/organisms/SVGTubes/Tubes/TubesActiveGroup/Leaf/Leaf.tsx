@@ -25,7 +25,7 @@ export const Leaf = ({ x, y, leaf }: LeafType) => {
         <g transform={`translate(${x} ${y})`} filter="url(#grayscale)"
             className={
                 cn(
-                    "transition-all duration-300 ease-in-out will-change-transform cursor-pointer",
+                    "transition-all duration-300 ease-in-out cursor-pointer",
                     isActive ? "drop-shadow-leaf-active grayscale-[0]" : "grayscale-[1] drop-shadow-leaf"
                 )
             }
@@ -34,7 +34,7 @@ export const Leaf = ({ x, y, leaf }: LeafType) => {
         >
             <g
                 className={cn(
-                    "transition-all duration-300 ease-in-out will-change-transform",
+                    "transition-all duration-300 ease-in-out",
                     isActive && "translate-x-[2px] translate-y-[4px]"
                 )}
             >
