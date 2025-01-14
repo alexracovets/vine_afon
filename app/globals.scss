@@ -87,3 +87,9 @@ html {
 .textShadow {
   text-shadow: .1rem .1rem .2rem black;
 }
+
+.block_shadow {
+  box-shadow:
+    inset 0px 0px 5px rgb(255 255 255 / 50%),
+    0px 0px 5px rgb(76 71 28);
+}

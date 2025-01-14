@@ -31,9 +31,7 @@ export const BuildingBlocks = () => {
             <BlockRow col={22} />
             <BlockRow second col={23} />
             <BlockRow col={24} />
-            <BlockRow second col={25} />
-            <BlockRow col={26} />
-            <BlockRow second col={27} />
+            <BlockRow second col={25} /> 
         </g>
     );
 };

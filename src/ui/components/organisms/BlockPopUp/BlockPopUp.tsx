@@ -55,13 +55,14 @@ export const BlockPopUp = () => {
                             key={idx}
                             className={cn(
                                 "outline",
-                                isActiveBlock ? "outline-[.5rem] outline-[#efbf04]" : "outline-[1px]",
+                                isActiveBlock ? "outline-[.5rem] outline-[#efbf04]" : "outline-[1px] outline-regalMain",
                                 active && "bg-[#247616]",
                                 reserved && "bg-[#1f2b1d]",
                                 buyed && "bg-[#7b8618]",
                                 isActiveBlock && "bg-[#171717]",
                                 "fixed transition-[transform left top width height] ease-in duration-500 flex justify-center items-center will-change-contents",
                                 isActiveBlock ? "rounded-[2rem] z-[10]" : "cursor-pointer z-[0] rounded-[.1rem]",
+                                "block_shadow"
                             )}
                             onClick={(e) => openPopUp(e, idx)}
                             style={{
@@ -107,7 +108,6 @@ export const BlockPopUp = () => {
                                     className={cn(
                                         "relative flex flex-grow w-full h-full justify-center items-center",
                                         isActiveBlock ? "opacity-0" : "opacity-100",
-
                                     )}
                                 >
                                     <Text variant={'activeBlock'} className="text-white">

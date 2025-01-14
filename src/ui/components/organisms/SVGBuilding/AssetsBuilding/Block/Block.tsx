@@ -15,7 +15,7 @@ export const Block = ({ row, col, second }: BlockProps) => {
             transform={`translate(${second ? widthBlock + widthBlock / 4 - widthBlock / 2 : widthBlock / 4} 0)`}
             x={widthBlock * (row - 1)} y={-col * heightBlock}
             fill="rgb(216, 216, 216)"
-            stroke="black"
+            stroke="rgb(106 40 65 / 50%)"
             width={widthBlock} height={heightBlock}
             rx="2" ry="2"
         />

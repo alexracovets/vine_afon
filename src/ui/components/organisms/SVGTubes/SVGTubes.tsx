@@ -38,7 +38,7 @@ export const SVGTubes = () => {
     const activeTubesWidth = 1.3;
 
     return (
-        <svg width="100%" className="flex-grow h-full max-h-full overflow-visible">
+        <svg width="100%" className="relative flex-grow h-full max-h-full overflow-visible z-[0]">
             <Filters />
             <g transform="translate(0, 100) scale(.99)">
                 {
@@ -69,7 +69,7 @@ export const SVGTubes = () => {
                                     lineHeight_2={lineHeight_2}
                                     className={testStyle}
                                 />
-                                <TubesActiveGroup 
+                                <TubesActiveGroup
                                     row={row}
                                     midleTubeWidth={midleTubeWidth}
                                     activeTubesWidth={activeTubesWidth}
