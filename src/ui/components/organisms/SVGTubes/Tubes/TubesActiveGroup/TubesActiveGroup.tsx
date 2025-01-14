@@ -3,10 +3,10 @@
 import { ActiveTube } from "./ActiveTube";
 import { Dash } from "../../Dashes/Dash";
 import { Leaf } from "./Leaf";
-import { TubeData } from "@/src/types";
+import { DataTubeLeaf } from "@/src/types";
 
 interface TubesActiveGroupProps {
-    tubes: TubeData[];
+    row: DataTubeLeaf;
     midleTubeWidth: number;
     activeTubesWidth: number;
     tubeHeight: number;
@@ -17,11 +17,11 @@ interface TubesActiveGroupProps {
     activeTubesStyle: string;
 };
 
-export const TubesActiveGroup = ({ tubes, midleTubeWidth, activeTubesWidth, tubeHeight, borderWidth, borderHeight, lineHeight_2Normal, dashStyle, activeTubesStyle }: TubesActiveGroupProps) => {
+export const TubesActiveGroup = ({ row, midleTubeWidth, activeTubesWidth, tubeHeight, borderWidth, borderHeight, lineHeight_2Normal, dashStyle, activeTubesStyle }: TubesActiveGroupProps) => {
 
     return (
         <g filter="url(#roughness)" >
-            {tubes.map((tube, idx) => {
+            {row.tubes.map((tube, idx) => {
                 return (
                     <g key={idx}>
                         <ActiveTube
@@ -40,7 +40,13 @@ export const TubesActiveGroup = ({ tubes, midleTubeWidth, activeTubesWidth, tube
                             rounded={borderWidth / 2}
                             className={dashStyle}
                         />
-                        <Leaf x={(6.15 + idx * activeTubesWidth) * midleTubeWidth} y={40} />
+                    </g>
+                )
+            })}
+            {row.leaf.map((leaf, idx) => {
+                return (
+                    <g key={idx}>
+                        <Leaf x={(6.15 + idx * activeTubesWidth) * midleTubeWidth} y={40} leaf={leaf} />
                     </g>
                 )
             })}

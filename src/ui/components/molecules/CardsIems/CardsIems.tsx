@@ -8,11 +8,18 @@ import useCardShop from "@/store/useCardShop";
 export const CardsIems = () => {
     const count = 1;
     const activeTubes = useCardShop((state) => state.tubes);
+    const activeLeafs = useCardShop((state) => state.leafs);
+
     const [tubesCount, setTubesCount] = useState(0);
+    const [leafsCount, setLeafsCount] = useState(0);
 
     useEffect(() => {
         setTubesCount(activeTubes.length);
-    }, [activeTubes])
+    }, [activeTubes]);
+
+    useEffect(() => {
+        setLeafsCount(activeLeafs.length);
+    }, [activeLeafs]);
 
     return (
         <div className={cn(
@@ -41,7 +48,7 @@ export const CardsIems = () => {
                     className={cn(
                         "text-[5rem] font-bold text-regalWhite mt-[1.067rem]"
                     )}>
-                    {count}
+                    {leafsCount}
                 </div>
             </div>
             <div

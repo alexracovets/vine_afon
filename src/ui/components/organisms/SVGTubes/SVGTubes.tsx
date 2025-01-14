@@ -70,7 +70,7 @@ export const SVGTubes = () => {
                                     className={testStyle}
                                 />
                                 <TubesActiveGroup 
-                                    tubes={row.data}
+                                    row={row}
                                     midleTubeWidth={midleTubeWidth}
                                     activeTubesWidth={activeTubesWidth}
                                     tubeHeight={tubeHeight}

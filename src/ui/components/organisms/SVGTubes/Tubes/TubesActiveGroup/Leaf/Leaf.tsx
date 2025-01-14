@@ -1,25 +1,41 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import { LeafType } from "@/src/types";
 import { cn } from "@/src/utils/cn";
 
-export const Leaf = ({ x, y }: LeafType) => {
+import useCardShop from "@/store/useCardShop";
+
+export const Leaf = ({ x, y, leaf }: LeafType) => {
+    const addLeaf = useCardShop((state) => state.addLeaf);
+    const removeLeaf = useCardShop((state) => state.removeLeaf);
+    const [isActive, setIsActive] = useState(false);
     const border = "#6a2841";
+
+    useEffect(() => {
+        if (isActive) {
+            addLeaf(leaf)
+        } else {
+            removeLeaf(leaf)
+        }
+    }, [isActive, addLeaf, removeLeaf, leaf]);
 
     return (
         <g transform={`translate(${x} ${y})`} filter="url(#grayscale)"
             className={
                 cn(
-                    "transition-all duration-300 ease-in-out will-change-transform",
-                    "grayscale-[1] drop-shadow-leaf cursor-pointer",
-                    "hover:drop-shadow-leaf-active hover:grayscale-[0]"
+                    "transition-all duration-300 ease-in-out will-change-transform cursor-pointer",
+                    isActive ? "drop-shadow-leaf-active grayscale-[0]" : "grayscale-[1] drop-shadow-leaf"
                 )
             }
+
+            onClick={() => setIsActive(!isActive)}
         >
             <g
                 className={cn(
                     "transition-all duration-300 ease-in-out will-change-transform",
-                    "hover:translate-x-[2px] hover:translate-y-[4px]"
+                    isActive && "translate-x-[2px] translate-y-[4px]"
                 )}
             >
                 <circle cx="25" cy="25" r="25" fill="#fff" stroke={border} strokeWidth="4" filter="url(#dash-gradient)" />
