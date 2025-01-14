@@ -1,12 +1,7 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
-interface TubeData {
-    row: number;
-    col: number;
-    id: number;
-    tubeStatus: "active" | "inactive" | string;
-}
+import { TubeData } from "@/src/types";
 
 interface Data {
     data: TubeData[];

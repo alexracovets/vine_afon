@@ -4,3 +4,4 @@ export { type CraneProps } from './models';
 export { type DashType } from './models';
 export { type ActiveType } from './models';
 export { type LeafType } from './models';
+export { type TubeData } from './models';

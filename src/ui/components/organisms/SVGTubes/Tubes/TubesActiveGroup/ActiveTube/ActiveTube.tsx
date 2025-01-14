@@ -1,20 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { ActiveType } from "@/src/types";
 import { Tube } from "../../Tube";
+import useCardShop from "@/store/useCardShop";
 
-export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className, num }: ActiveType) => {
+export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className, tube }: ActiveType) => {
+    const addTube = useCardShop((state) => state.addTube);
+    const removeTube = useCardShop((state) => state.removeTube);
     const [isActive, setIsActive] = useState(false);
     const [isHover, setIsHover] = useState(false);
+
+    const clickHandler = () => {
+        if (tube.tubeStatus === "active") {
+            setIsActive(!isActive);
+        }
+    }
+
+    useEffect(() => {
+        if (isActive) {
+            addTube(tube)
+        } else {
+            removeTube(tube)
+        }
+    }, [isActive, addTube, removeTube, tube]);
 
     return (
         <g
             className="cursor-pointer"
-            onClick={() => setIsActive(!isActive)} // Перемикання стану при кліку
-            onPointerEnter={() => setIsHover(true)} // Підсвічування при наведенні
-            onPointerLeave={() => setIsHover(false)} // Підсвічування при наведенні
+            onClick={clickHandler}
+            onPointerEnter={() => setIsHover(true)}
+            onPointerLeave={() => setIsHover(false)}
         >
             <Tube
                 x={x} y={y}
@@ -34,11 +51,11 @@ export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className, 
                 strokeWidth="2"
             />
             <defs>
-                <linearGradient id={`wave-gradient_${num}-${idx}`} x1="0%" y1="100%" x2="0%" y2="0%">
+                <linearGradient id={`wave-gradient_${tube.row}-${idx}`} x1="0%" y1="100%" x2="0%" y2="0%">
                     <stop offset="0%" stopColor="#3986fd" />
                     <stop offset="100%" stopColor="#009fff" />
                 </linearGradient>
-                <mask id={`wave-mask_${num}-${idx}`}>
+                <mask id={`wave-mask_${tube.row}-${idx}`}>
                     <rect
                         x={x}
                         y={isActive ? y : (isHover ? y + height / 1.5 : y + height)}
@@ -56,8 +73,8 @@ export const ActiveTube = ({ x, y, width, idx, height, borderHeight, className, 
                 y={y}
                 width={width}
                 height={height}
-                fill={`url(#wave-gradient_${num}-${idx})`}
-                mask={`url(#wave-mask_${num}-${idx})`}
+                fill={`url(#wave-gradient_${tube.row}-${idx})`}
+                mask={`url(#wave-mask_${tube.row}-${idx})`}
                 style={{
                     transition: isHover ? "y .5s ease-in-out" : "y 1.5s ease-in-out",
                 }}

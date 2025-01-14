@@ -5,7 +5,7 @@ import { Building, DoorBuilding, DownBuilding, ActiveBlocks, BuildingBlocks } fr
 export const SVGBuilding = () => {
 
     return (
-        <svg width="100%" className="flex-grow h-full max-h-full">
+        <svg width="100%" className="flex-grow h-full max-h-full overflow-visible">
             <g transform="translate(0, -100)">
                 <Building />
                 <g clipPath="url(#buildingClip)">
@@ -13,8 +13,8 @@ export const SVGBuilding = () => {
                     <BuildingBlocks />
                     <DoorBuilding />
                     <ActiveBlocks />
-                </g> 
-            </g> 
+                </g>
+            </g>
         </svg>
     );
 };

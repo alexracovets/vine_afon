@@ -2,9 +2,18 @@
 
 import { cn } from "@/src/utils/cn";
 import { ImageAtom } from "../../atoms";
+import { useEffect, useState } from "react";
+import useCardShop from "@/store/useCardShop";
 
 export const CardsIems = () => {
     const count = 1;
+    const activeTubes = useCardShop((state) => state.tubes);
+    const [tubesCount, setTubesCount] = useState(0);
+
+    useEffect(() => {
+        setTubesCount(activeTubes.length);
+    }, [activeTubes])
+
     return (
         <div className={cn(
             'flex justify-start items-center gap-[2rem]',
@@ -13,7 +22,7 @@ export const CardsIems = () => {
         )}>
             <div
                 className={cn(
-                    "flex justify-start items-center gap-x-[1rem] h-[9rem]",
+                    "flex justify-start items-center gap-x-[1rem] h-[9rem] min-w-[21rem]",
 
                 )}
             >
@@ -36,7 +45,7 @@ export const CardsIems = () => {
                 </div>
             </div>
             <div
-                className="flex justify-start items-center gap-x-[1rem] h-[9rem]"
+                className="flex justify-start items-center gap-x-[1rem] h-[9rem] min-w-[21rem]"
             >
                 <div
                     className={cn(
@@ -55,11 +64,11 @@ export const CardsIems = () => {
                     className={cn(
                         "text-[5rem] font-bold text-regalWhite mt-[1.067rem]"
                     )}>
-                    {count}
+                    {tubesCount}
                 </div>
             </div>
             <div
-                className="flex justify-start items-center gap-x-[1rem] h-[9rem]"
+                className="flex justify-start items-center gap-x-[1rem] h-[9rem] min-w-[21rem]"
             >
                 <div
                     className={cn(

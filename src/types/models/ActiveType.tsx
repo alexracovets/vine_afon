@@ -1,3 +1,5 @@
+import { TubeData } from "./TubeData";
+
 export interface ActiveType {
     x: number;
     y: number;
@@ -6,5 +8,5 @@ export interface ActiveType {
     height: number;
     borderHeight: number;
     className: string;
-    num: number;
+    tube: TubeData;
 }
