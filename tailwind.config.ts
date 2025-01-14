@@ -24,7 +24,8 @@ const config: Config = {
 			colors: {
 				regalWhite: '#FFFFFF',
 				regalBlack: '#171717',
-				regalMain: '#6a2841'
+				regalMain: '#6a2841',
+				bgDialog: 'rgba(55,65,81,.3)'
 			},
 			keyframes: {
 				'accordion-down': {

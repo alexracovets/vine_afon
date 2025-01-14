@@ -8,7 +8,7 @@ interface BlockProps {
 
 export const Block = ({ row, col, second }: BlockProps) => {
     const widthBlock = 87;
-    const heightBlock = 25;
+    const heightBlock = 27;
 
     return (
         <rect

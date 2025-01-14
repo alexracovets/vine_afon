@@ -37,10 +37,22 @@ const textVariants = cva(
                     "max-mobile:text-[1.2rem]"
                 ),
                 acordionTitle: cn(
-                    "text-[3rem] font-[600] leading-[1.1]",
+                    "text-[3rem] font-[600] leading-[1]",
                     "max-tablet:text-[2rem]",
                     "max-mobile:text-[1.6rem]"
-                )
+                ),
+                activeBlockNumber: cn(
+                    "text-[4rem] font-[600] text-regalWhite leading-[1]",
+                ),
+                activeBlockName: cn(
+                    "text-[3rem] font-[600] text-regalWhite leading-[1]",
+                ),
+                activeBlockNameFill: cn(
+                    "text-[5rem] font-[600] text-[#efbf04] leading-[1]",
+                ),
+                activeBlock: cn(
+                    "text-[1rem] font-[600] textShadow leading-[1]",
+                ),
             }
         },
         defaultVariants: {

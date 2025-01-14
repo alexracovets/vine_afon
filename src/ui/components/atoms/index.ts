@@ -16,3 +16,4 @@ export { Section } from './Section';
 export { Button } from './Button';
 export { Logo } from './Logo';
 export { Text } from './Text';
+export { Input } from './Input';
