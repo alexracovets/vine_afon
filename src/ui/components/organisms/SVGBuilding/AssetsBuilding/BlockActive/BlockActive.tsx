@@ -41,10 +41,7 @@ export const BlockActive = ({ row, col, second, name, status, index }: BlockProp
             ref={rectRef}
             transform={`translate(${second ? widthBlock + widthBlock / 4 - widthBlock / 2 : widthBlock / 4} 0)`}
             x={widthBlock * (row - 1)} y={-col * heightBlock}
-            fill="red"
-            stroke="black"
             width={widthBlock} height={heightBlock}
-            rx="2" ry="2"
         />
     );
 };

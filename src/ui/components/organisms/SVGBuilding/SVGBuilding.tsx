@@ -6,13 +6,15 @@ export const SVGBuilding = () => {
 
     return (
         <svg width="100%" className="flex-grow h-full max-h-full">
-            <Building />
-            <g clipPath="url(#buildingClip)">
-                <DownBuilding />
-                <BuildingBlocks />
-                <DoorBuilding />
-                <ActiveBlocks />
-            </g>
+            <g transform="translate(0, -100)">
+                <Building />
+                <g clipPath="url(#buildingClip)">
+                    <DownBuilding />
+                    <BuildingBlocks />
+                    <DoorBuilding />
+                    <ActiveBlocks />
+                </g> 
+            </g> 
         </svg>
     );
 };

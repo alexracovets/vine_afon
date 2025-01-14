@@ -40,7 +40,7 @@ export const SVGTubes = () => {
     return (
         <svg width="100%" className="flex-grow h-full max-h-full">
             <Filters />
-            <g transform="translate(-81, 200)">
+            <g transform="translate(0, 100) scale(.99)">
                 {
                     currentActiveBlock.map((row, idx) => {
                         return (

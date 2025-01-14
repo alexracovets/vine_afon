@@ -1,6 +1,7 @@
 "use client";
 
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
+import { useControls } from "react-zoom-pan-pinch";
 import { MdClose } from "react-icons/md";
 
 import useBlockPosition from "@/store/useBlockPosition";
@@ -14,6 +15,7 @@ export const BlockPopUp = () => {
     const setCurrentActiveBlock = useBlockPosition((state) => state.setCurrentActiveBlock);
     const setIsActive = useBlockPosition((state) => state.setIsActive);
     const [isShow, setIsShow] = useState(false);
+    const { resetTransform } = useControls();
 
     const [InputValue, setInputValue] = useState('');
 
@@ -33,6 +35,11 @@ export const BlockPopUp = () => {
             setIsShow(true);
         }, 500);
     };
+    useEffect(() => {
+        if (isActive) {
+            resetTransform();
+        }
+    }, [isActive, resetTransform]);
 
     return (
         <>
@@ -48,13 +55,13 @@ export const BlockPopUp = () => {
                             key={idx}
                             className={cn(
                                 "outline",
-                                isActiveBlock ? "outline-[.5rem] outline-[#efbf04]" : "outline-[.1rem]",
+                                isActiveBlock ? "outline-[.5rem] outline-[#efbf04]" : "outline-[1px]",
                                 active && "bg-[#247616]",
                                 reserved && "bg-[#1f2b1d]",
                                 buyed && "bg-[#7b8618]",
                                 isActiveBlock && "bg-[#171717]",
                                 "fixed transition-[transform left top width height] ease-in duration-500 flex justify-center items-center will-change-contents",
-                                isActiveBlock ? "rounded-[2rem] z-[10]" : "cursor-pointer z-[0]"
+                                isActiveBlock ? "rounded-[2rem] z-[10]" : "cursor-pointer z-[0] rounded-[.1rem]",
                             )}
                             onClick={(e) => openPopUp(e, idx)}
                             style={{
@@ -96,7 +103,7 @@ export const BlockPopUp = () => {
                                 </div>
                             }
                             {
-                                !isShow && <div
+                                !isActiveBlock && <div
                                     className={cn(
                                         "relative flex flex-grow w-full h-full justify-center items-center",
                                         isActiveBlock ? "opacity-0" : "opacity-100",
