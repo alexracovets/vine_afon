@@ -22,3 +22,4 @@ export { PopupBlockBG } from './PopupBlockBG';
 export { PopUpBlockWrapper } from './PopUpBlockWrapper';
 export { FormPopUpInner } from './FormPopUpInner';
 export { FormPopUpWrapper } from './FormPopUpWrapper';
+export { ClosePopUp } from './ClosePopUp';
