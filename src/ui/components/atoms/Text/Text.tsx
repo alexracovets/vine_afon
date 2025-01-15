@@ -53,6 +53,9 @@ const textVariants = cva(
                 activeBlock: cn(
                     "text-[1rem] font-[600] textShadow leading-[1]",
                 ),
+                activeBlockMain: cn(
+                    "text-[2rem] font-[600] textShadow text-center leading-[1.2]",
+                ),
                 popUpError: cn(
                     "text-[1.5rem] font-[600] text-red-500 leading-[1] block w-full py-[.2rem]",
                 ),
