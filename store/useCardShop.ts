@@ -1,16 +1,11 @@
-import { LeafData, TubeData } from "@/src/types";
+import { LeafData, TubeData, BlockActiveData } from "@/src/types";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
-
-interface BlockData {
-    name?: string;
-    id: number;
-}
 
 interface CardShopState {
     tubes: TubeData[];
     leafs: LeafData[];
-    blocks: BlockData[];
+    blocks: BlockActiveData[];
     priceBlock: number;
     priceTube: number;
     priceLeaf: number;
@@ -18,8 +13,8 @@ interface CardShopState {
     removeTube: (tube: TubeData) => void;
     addLeaf: (leaf: LeafData) => void;
     removeLeaf: (leaf: LeafData) => void;
-    addBlock: (block: BlockData) => void;
-    removeBlock: (block: BlockData) => void;
+    addBlock: (block: BlockActiveData) => void;
+    removeBlock: (block: BlockActiveData) => void;
 }
 
 const useCardShop = create<CardShopState>()(immer((set) => ({

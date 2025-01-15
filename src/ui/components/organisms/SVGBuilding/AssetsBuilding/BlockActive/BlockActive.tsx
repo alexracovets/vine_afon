@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 import useBlockPosition from "@/store/useBlockPosition";
 
@@ -20,7 +20,8 @@ export const BlockActive = ({ row, col, second, name, status, id }: BlockProps) 
     const widthBlock = 87;
     const heightBlock = 27;
 
-    const updatePosition = () => {
+    const updatePosition = useCallback(() => {
+
         if (rectRef.current && name && status && id) {
             const rect = rectRef.current.getBoundingClientRect();
             setPosition({
@@ -33,7 +34,8 @@ export const BlockActive = ({ row, col, second, name, status, id }: BlockProps) 
                 id: id
             });
         }
-    };
+
+    }, [setPosition, name, status, id]);
 
     useEffect(() => {
         updatePosition();
@@ -42,7 +44,7 @@ export const BlockActive = ({ row, col, second, name, status, id }: BlockProps) 
         return () => {
             window.removeEventListener("resize", updatePosition);
         };
-    }, [setPosition, name, status, id]);
+    }, [updatePosition]);
 
     return (
         <rect

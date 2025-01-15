@@ -10,3 +10,4 @@ export { type DataTubeLeaf } from './DataTubeLeaf';
 export { type BlockData } from './BlockData';
 export { type BlockPositionType } from './BlockPositionType';
 export { type MyFormData } from './MyFormData';
+export { type BlockActiveData } from './BlockActiveData';
