@@ -56,6 +56,14 @@ const textVariants = cva(
                 popUpError: cn(
                     "text-[1.5rem] font-[600] text-red-500 leading-[1]",
                 ),
+                formTitle: cn(
+                    'text-[4.321rem] text-regalWhite text-center font-[600] leading-[4.754rem] mb-[2rem]',
+                    'max-mobile:text-[2rem] max-mobile:leading-[2.2rem]'
+                ),
+                formSubTitle: cn(
+                    'text-[1.6rem] text-center text-regalWhite font-[300] leading-[1.92rem] mb-[3rem] w-[45.3rem] mx-auto',
+                    'max-mobile:text-[1.2rem] max-mobile:leading-[1.44rem] max-mobile:w-full'
+                ),
             }
         },
         defaultVariants: {

@@ -5,8 +5,10 @@ import { Button } from "@/src/ui/components/atoms";
 import { useEffect, useState } from "react";
 
 import useCardShop from "@/store/useCardShop";
+import useFormModal from "@/store/useFormModal";
 
 export const Price = () => {
+    const setActiveStatus = useFormModal((state) => state.setActiveStatus);
     const blocks = useCardShop((state) => state.blocks);
     const tubes = useCardShop((state) => state.tubes);
     const leafs = useCardShop((state) => state.leafs);
@@ -41,7 +43,7 @@ export const Price = () => {
             )}>
                 Вартість: {priceTotal} $
             </div>
-            <Button variant={"destructive"}>
+            <Button variant={"destructive"} onClick={() => setActiveStatus(true)}>
                 Зробити внесок
             </Button>
         </div>

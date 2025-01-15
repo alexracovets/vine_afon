@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 
-import { Footer, Header, OverlayMobileMenu } from "@/src/ui/components/organisms";
+import { Footer, Header, OverlayMobileMenu, FormPopUp } from "@/src/ui/components/organisms";
 // import { Loader, } from "@/src/ui/components/organisms";
 import { useCheckModal, useCheckResponsive } from "@/src/hooks";
 import { montserrat } from "@/src/ui/foundation/fonts";
@@ -25,6 +25,7 @@ export const VinelandLayout = ({ children }: VinelandLayoutProps) => {
                     <OverlayMobileMenu />
                 </main>
                 <Footer />
+                <FormPopUp />
             </body>
         </html>
     );

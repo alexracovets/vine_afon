@@ -17,5 +17,8 @@ export { Button } from './Button';
 export { Logo } from './Logo';
 export { Text } from './Text';
 export { Input } from './Input';
+export { TextArea } from './TextArea';
 export { PopupBlockBG } from './PopupBlockBG';
 export { PopUpBlockWrapper } from './PopUpBlockWrapper';
+export { FormPopUpInner } from './FormPopUpInner';
+export { FormPopUpWrapper } from './FormPopUpWrapper';

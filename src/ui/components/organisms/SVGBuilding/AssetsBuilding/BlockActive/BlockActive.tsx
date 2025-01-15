@@ -23,7 +23,6 @@ export const BlockActive = ({ row, col, second, name, status, id }: BlockProps) 
     const updatePosition = () => {
         if (rectRef.current && name && status && id) {
             const rect = rectRef.current.getBoundingClientRect();
-            console.log("Updating position:", rect); // Дебаг
             setPosition({
                 x: rect.x,
                 y: rect.y,

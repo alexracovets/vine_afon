@@ -2,18 +2,16 @@
 
 import { cn } from "@/src/utils/cn";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    type: string;
+interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
     placeholder: string;
     value?: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     className?: string;
 }
 
-export const Input = ({ type, placeholder, value, onChange, className, ...props }: InputProps) => {
+export const TextArea = ({ placeholder, value, onChange, className, ...props }: TextAreaProps) => {
     return (
-        <input
-            type={type}
+        <textarea 
             placeholder={placeholder}
             value={value}
             onChange={onChange}
