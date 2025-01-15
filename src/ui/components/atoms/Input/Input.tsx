@@ -18,7 +18,7 @@ export const Input = ({ type, placeholder, value, onChange, className, ...props 
             value={value}
             onChange={onChange}
             className={cn(
-                'text-[1.6rem] leading-[1.92rem] w-full text-regalBlack font-roboto p-[2rem] rounded-[1.3rem] block',
+                'text-[1.6rem] leading-[1.4rem] w-full text-regalBlack font-roboto px-[2rem] py-[1.5rem] rounded-[1.3rem] block',
                 'max-mobile:text-[1.2rem] max-mobile:leading-[1.44rem] max-mobile:p-[1rem] max-mobile:rounded-[.6rem]',
                 className
             )}

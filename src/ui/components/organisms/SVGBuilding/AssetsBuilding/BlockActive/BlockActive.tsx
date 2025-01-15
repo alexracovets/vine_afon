@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from "react";
+import { useControls } from "react-zoom-pan-pinch";
 
 import useBlockPosition from "@/store/useBlockPosition";
 
@@ -15,6 +16,7 @@ interface BlockProps {
 
 export const BlockActive = ({ row, col, second, name, status, id }: BlockProps) => {
     const setPosition = useBlockPosition((state) => state.setPosition);
+    const { resetTransform } = useControls();
 
     const rectRef = useRef<SVGRectElement>(null);
     const widthBlock = 87;
@@ -22,20 +24,23 @@ export const BlockActive = ({ row, col, second, name, status, id }: BlockProps) 
 
     const updatePosition = useCallback(() => {
 
-        if (rectRef.current && name && status && id) {
-            const rect = rectRef.current.getBoundingClientRect();
-            setPosition({
-                x: rect.x,
-                y: rect.y,
-                width: rect.width,
-                height: rect.height,
-                name: name,
-                status: status,
-                id: id
-            });
-        }
+        resetTransform();
+        setTimeout(() => {
+            if (rectRef.current && name && status && id) {
+                const rect = rectRef.current.getBoundingClientRect();
+                setPosition({
+                    x: rect.x,
+                    y: rect.y,
+                    width: rect.width,
+                    height: rect.height,
+                    name: name,
+                    status: status,
+                    id: id
+                });
+            }
+        }, 300)
 
-    }, [setPosition, name, status, id]);
+    }, [setPosition, resetTransform, name, status, id]);
 
     useEffect(() => {
         updatePosition();

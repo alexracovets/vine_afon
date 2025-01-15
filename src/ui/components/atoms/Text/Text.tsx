@@ -54,7 +54,7 @@ const textVariants = cva(
                     "text-[1rem] font-[600] textShadow leading-[1]",
                 ),
                 popUpError: cn(
-                    "text-[1.5rem] font-[600] text-red-500 leading-[1]",
+                    "text-[1.5rem] font-[600] text-red-500 leading-[1] block w-full py-[.2rem]",
                 ),
                 formTitle: cn(
                     'text-[4.321rem] text-regalWhite text-center font-[600] leading-[4.754rem] mb-[2rem]',

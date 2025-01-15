@@ -15,7 +15,6 @@ export const usePrevNextButtons = (emblaApi: EmblaCarouselType | undefined): Use
     const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
     const onPrevButtonClick = useCallback(() => {
-        console.log(emblaApi)
         if (!emblaApi) return;
         emblaApi.scrollPrev();
     }, [emblaApi]);

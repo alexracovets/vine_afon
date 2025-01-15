@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import useResponsive from '@/store/useResponsive';
 
 export const useCheckResponsive = () => {
-
   const setResponsive = useResponsive(state => state.setResponsive);
 
   useEffect(() => {
