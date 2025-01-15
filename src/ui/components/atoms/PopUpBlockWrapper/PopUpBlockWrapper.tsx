@@ -33,7 +33,7 @@ export const PopUpBlockWrapper = ({ openPopUp, isActiveBlock, block, active, res
             onClick={(e) => openPopUp(e, idx)}
             style={{
                 width: isActiveBlock ? "60rem" : block.width,
-                height: isActiveBlock ? "30rem" : block.height,
+                height: isActiveBlock ? "35rem" : block.height,
                 left: isActiveBlock ? "50%" : block.x,
                 top: isActiveBlock ? "50%" : block.y,
                 transform: isActiveBlock ? "translate(-50%, -50%)" : "translate(0%, 0%)",

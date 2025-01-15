@@ -89,7 +89,7 @@ export const BlockShown = ({ isShow, isActiveBlock, active, reserved, buyed, blo
                                 </Text>
                                 <form
                                     onSubmit={(e) => clickHandler(e)}
-                                    className="flex flex-col gap-y-[1rem]"
+                                    className="flex flex-col gap-y-[2rem] w-full justify-center items-center mt-[2rem]"
                                 >
                                     <Input type='text' placeholder='Ім`я' value={InputValue} onChange={(e) => setInputValue(e.target.value)} />
                                     {isError && <Text variant='popUpError'>Ведіть будь-ласка Ім&#39;я</Text>}

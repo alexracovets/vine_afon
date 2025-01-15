@@ -62,7 +62,7 @@ export const FormModal = () => {
     return (
         <form
             onSubmit={handleSubmitContactForm}
-            className="flex flex-col w-full justify-center items-center"
+            className="flex flex-col w-full justify-center items-center gap-y-[1rem]"
         >
             <Input
                 onChange={handleChange}
