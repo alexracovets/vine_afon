@@ -85,7 +85,7 @@ export const BlockShown = ({ isShow, isActiveBlock, active, reserved, buyed, blo
                         {active && !isСhosen &&
                             <>
                                 <Text variant='activeBlockName'>
-                                    Введіть ім'я для резерву:
+                                    Введіть ім&#39;я для резерву:
                                 </Text>
                                 <form
                                     onSubmit={(e) => clickHandler(e)}
@@ -116,7 +116,7 @@ export const BlockShown = ({ isShow, isActiveBlock, active, reserved, buyed, blo
                             buyed &&
                             <>
                                 <Text variant='activeBlockName'>
-                                    Ім'я власника:
+                                    Ім&#39;я власника:
                                 </Text>
                                 <Text variant='activeBlockNameFill'>{block.name}</Text>
                             </>

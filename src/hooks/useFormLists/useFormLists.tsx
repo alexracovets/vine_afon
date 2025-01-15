@@ -1,3 +1,4 @@
+import { MyFormData } from "@/src/types";
 import { useEffect } from "react";
 
 interface BlockType {
@@ -7,16 +8,6 @@ interface BlockType {
     col?: number;
 }
 
-interface MyFormData {
-    formData: string;
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-    blockList: string;
-    leafList: string;
-    tubesList: string;
-}
 
 export function useFormLists(
     activeBlocks: BlockType[],
@@ -25,32 +16,56 @@ export function useFormLists(
     setFormData: React.Dispatch<React.SetStateAction<MyFormData>>
 ) {
     useEffect(() => {
-        const blocksList = activeBlocks.map(
-            (block) => `<li>Комірка №:${block.id} заброньована на ім'я '${block.name}'</li>`
-        );
-        setFormData((prev) => ({
-            ...prev,
-            blockList: `<ul>${blocksList.join('')}</ul>`,
-        }));
+        if (activeBlocks.length > 0) {
+            const blocksList = activeBlocks.map(
+                (block) => `<li>Комірка №:${block.id} заброньована на ім'я '${block.name}'</li>`
+            );
+            setFormData((prev) => ({
+                ...prev,
+                blockList: `<ul>${blocksList.join('')}</ul>`,
+            }));
+        } else {
+            setFormData((prev) => ({
+                ...prev,
+                blockList: null,
+            }));
+        };
+
     }, [activeBlocks, setFormData]);
 
     useEffect(() => {
-        const leafList = activeLeafs.map(
-            (leaf) => `<li>Листок під №:${leaf.id} з позиціями по x-${leaf.col} по y-${leaf.row}</li>`
-        );
-        setFormData((prev) => ({
-            ...prev,
-            leafList: `<ul>${leafList.join('')}</ul>`,
-        }));
+        if (activeLeafs.length > 0) {
+            const leafList = activeLeafs.map(
+                (leaf) => `<li>Листок під №:${leaf.id} з позиціями по x-${leaf.col} по y-${leaf.row}</li>`
+            );
+            setFormData((prev) => ({
+                ...prev,
+                leafList: `<ul>${leafList.join('')}</ul>`,
+            }));
+        } else {
+            setFormData((prev) => ({
+                ...prev,
+                leafList: null,
+            }));
+        }
+
     }, [activeLeafs, setFormData]);
 
     useEffect(() => {
-        const tubesList = activeTubes.map(
-            (tube) => `<li>Труба під №:${tube.id} з позиціями по x-${tube.col} по y-${tube.row}</li>`
-        );
-        setFormData((prev) => ({
-            ...prev,
-            tubesList: `<ul>${tubesList.join('')}</ul>`,
-        }));
+        if (activeTubes.length > 0) {
+            const tubesList = activeTubes.map(
+                (tube) => `<li>Труба під №:${tube.id} з позиціями по x-${tube.col} по y-${tube.row}</li>`
+            );
+            setFormData((prev) => ({
+                ...prev,
+                tubesList: `<ul>${tubesList.join('')}</ul>`,
+            }));
+        } else {
+            setFormData((prev) => ({
+                ...prev,
+                tubesList: null,
+            }));
+        }
+
     }, [activeTubes, setFormData]);
 }

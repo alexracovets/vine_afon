@@ -6,6 +6,7 @@ import { Button, Input, TextArea } from "@/src/ui/components/atoms";
 import useFormModal from "@/store/useFormModal";
 import useCardShop from "@/store/useCardShop";
 import { useFormLists } from "@/src/hooks";
+import { MyFormData } from "@/src/types";
 
 export const FormModal = () => {
     const setActiveStatus = useFormModal((state) => state.setActiveStatus);
@@ -13,7 +14,7 @@ export const FormModal = () => {
     const activeLeafs = useCardShop((state) => state.leafs);
     const activeTubes = useCardShop((state) => state.tubes);
 
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<MyFormData>({
         formData: 'Заявка з сайту Vine of Athos',
         name: '',
         email: '',
