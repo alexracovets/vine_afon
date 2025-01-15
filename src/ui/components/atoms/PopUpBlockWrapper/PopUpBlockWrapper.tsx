@@ -20,15 +20,15 @@ export const PopUpBlockWrapper = ({ openPopUp, isActiveBlock, block, active, res
     return (
         <dialog
             className={cn(
-                "outline",
-                isActiveBlock ? "outline-[.5rem] outline-[#efbf04]" : "outline-[1px] outline-regalMain",
+                "fixed transition-[transform left top width height] ease-in flex justify-center items-center will-change-contents outline",
+                isActiveBlock ?
+                    "duration-500 z-[10] rounded-[2rem]  outline-[.5rem] outline-[#efbf04]" :
+                    "duration-300 z-[0] rounded-[.1rem] outline-[1px] outline-regalMain cursor-pointer",
                 active && "bg-[#247616]",
                 reserved && "bg-[#1f2b1d]",
                 buyed && "bg-[#7b8618]",
                 isActiveBlock && "bg-[#171717]",
-                "fixed transition-[transform left top width height] ease-in flex justify-center items-center will-change-contents",
-                isActiveBlock ? "rounded-[2rem] z-[10]" : "cursor-pointer z-[0] rounded-[.1rem]",
-                isActiveBlock ? "duration-500" : "duration-0"
+                "block_shadow"
             )}
             onClick={(e) => openPopUp(e, idx)}
             style={{
