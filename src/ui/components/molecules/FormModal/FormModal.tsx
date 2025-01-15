@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { Button, Input, TextArea } from "@/src/ui/components/atoms";
 import useFormModal from "@/store/useFormModal";
 import useCardShop from "@/store/useCardShop";
+import { useFormLists } from "@/src/hooks";
 
 export const FormModal = () => {
     const setActiveStatus = useFormModal((state) => state.setActiveStatus);
@@ -23,41 +24,7 @@ export const FormModal = () => {
         tubesList: ''
     });
 
-    useEffect(() => {
-        const blocksList = activeBlocks.map((block) => {
-            return (
-                `<li>Комірка №:${block.id} заброньована на ім'я '${block.name}'</li>`
-            );
-        });
-        setFormData((prev) => ({
-            ...prev,
-            blockList: `<ul>${blocksList.join('')}</ul>`
-        }));
-    }, [activeBlocks]);
-
-    useEffect(() => {
-        const leafList = activeLeafs.map((leaf) => {
-            return (
-                `<li>Листок під №:${leaf.id} з позиціями по x-${leaf.col} по y-${leaf.row}</li>`
-            );
-        });
-        setFormData((prev) => ({
-            ...prev,
-            leafList: `<ul>${leafList.join('')}</ul>`
-        }));
-    }, [activeLeafs]);
-
-    useEffect(() => {
-        const tubesList = activeTubes.map((tube) => {
-            return (
-                `<li>Труба під №:${tube.id} з позиціями по x-${tube.col} по y-${tube.row}</li>`
-            );
-        });
-        setFormData((prev) => ({
-            ...prev,
-            tubesList: `<ul>${tubesList.join('')}</ul>`
-        }));
-    }, [activeTubes]);
+    useFormLists(activeBlocks, activeLeafs, activeTubes, setFormData);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
