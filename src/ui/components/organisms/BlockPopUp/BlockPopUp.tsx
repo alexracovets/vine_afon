@@ -5,6 +5,7 @@ import { useControls } from "react-zoom-pan-pinch";
 
 import { PopupBlockBG, PopUpBlockWrapper } from "@/src/ui/components/atoms";
 import { BlockHidden, BlockShown } from "@/src/ui/components/molecules";
+import { BlockPopUpMain } from "@/src/ui/components/organisms";
 import useBlockPosition from "@/store/useBlockPosition";
 
 export const BlockPopUp = () => {
@@ -13,6 +14,7 @@ export const BlockPopUp = () => {
     const isActive = useBlockPosition((state) => state.isActive);
     const setCurrentActiveBlock = useBlockPosition((state) => state.setCurrentActiveBlock);
     const setIsActive = useBlockPosition((state) => state.setIsActive);
+    const setMainBlockActive = useBlockPosition((state) => state.setMainBlockActive);
     const [isShow, setIsShow] = useState(false);
     const { resetTransform } = useControls();
 
@@ -21,6 +23,7 @@ export const BlockPopUp = () => {
             e.stopPropagation();
         }
         setIsActive(false);
+        setMainBlockActive(false);
         setTimeout(() => {
             setIsShow(false);
         }, 500);
@@ -34,11 +37,12 @@ export const BlockPopUp = () => {
             setIsShow(true);
         }, 500);
     };
+    
     useEffect(() => {
         if (isActive) {
             resetTransform();
         }
-    }, [isActive, resetTransform]);
+    }, [isActive]);
 
     return (
         <>
@@ -80,6 +84,7 @@ export const BlockPopUp = () => {
                     )
                 })
             }
+            <BlockPopUpMain />
             <PopupBlockBG closePopUp={closePopUp} />
         </>
     );

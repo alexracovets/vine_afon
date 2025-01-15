@@ -16,3 +16,4 @@ export { CardsIems } from './CardsIems';
 export { BlockHidden } from './BlockHidden';
 export { BlockShown } from './BlockShown';
 export { FormModal } from './FormModal';
+export { BlockHiddenMain } from './BlockHiddenMain';

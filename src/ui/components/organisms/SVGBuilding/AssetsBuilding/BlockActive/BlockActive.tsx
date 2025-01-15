@@ -40,7 +40,7 @@ export const BlockActive = ({ row, col, second, name, status, id }: BlockProps) 
             }
         }, 300)
 
-    }, [setPosition, resetTransform, name, status, id]);
+    }, [setPosition]);
 
     useEffect(() => {
         updatePosition();
@@ -54,6 +54,7 @@ export const BlockActive = ({ row, col, second, name, status, id }: BlockProps) 
     return (
         <rect
             ref={rectRef}
+            fill="rgb(216, 216, 216)"
             transform={`translate(${second ? widthBlock + widthBlock / 4 - widthBlock / 2 : widthBlock / 4} 0)`}
             x={widthBlock * (row - 1)} y={-col * heightBlock}
             width={widthBlock} height={heightBlock}

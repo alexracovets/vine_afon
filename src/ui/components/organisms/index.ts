@@ -16,3 +16,4 @@ export { PumpsThree } from './PumpsThree';
 export { SVGTubes } from './SVGTubes';
 export { CardShop } from './CardShop';
 export { FormPopUp } from './FormPopUp';
+export { BlockPopUpMain } from './BlockPopUpMain';

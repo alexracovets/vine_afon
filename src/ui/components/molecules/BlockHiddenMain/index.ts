@@ -1,0 +1,1 @@
+export { BlockHiddenMain } from './BlockHiddenMain';

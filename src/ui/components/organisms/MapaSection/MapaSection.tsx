@@ -25,7 +25,7 @@ export const MapaSection = () => {
                                 <SVGBuilding />
                             </div>
                         </div>
-                        <BlockPopUp />
+                        <BlockPopUp /> 
                     </div >
                 </TransformComponent>
             </TransformWrapper>

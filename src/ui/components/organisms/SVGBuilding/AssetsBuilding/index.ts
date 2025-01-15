@@ -6,3 +6,4 @@ export { BlockActive } from './BlockActive';
 export { BlockRow } from './BlockRow';
 export { Building } from './Building';
 export { Block } from './Block';
+export { MainBlock } from './MainBlock';

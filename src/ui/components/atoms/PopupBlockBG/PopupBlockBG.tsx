@@ -10,14 +10,15 @@ interface PopupBlockBGProps {
 }
 
 export const PopupBlockBG = ({ closePopUp }: PopupBlockBGProps) => {
-    const isActive = useBlockPosition((state) => state.isActive);
+    const isActiveBlocks = useBlockPosition((state) => state.isActive);
+    const isActiveMainBlock = useBlockPosition((state) => state.isMainBlockActive);
 
     return (
         <dialog
             onClick={closePopUp}
             className={cn(
                 "w-full h-[100dvh] left-0 top-0 absolute flex justify-center items-center",
-                isActive ? "bg-bgDialog z-[0]" : "bg-transparent z-[-1]"
+                isActiveBlocks || isActiveMainBlock ? "bg-bgDialog z-[0]" : "bg-transparent z-[-1]"
             )}
         />
     );

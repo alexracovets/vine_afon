@@ -2,18 +2,40 @@ import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 import { BlockPositionType } from "@/src/types";
 
+interface MainBlockPositionType {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    name: string;
+    status: string;
+}
+
 interface MobileMenuState {
+    mainBlock: MainBlockPositionType;
     blocks: BlockPositionType[];
     isActive: boolean;
+    isMainBlockActive: boolean;
     currentActiveBlock: number;
     setPosition: (value: BlockPositionType) => void;
     setIsActive: (value: boolean) => void;
     setCurrentActiveBlock: (value: number) => void;
+    setMainBlockActive: (value: boolean) => void;
+    setMainBlockPosition: (value: MainBlockPositionType) => void;
 }
 
 const useBlockPosition = create<MobileMenuState>()(immer((set) => ({
+    mainBlock: {
+        x: 0,
+        y: 0,
+        width: 0,
+        height: 0,
+        name: "Ваше Ім'я",
+        status: "active",
+    },
     blocks: [],
     isActive: false,
+    isMainBlockActive: false,
     currentActiveBlock: 0,
     setPosition: (value: BlockPositionType) =>
         set((state) => {
@@ -29,7 +51,13 @@ const useBlockPosition = create<MobileMenuState>()(immer((set) => ({
     }),
     setCurrentActiveBlock: (value: number) => set((state) => {
         state.currentActiveBlock = value;
-    })
+    }),
+    setMainBlockPosition: (value: MainBlockPositionType) => set((state) => {
+        state.mainBlock = value;
+    }),
+    setMainBlockActive: (value: boolean) => set((state) => {
+        state.isMainBlockActive = value;
+    }),
 })))
 
 export default useBlockPosition;

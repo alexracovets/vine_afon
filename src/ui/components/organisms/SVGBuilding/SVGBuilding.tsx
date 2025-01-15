@@ -1,6 +1,6 @@
 "use client";
 
-import { Building, DoorBuilding, DownBuilding, ActiveBlocks, BuildingBlocks } from "./AssetsBuilding";
+import { Building, DoorBuilding, DownBuilding, ActiveBlocks, BuildingBlocks, MainBlock } from "./AssetsBuilding";
 
 export const SVGBuilding = () => {
 
@@ -12,6 +12,7 @@ export const SVGBuilding = () => {
                     <DoorBuilding />
                     <DownBuilding />
                     <ActiveBlocks />
+                    <MainBlock />
                 </g>
                 <Building />
                 <g fill="#6a2841" transform="translate(1000, 65)">
