@@ -17,7 +17,7 @@ export const Dashes = ({ borderWidth, borderHeight, midleTubeWidth, tubeHeight, 
 
     return (
         <g name="dashes">
-            <Dash
+            {/* <Dash
                 x={0} y={0}
                 width={borderWidth * 4}
                 height={borderHeight}
@@ -93,7 +93,7 @@ export const Dashes = ({ borderWidth, borderHeight, midleTubeWidth, tubeHeight, 
                 height={borderHeight}
                 rounded={borderWidth / 2}
                 className={dashStyle}
-            />
+            /> */}
         </g>
     );
 };

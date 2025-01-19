@@ -37,7 +37,7 @@ export const TubesGroup = ({ midleTubeWidth, tubeHeight, borderHeight, lineHeigh
                 className={className}
             />
             <Tube
-                x={3 * midleTubeWidth - 0.5} y={lineHeight_1 - 0.5}
+                x={3 * midleTubeWidth} y={lineHeight_1 + 10.5}
                 width={midleTubeWidth / 2}
                 tubeHeight={tubeHeight}
                 borderHeight={borderHeight}

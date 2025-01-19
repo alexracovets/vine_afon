@@ -86,6 +86,58 @@ const useActiveTubes = create<ActiveTubesState>()(immer(() => ({
                 { row: 3, col: 9, id: 29, tubeStatus: "active" },
                 { row: 3, col: 10, id: 30, tubeStatus: "active" }
             ]
+        },
+        {
+            tubes: [
+                { row: 4, col: 1, id: 31, tubeStatus: "active" },
+                { row: 4, col: 2, id: 32, tubeStatus: "active" },
+                { row: 4, col: 3, id: 33, tubeStatus: "active" },
+                { row: 4, col: 4, id: 34, tubeStatus: "active" },
+                { row: 4, col: 5, id: 35, tubeStatus: "active" },
+                { row: 4, col: 6, id: 36, tubeStatus: "active" },
+                { row: 4, col: 7, id: 37, tubeStatus: "active" },
+                { row: 4, col: 8, id: 38, tubeStatus: "active" },
+                { row: 4, col: 9, id: 39, tubeStatus: "active" },
+                { row: 4, col: 10, id: 40, tubeStatus: "active" }
+            ],
+            leaf: [
+                { row: 4, col: 1, id: 31, tubeStatus: "active" },
+                { row: 4, col: 2, id: 32, tubeStatus: "active" },
+                { row: 4, col: 3, id: 33, tubeStatus: "active" },
+                { row: 4, col: 4, id: 34, tubeStatus: "active" },
+                { row: 4, col: 5, id: 35, tubeStatus: "active" },
+                { row: 4, col: 6, id: 36, tubeStatus: "active" },
+                { row: 4, col: 7, id: 37, tubeStatus: "active" },
+                { row: 4, col: 8, id: 38, tubeStatus: "active" },
+                { row: 4, col: 9, id: 39, tubeStatus: "active" },
+                { row: 4, col: 10, id: 40, tubeStatus: "active" }
+            ]
+        },
+        {
+            tubes: [
+                { row: 5, col: 1, id: 41, tubeStatus: "active" },
+                { row: 5, col: 2, id: 42, tubeStatus: "active" },
+                { row: 5, col: 3, id: 43, tubeStatus: "active" },
+                { row: 5, col: 4, id: 44, tubeStatus: "active" },
+                { row: 5, col: 5, id: 45, tubeStatus: "active" },
+                { row: 5, col: 6, id: 46, tubeStatus: "active" },
+                { row: 5, col: 7, id: 47, tubeStatus: "active" },
+                { row: 5, col: 8, id: 48, tubeStatus: "active" },
+                { row: 5, col: 9, id: 49, tubeStatus: "active" },
+                { row: 5, col: 10, id: 50, tubeStatus: "active" }
+            ],
+            leaf: [
+                { row: 5, col: 1, id: 41, tubeStatus: "active" },
+                { row: 5, col: 2, id: 42, tubeStatus: "active" },
+                { row: 5, col: 3, id: 43, tubeStatus: "active" },
+                { row: 5, col: 4, id: 44, tubeStatus: "active" },
+                { row: 5, col: 5, id: 45, tubeStatus: "active" },
+                { row: 5, col: 6, id: 46, tubeStatus: "active" },
+                { row: 5, col: 7, id: 47, tubeStatus: "active" },
+                { row: 5, col: 8, id: 48, tubeStatus: "active" },
+                { row: 5, col: 9, id: 49, tubeStatus: "active" },
+                { row: 5, col: 10, id: 50, tubeStatus: "active" }
+            ]
         }
     ]
 

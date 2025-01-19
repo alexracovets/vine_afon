@@ -13,41 +13,40 @@ import { cn } from "@/src/utils/cn";
 
 export const SVGTubes = () => {
     const currentActiveBlock = useActiveTubes((state) => state.rows);
-    const midleTubeWidth = 50;
-    const bendHeight = 45.47;
-    const tubeHeight = 37.5;
-    const bendWidth = 22.75;
-    const borderHeight = 45;
+    const midleTubeWidth = 55;
+    const bendHeight = 35;
+    const tubeHeight = 25;
+    const borderHeight = 40;
     const borderWidth = 4;
 
     const lineHeight_0 = (borderHeight - tubeHeight) / 2;
-    const lineHeight_1 = (borderHeight - tubeHeight) / 2 + (bendHeight - tubeHeight) * 2 + tubeHeight;
-    const lineHeight_2 = (borderHeight - tubeHeight) / 2 + (bendHeight - tubeHeight) * 3 + tubeHeight * 2;
-    const lineHeight_2Normal = lineHeight_2 + (borderHeight - tubeHeight);
+    const lineHeight_1 = (borderHeight - tubeHeight) / 2 + (bendHeight - tubeHeight) * 2 + tubeHeight - 21.5;
+    const lineHeight_2 = (borderHeight - tubeHeight) / 2 + (bendHeight - tubeHeight) * 3 + tubeHeight * 2 - 24;
+    const lineHeight_2Normal = lineHeight_2 + (borderHeight - tubeHeight) - 3;
 
     const dashStyle = cn(
-        "fill-[#2d5b9d] stroke-[2px] stroke-[#091428]"
+        "fill-[#2d5b9d] stroke-[1.5px] stroke-[#091428]"
     );
     const activeTubesStyle = cn(
-        "fill-white stroke-[2px] stroke-[#091428] fill-[#b4c6e9]"
+        "fill-white stroke-[1.5px] stroke-[#091428] fill-[#b4c6e9]"
     );
 
     const testStyle = cn(
-        "fill-[#2d5b9d] stroke-[2px] stroke-[#091428]"
+        "fill-[#2d5b9d] stroke-[1.5px] stroke-[#091428]"
     );
     const activeTubesWidth = 1.3;
 
     return (
-        <svg width="100%" height="100%" viewBox="0 0 960 540" className="relative flex-grow h-full max-h-full overflow-visible z-[0]">
+        <svg width="100%" height="100%" viewBox="0 0 960 800" className="relative flex-grow h-full max-h-full overflow-visible z-[0]">
             <Filters />
-            <g transform="translate(0, 0)">
+            <g transform="translate(0, 50)">
                 {
                     currentActiveBlock.map((row, idx) => {
                         return (
                             <g
                                 key={idx}
                                 filter="url(#drop-shadow)"
-                                transform={`translate(0, ${idx * 171})`}
+                                transform={`translate(0, ${idx * 110})`}
                             >
                                 <TubesGroup
                                     midleTubeWidth={midleTubeWidth}
@@ -60,10 +59,7 @@ export const SVGTubes = () => {
                                 />
                                 <Bendes
                                     midleTubeWidth={midleTubeWidth}
-                                    bendWidth={bendWidth}
                                     bendHeight={bendHeight}
-                                    borderHeight={borderHeight}
-                                    tubeHeight={tubeHeight}
                                     lineHeight_0={lineHeight_0}
                                     lineHeight_1={lineHeight_1}
                                     lineHeight_2={lineHeight_2}
