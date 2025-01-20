@@ -19,17 +19,17 @@ export const Bendes = ({ midleTubeWidth, bendHeight, lineHeight_0, lineHeight_1,
                 className={className}
             />
             <Bend
-                x={3.5 * midleTubeWidth} y={bendHeight + 2}
+                x={3.5 * midleTubeWidth - 0.5} y={bendHeight - 2}
                 rotate={0}
                 className={className}
             />
             <Bend
-                x={2.5 * midleTubeWidth - 2} y={lineHeight_1}
+                x={2.5 * midleTubeWidth - 2} y={lineHeight_1 - 21}
                 rotate={180}
                 className={className}
             />
             <Bend
-                x={2.5 * midleTubeWidth - 7} y={lineHeight_2 + 2}
+                x={2.5 * midleTubeWidth - 7.5} y={lineHeight_2 - 21}
                 rotate={90}
                 className={className}
             />

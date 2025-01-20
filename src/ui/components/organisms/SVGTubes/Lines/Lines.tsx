@@ -6,121 +6,126 @@ export const Lines = () => {
 
     return (
         <g name="lines">
-            <g transform="translate(50 30)">
+            <g transform="translate(70 15)">
                 <rect
                     x="0" y="0"
-                    width={35}
-                    height={2}
+                    width={30}
+                    height={1}
                     fill={color}
-                    rx={2} ry={2}
+                    rx={1} ry={1}
                 />
                 <rect
-                    x="20" y="4"
-                    width={15}
-                    height={2}
+                    x="10" y="3"
+                    width={14}
+                    height={1}
                     fill={color}
-                    rx={2} ry={2}
+                    rx={1} ry={1}
                 />
                 <rect
-                    x="-10" y="-15"
-                    width={25}
-                    height={2}
+                    x="-10" y="-3"
+                    width={30}
+                    height={1}
                     fill={color}
-                    rx={2} ry={2}
+                    rx={1} ry={1}
                 />
                 <rect
-                    x="50" y="-15"
+                    x="50" y="-8"
                     width={5}
-                    height={2}
+                    height={1}
                     fill={color}
-                    rx={2} ry={2}
+                    rx={1} ry={1}
                 />
             </g>
             <g transform="translate(20 -50)" >
                 <rect
                     x="5" y="5"
-                    width={5}
-                    height={1.5}
+                    width={6}
+                    height={2}
                     fill={color}
+                    rx={2} ry={2}
                     transform="rotate(220 0 60) translate (0 50)"
                 />
                 <rect
-                    x="10" y="10"
-                    width={5}
-                    height={3}
+                    x="6" y="11"
+                    width={10}
+                    height={2}
                     fill={color}
+                    rx={2} ry={2}
                     transform="rotate(220 0 60) translate (0 40)"
                 />
             </g>
-            <g transform="translate(150 30)">
+            <g transform="translate(150 20)">
                 <rect
                     x="0" y="0"
-                    width={10}
-                    height={2}
+                    width={16}
+                    height={1}
+                    rx={1} ry={1}
                     fill={color}
                 />
             </g>
-            <g transform="translate(190 80)">
+            <g transform="translate(203 53)">
                 <rect
                     x="0" y="0"
                     width={15}
-                    height={2}
+                    height={1}
                     fill={color}
+                    rx={1} ry={1}
                     transform={`rotate(-45 0 0)`}
                 />
                 <rect
-                    x="0" y="5"
+                    x="2" y="3"
                     width={10}
-                    height={2}
+                    height={1}
                     fill={color}
+                    rx={1} ry={1}
                     transform={`rotate(-45 0 0)`}
                 />
             </g>
-            <g transform="translate(140 70)">
+            <g transform="translate(160 50)">
                 <rect
                     x="0" y="0"
-                    width={15}
-                    height={2}
+                    width={14}
+                    height={1}
                     fill={color}
+                    rx={1} ry={1}
                     transform={`rotate(140 0 0)`}
                 />
                 <rect
-                    x="5" y="5"
+                    x="3" y="3"
                     width={10}
-                    height={2}
+                    height={1}
                     fill={color}
+                    rx={1} ry={1}
                     transform={`rotate(140 0 0)`}
                 />
                 <rect
-                    x="5" y="5"
-                    width={5}
-                    height={2}
-                    fill={color}
-                    transform={`rotate(140 0 0)`}
-                />
-                <rect
-                    x="0" y="10"
+                    x="0" y="6"
                     width={15}
-                    height={2}
+                    height={1}
                     fill={color}
+                    rx={1} ry={1}
                     transform={`rotate(140 0 0)`}
                 />
+            </g>
+            <g transform="translate(136 43)">
                 <rect
-                    x="-25" y="55"
-                    width={20}
-                    height={2}
+                    x="-15" y="25"
+                    width={14}
+                    height={1}
                     fill={color}
+                    rx={1} ry={1}
                     transform={`rotate(40 -20 60)`}
                 />
                 <rect
-                    x="-20" y="60"
+                    x="-12" y="22"
                     width={10}
-                    height={2}
+                    height={1}
                     fill={color}
+                    rx={1} ry={1}
                     transform={`rotate(40 -20 60)`}
                 />
             </g>
-            <g transform="translate(195 10)">
+            <g transform="translate(205 10)">
                 <rect
                     x="0" y="0"
                     width={5}
@@ -138,60 +143,60 @@ export const Lines = () => {
                     transform={`rotate(10 0 0) translate (0 0)`}
                 />
             </g>
-            <g transform="translate(170 120)">
+            <g transform="translate(185 83)">
                 <rect
                     x="0" y="0"
-                    width={20}
-                    height={2}
+                    width={40}
+                    height={1}
                     fill={color}
-                    rx={2} ry={2}
+                    rx={1} ry={1}
                 />
                 <rect
-                    x="1" y="3"
-                    width={10}
-                    height={2}
+                    x="1" y="2"
+                    width={30}
+                    height={1}
                     fill={color}
-                    rx={2} ry={2}
+                    rx={1} ry={1}
                 />
                 <rect
-                    x="2" y="6"
-                    width={5}
-                    height={2}
+                    x="2" y="4"
+                    width={14}
+                    height={1}
                     fill={color}
-                    rx={2} ry={2}
+                    rx={1} ry={1}
                 />
             </g>
-            <g transform="translate(245 135)">
+            <g transform="translate(265 85)">
                 <rect
                     x="0" y="0"
-                    width={35}
-                    height={2}
+                    width={48}
+                    height={1}
                     fill={color}
-                    rx={2} ry={2}
+                    rx={1} ry={1}
                     transform={`rotate(0 0 0)`}
                 />
                 <rect
-                    x="20" y="4"
+                    x="40" y="2"
                     width={15}
-                    height={2}
+                    height={1}
                     fill={color}
-                    rx={2} ry={2}
+                    rx={1} ry={1}
                     transform={`rotate(0 0 0)`}
                 />
                 <rect
-                    x="0" y="-18"
+                    x="-6" y="-7"
                     width={25}
-                    height={2}
+                    height={1}
                     fill={color}
-                    rx={2} ry={2}
+                    rx={1} ry={1}
                     transform={`rotate(0 0 0)`}
                 />
                 <rect
-                    x="30" y="-18"
-                    width={5}
-                    height={2}
+                    x="24" y="-7"
+                    width={8}
+                    height={1}
                     fill={color}
-                    rx={3} ry={3}
+                    rx={1} ry={1}
                     transform={`rotate(0 0 0)`}
                 />
             </g>

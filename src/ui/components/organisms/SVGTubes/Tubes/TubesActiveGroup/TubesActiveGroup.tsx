@@ -46,7 +46,7 @@ export const TubesActiveGroup = ({ row, midleTubeWidth, activeTubesWidth, tubeHe
             {row.leaf.map((leaf, idx) => {
                 return (
                     <g key={idx}>
-                        <Leaf x={(6.15 + idx * activeTubesWidth) * midleTubeWidth} y={40} leaf={leaf} />
+                        <Leaf x={(6.15 + idx * activeTubesWidth) * midleTubeWidth} y={8} leaf={leaf} />
                     </g>
                 )
             })}

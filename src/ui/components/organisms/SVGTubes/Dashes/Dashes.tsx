@@ -17,7 +17,7 @@ export const Dashes = ({ borderWidth, borderHeight, midleTubeWidth, tubeHeight, 
 
     return (
         <g name="dashes">
-            {/* <Dash
+            <Dash
                 x={0} y={0}
                 width={borderWidth * 4}
                 height={borderHeight}
@@ -39,35 +39,35 @@ export const Dashes = ({ borderWidth, borderHeight, midleTubeWidth, tubeHeight, 
                 className={dashStyle}
             />
             <Dash
-                x={3.5 * midleTubeWidth - borderWidth} y={0}
+                x={3.5 * midleTubeWidth - borderWidth / 2} y={0}
                 width={borderWidth}
                 height={borderHeight}
                 rounded={borderWidth / 2}
                 className={dashStyle}
             />
             <Dash
-                x={3.5 * midleTubeWidth + borderWidth} y={(borderHeight - tubeHeight) / 2 + bendHeight - borderWidth}
+                x={3.5 * midleTubeWidth + borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + bendHeight - borderWidth - 3}
                 width={borderHeight}
                 height={borderWidth}
                 rounded={borderWidth / 2}
                 className={dashStyle}
             />
             <Dash
-                x={3.5 * midleTubeWidth - borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + bendHeight + borderWidth}
+                x={3.5 * midleTubeWidth - borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + bendHeight - borderWidth + 2}
                 width={borderWidth}
                 height={borderHeight}
                 rounded={borderWidth / 2}
                 className={dashStyle}
             />
             <Dash
-                x={3 * midleTubeWidth - borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + bendHeight + borderWidth}
+                x={3 * midleTubeWidth - borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + bendHeight - borderWidth + 2}
                 width={borderWidth}
                 height={borderHeight}
                 rounded={borderWidth / 2}
                 className={dashStyle}
             />
             <Dash
-                x={2 * midleTubeWidth + borderWidth / 2} y={(borderHeight - tubeHeight) / 2 + 2 * bendHeight + borderWidth}
+                x={2.5 * midleTubeWidth - 4.5} y={(borderHeight - tubeHeight) / 2 + 2 * bendHeight - borderWidth - 3}
                 width={borderHeight}
                 height={borderWidth}
                 rounded={borderWidth / 2}
@@ -93,7 +93,7 @@ export const Dashes = ({ borderWidth, borderHeight, midleTubeWidth, tubeHeight, 
                 height={borderHeight}
                 rounded={borderWidth / 2}
                 className={dashStyle}
-            /> */}
+            />
         </g>
     );
 };
