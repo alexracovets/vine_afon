@@ -3,19 +3,19 @@
 import { MouseEvent, useEffect, useState } from "react";
 import { useControls } from "react-zoom-pan-pinch";
 
-import { PopupBlockBG, PopUpBlockWrapper } from "@/src/ui/components/atoms";
-import { BlockHidden, BlockShown } from "@/src/ui/components/molecules";
+import { PopUpBlockWrapper, PopupBlockBG } from "@/src/ui/components/atoms";
+import { BlockHidden, BlockShown, } from "@/src/ui/components/molecules";
 import { BlockPopUpMain } from "@/src/ui/components/organisms";
 import useBlockPosition from "@/store/useBlockPosition";
 
 export const BlockPopUp = () => {
+    const [isShow, setIsShow] = useState(false);
+    const setIsActive = useBlockPosition((state) => state.setIsActive);
+    const setMainBlockActive = useBlockPosition((state) => state.setMainBlockActive);
+    const setCurrentActiveBlock = useBlockPosition((state) => state.setCurrentActiveBlock);
     const currentActiveBlock = useBlockPosition((state) => state.currentActiveBlock);
     const currentArguments = useBlockPosition((state) => state.blocks);
     const isActive = useBlockPosition((state) => state.isActive);
-    const setCurrentActiveBlock = useBlockPosition((state) => state.setCurrentActiveBlock);
-    const setIsActive = useBlockPosition((state) => state.setIsActive);
-    const setMainBlockActive = useBlockPosition((state) => state.setMainBlockActive);
-    const [isShow, setIsShow] = useState(false);
     const { resetTransform } = useControls();
 
     const closePopUp = (e?: MouseEvent<HTMLDialogElement> | MouseEvent<HTMLButtonElement>) => {
@@ -24,6 +24,7 @@ export const BlockPopUp = () => {
         }
         setIsActive(false);
         setMainBlockActive(false);
+        setCurrentActiveBlock(-1)
         setTimeout(() => {
             setIsShow(false);
         }, 500);
@@ -31,13 +32,14 @@ export const BlockPopUp = () => {
 
     const openPopUp = (e: MouseEvent<HTMLDialogElement>, idx: number) => {
         e.stopPropagation();
-        setCurrentActiveBlock(idx)
+        setCurrentActiveBlock(idx);
         setIsActive(true);
+        resetTransform();
         setTimeout(() => {
             setIsShow(true);
         }, 500);
     };
-    
+
     useEffect(() => {
         if (isActive) {
             resetTransform();

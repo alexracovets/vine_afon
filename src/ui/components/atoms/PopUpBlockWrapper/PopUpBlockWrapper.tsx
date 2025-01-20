@@ -20,7 +20,7 @@ export const PopUpBlockWrapper = ({ openPopUp, isActiveBlock, block, active, res
     return (
         <dialog
             className={cn(
-                "fixed transition-[transform left top width height] ease-in flex justify-center items-center will-change-contents outline",
+                "absolute transition-[transform left top width height] ease-in flex justify-center items-center will-change-contents outline",
                 isActiveBlock ?
                     "duration-500 z-[10] rounded-[2rem]  outline-[.5rem] outline-[#efbf04]" :
                     "duration-300 z-[0] rounded-[.1rem] outline-[1px] outline-regalMain cursor-pointer",
@@ -32,10 +32,10 @@ export const PopUpBlockWrapper = ({ openPopUp, isActiveBlock, block, active, res
             )}
             onClick={(e) => openPopUp(e, idx)}
             style={{
-                width: isActiveBlock ? "60rem" : block.width,
-                height: isActiveBlock ? "35rem" : block.height,
-                left: isActiveBlock ? "50%" : block.x,
-                top: isActiveBlock ? "50%" : block.y,
+                width: isActiveBlock ? "60rem" : block.width - 1,
+                height: isActiveBlock ? "35rem" : block.height - 1,
+                left: isActiveBlock ? "50%" : block.x + 0.5,
+                top: isActiveBlock ? "50%" : block.y + 0.5,
                 transform: isActiveBlock ? "translate(-50%, -50%)" : "translate(0%, 0%)",
             }}
         >

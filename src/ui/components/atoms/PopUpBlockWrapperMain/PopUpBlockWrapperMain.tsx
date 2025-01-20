@@ -22,7 +22,7 @@ export const PopUpBlockWrapperMain = ({ isActive, active, reserved, buyed, mainB
     return (
         <dialog
             className={cn(
-                "fixed transition-[transform left top width height] ease-in flex justify-center items-center will-change-contents outline",
+                "absolute transition-[transform left top width height] ease-in flex justify-center items-center will-change-contents outline",
                 isActive ?
                     "duration-500 z-[10] rounded-[2rem]  outline-[.5rem] outline-[#efbf04] bg-[#171717]" :
                     "duration-300 z-[0] rounded-[.1rem] outline-[1px] outline-regalMain cursor-pointer",

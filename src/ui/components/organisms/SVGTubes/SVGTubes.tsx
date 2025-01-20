@@ -170,7 +170,7 @@ export const SVGTubes = () => {
     return (
         <svg width="100%" height="100%" viewBox="0 0 960 800" className="relative flex-grow h-full max-h-full overflow-visible z-[0]">
             <Filters />
-            <g transform="translate(0, 50)">
+            <g transform="translate(0, 100)">
                 {
                     currentActiveBlock.map((row, idx) => {
                         return (

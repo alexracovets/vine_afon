@@ -1,1 +1,0 @@
-export { PumpsThree } from './PumpsThree';
