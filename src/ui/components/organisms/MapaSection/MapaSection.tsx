@@ -41,7 +41,7 @@ export const MapaSection = () => {
                                 >
                                     <div className={cn(
                                         "w-[50%] h-full flex",
-                                        "max-tablet:w-full max-tablet:h-[60rem]"
+                                        "max-tablet:w-full max-tablet:h-[65rem]"
                                     )}>
                                         <SVGTubes />
                                     </div>
