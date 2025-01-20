@@ -7,37 +7,47 @@ import { Canvas } from '@react-three/fiber';
 import { SVGTubes, SVGBuilding, BlockPopUp } from "@/src/ui/components/organisms";
 
 import useBlockPosition from "@/store/useBlockPosition";
+import { cn } from "@/src/utils/cn";
 
 export const MapaSection = () => {
     const isBlockPopUp = useBlockPosition((state) => state.isActive);
 
-
-
     return (
-        <div className="bg-[#96d55a]" >
-            <Canvas >
+        <div className="bg-[#96d55a]">
+            <Canvas>
                 <Html
                     as="div"
                     zIndexRange={[0, -1]}
                     fullscreen
-                    className="flex flex-col justify-start items-start flex-grow relative">
+                    wrapperClass="w-full h-full flex"
+                    className="flex flex-col justify-start items-start relative flex-grow">
+
                     <TransformWrapper
                         smooth={false}
                         initialScale={1}
                         disabled={isBlockPopUp}
-                        doubleClick={{ disabled: true }}
+                        doubleClick={{ disabled: true }} 
                     >
                         <TransformComponent>
                             <div
                                 className="flex flex-col justify-start items-start flex-grow relative"
                             >
                                 <div
-                                    className="flex-grow w-[100dvw] h-[100dvh] flex justify-center items-center"
+                                    className={cn(
+                                        "flex-grow w-[100dvw] h-[100dvh] flex justify-center items-center",
+                                        "max-tablet:flex-col-reverse max-tablet:h-auto"
+                                    )}
                                 >
-                                    <div className="w-[50%] h-full flex flex-col justify-center">
+                                    <div className={cn(
+                                        "w-[50%] h-full flex",
+                                        "max-tablet:w-full max-tablet:h-[60rem]"
+                                    )}>
                                         <SVGTubes />
                                     </div>
-                                    <div className="w-[50%] flex h-full">
+                                    <div className={cn(
+                                        "w-[50%] h-full flex",
+                                        "max-tablet:w-full max-tablet:h-[65rem]"
+                                    )}>
                                         <SVGBuilding />
                                     </div>
                                 </div>

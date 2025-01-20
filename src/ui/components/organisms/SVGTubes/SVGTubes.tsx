@@ -142,9 +142,16 @@ const currentActiveBlock = [
 ]
 
 import { cn } from "@/src/utils/cn";
+import { useEffect, useState } from "react";
+
+import useResponsive from '@/store/useResponsive';
 
 export const SVGTubes = () => {
-    const midleTubeWidth = 55;
+    const responsive = useResponsive(state => state.responsive);
+    const [viewBox, setViewBox] = useState("0 0 960 800");
+    const [mainTranslate, setMainTranslate] = useState("translate(0, 100)");
+
+    const midleTubeWidth = 50;
     const bendHeight = 35;
     const tubeHeight = 25;
     const borderHeight = 30;
@@ -167,10 +174,22 @@ export const SVGTubes = () => {
     );
     const activeTubesWidth = 1.3;
 
+
+    useEffect(() => {
+        if (responsive === "tablet" || responsive === "mobile") {
+            console.log(responsive)
+            setViewBox("0 0 960 560");
+            setMainTranslate("translate(0, -50)");
+        } else {
+            setViewBox("0 0 960 800");
+            setMainTranslate("translate(0, 100)");
+        }
+    }, [responsive])
+
     return (
-        <svg width="100%" height="100%" viewBox="0 0 960 800" className="relative flex-grow h-full max-h-full overflow-visible z-[0]">
+        <svg width="100%" height="100%" viewBox={viewBox} className="relative flex-grow h-full max-h-full overflow-visible z-[0]">
             <Filters />
-            <g transform="translate(0, 100)">
+            <g transform={mainTranslate}>
                 {
                     currentActiveBlock.map((row, idx) => {
                         return (

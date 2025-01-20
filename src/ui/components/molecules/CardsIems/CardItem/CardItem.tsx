@@ -26,13 +26,16 @@ export const CardItem = ({ image, alt, value }: CardItemProps) => {
             <div
                 className={cn(
                     "flex justify-start items-center gap-x-[1rem] h-[9rem] min-w-[21rem]",
-                    "max-tablet:min-w-[13rem] max-tablet:h-[5rem]"
+                    "max-tablet:min-w-[13rem] max-tablet:h-[5rem]",
+                    "max-mobile:w-[50%]"
                 )}
             >
                 <div className={cn(
                     "w-[9rem] h-[9rem] relative z-[1] bg-regalWhite",
+                    "outline outline-[.5rem] outline-regalMain rounded-[50%] overflow-hidden",
                     "max-tablet:w-[5rem] max-tablet:h-[5rem]",
-                    "outline outline-[.5rem] outline-regalMain rounded-[50%] overflow-hidden"
+                    "max-mobile:w-[4rem] max-mobile:h-[4rem] max-mobile:outline-[.3rem]",
+
                 )}>
                     <ImageAtom src={image} alt={alt} />
                 </div>

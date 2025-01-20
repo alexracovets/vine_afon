@@ -36,7 +36,7 @@ const useBlockPosition = create<MobileMenuState>()(immer((set) => ({
     blocks: [],
     isActive: false,
     isMainBlockActive: false,
-    currentActiveBlock: 0,
+    currentActiveBlock: -1,
     setPosition: (value: BlockPositionType) =>
         set((state) => {
             const existingIndex = state.blocks.findIndex((block) => block.id === value.id);

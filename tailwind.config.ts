@@ -7,7 +7,7 @@ const config: Config = {
 	theme: {
 		extend: {
 			screens: {
-				tablet: '1024px',
+				tablet: '1030px',
 				mobile: '768px'
 			},
 			fontFamily: {
