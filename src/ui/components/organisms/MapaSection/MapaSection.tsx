@@ -13,7 +13,7 @@ export const MapaSection = () => {
     const isBlockPopUp = useBlockPosition((state) => state.isActive);
 
     return (
-        <div className="bg-[#96d55a]">
+        <div className="bg-[#96d55a] touch-none" >
             <div
                 className="flex flex-col justify-start items-start relative flex-grow">
                 {/* <Canvas
