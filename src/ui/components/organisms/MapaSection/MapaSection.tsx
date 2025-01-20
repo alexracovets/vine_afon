@@ -13,7 +13,7 @@ export const MapaSection = () => {
     const isBlockPopUp = useBlockPosition((state) => state.isActive);
 
     return (
-        <div className="bg-[#96d55a] touch-none" >
+        <div className="bg-[#96d55a]" >
             <div
                 className="flex flex-col justify-start items-start relative flex-grow">
                 {/* <Canvas
@@ -32,7 +32,7 @@ export const MapaSection = () => {
                     doubleClick={{ disabled: true }}
 
                 >
-                    <TransformComponent wrapperClass="flex flex-col justify-start items-start flex-grow relative touch-auto">
+                    <TransformComponent wrapperClass="flex flex-col justify-start items-start flex-grow relative">
                         <div
                             className={cn(
                                 "flex-grow w-[100dvw] h-[calc(100dvh-8.2rem)] flex justify-center items-center mt-[8.2rem]",
