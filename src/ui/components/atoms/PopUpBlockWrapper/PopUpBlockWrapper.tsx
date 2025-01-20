@@ -4,6 +4,7 @@ import { MouseEvent } from "react";
 
 import { cn } from "@/src/utils/cn";
 import { BlockPositionType } from "@/src/types";
+import useResponsive from '@/store/useResponsive';
 
 interface PopUpBlockWrapperProps {
     openPopUp: (e: MouseEvent<HTMLDialogElement>, idx: number) => void;
@@ -17,6 +18,8 @@ interface PopUpBlockWrapperProps {
 }
 
 export const PopUpBlockWrapper = ({ openPopUp, isActiveBlock, block, active, reserved, buyed, idx, children }: PopUpBlockWrapperProps) => {
+    const responsive = useResponsive(state => state.responsive);
+
     return (
         <dialog
             className={cn(
@@ -32,8 +35,8 @@ export const PopUpBlockWrapper = ({ openPopUp, isActiveBlock, block, active, res
             )}
             onClick={(e) => openPopUp(e, idx)}
             style={{
-                width: isActiveBlock ? "60rem" : block.width - 1,
-                height: isActiveBlock ? "35rem" : block.height - 1,
+                width: responsive === "mobile" ? (isActiveBlock ? "95%" : block.width - 1) : (isActiveBlock ? "60rem" : block.width - 1),
+                height: responsive === "mobile" ? (isActiveBlock ? "70dvh" : block.height - 1) : (isActiveBlock ? "35rem" : block.height - 1),
                 left: isActiveBlock ? "50%" : block.x + 0.5,
                 top: isActiveBlock ? "50%" : block.y + 0.5,
                 transform: isActiveBlock ? "translate(-50%, -50%)" : "translate(0%, 0%)",

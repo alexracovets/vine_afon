@@ -13,7 +13,7 @@ export const CardsIems = () => {
         <div className={cn(
             'flex justify-start items-center gap-[2rem]',
             'max-tablet:gap-[1.2rem]',
-            'max-mobile:w-full max-mobile:gap-x-0 max-mobile:gap-y-[1rem] max-mobile:mb-[3rem] flex-wrap max-mobile:items-start'
+            'max-mobile:mb-[1rem] max-mobile:w-full max-mobile:gap-0 max-mobile:flex-wrap max-mobile:items-start'
         )}>
             <CardItem
                 image={"/jpg/tube.jpg"}
