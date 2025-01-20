@@ -21,7 +21,11 @@ export const BlockHiddenMain = ({ isActive, active, reserved, buyed }: BlockHidd
                         isActive ? "opacity-0" : "opacity-100",
                     )}
                 >
-                    <Text variant={'activeBlockMain'} className="text-white text-center ">
+                    <Text variant={'activeBlockMain'} className={cn(
+                        "text-white text-center leading-[1]",
+                        "max-tablet:text-[1rem]",
+                        "max-mobile:text-[1rem]"
+                    )}>
                         {active && "Стати головним меценатом!"}
                         {reserved && "Резерв"}
                         {buyed && "Зайнято"}

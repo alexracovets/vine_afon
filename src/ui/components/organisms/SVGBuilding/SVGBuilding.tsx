@@ -10,15 +10,14 @@ export const SVGBuilding = () => {
     const [mainTranslate, setMainTranslate] = useState("translate(0, -250)");
 
     useEffect(() => {
-        console.log(responsive)
-        if (responsive === "tablet" || responsive === "mobile") {
+        if (responsive === "mobile") {
             console.log(responsive)
             setViewBox("0 0 960 830");
             setMainTranslate("translate(-50, 0)");
         } else {
             setViewBox("0 0 960 540");
             setMainTranslate("translate(-50, -250)");
-        } 
+        }
     }, [responsive])
 
     return (

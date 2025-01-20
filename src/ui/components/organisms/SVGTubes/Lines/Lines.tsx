@@ -6,7 +6,7 @@ export const Lines = () => {
 
     return (
         <g name="lines">
-            <g transform="translate(70 15)">
+            <g transform="translate(60 15)">
                 <rect
                     x="0" y="0"
                     width={30}
@@ -54,7 +54,7 @@ export const Lines = () => {
                     transform="rotate(220 0 60) translate (0 40)"
                 />
             </g>
-            <g transform="translate(150 20)">
+            <g transform="translate(145 20)">
                 <rect
                     x="0" y="0"
                     width={16}
@@ -63,7 +63,7 @@ export const Lines = () => {
                     fill={color}
                 />
             </g>
-            <g transform="translate(203 53)">
+            <g transform="translate(185 53)">
                 <rect
                     x="0" y="0"
                     width={15}
@@ -81,7 +81,7 @@ export const Lines = () => {
                     transform={`rotate(-45 0 0)`}
                 />
             </g>
-            <g transform="translate(160 50)">
+            <g transform="translate(145 50)">
                 <rect
                     x="0" y="0"
                     width={14}
@@ -107,7 +107,7 @@ export const Lines = () => {
                     transform={`rotate(140 0 0)`}
                 />
             </g>
-            <g transform="translate(136 43)">
+            <g transform="translate(125 43)">
                 <rect
                     x="-15" y="25"
                     width={14}
@@ -125,7 +125,7 @@ export const Lines = () => {
                     transform={`rotate(40 -20 60)`}
                 />
             </g>
-            <g transform="translate(205 10)">
+            <g transform="translate(190 10)">
                 <rect
                     x="0" y="0"
                     width={5}
@@ -143,7 +143,7 @@ export const Lines = () => {
                     transform={`rotate(10 0 0) translate (0 0)`}
                 />
             </g>
-            <g transform="translate(185 83)">
+            <g transform="translate(170 83)">
                 <rect
                     x="0" y="0"
                     width={40}
@@ -166,7 +166,7 @@ export const Lines = () => {
                     rx={1} ry={1}
                 />
             </g>
-            <g transform="translate(265 85)">
+            <g transform="translate(235 85)">
                 <rect
                     x="0" y="0"
                     width={48}

@@ -4,21 +4,26 @@ import { cn } from "@/src/utils/cn";
 import { CardsIems, Price } from "@/src/ui/components/molecules";
 
 import useBlockPosition from "@/store/useBlockPosition";
+import { Container } from "@/src/ui/components/atoms";
 
 export const CardShop = () => {
     const isBlockPopUp = useBlockPosition((state) => state.isActive);
 
     return (
-        <div className={cn(
-            'absolute left-[8.8rem] bottom-[.5rem] flex justify-between items-center w-[133.9rem] py-[1rem] px-[2rem] bg-regalBlack rounded-[2.5rem] overflow-hidden',
-            'max-tablet:left-[2.9rem] max-tablet:w-[68.7rem] max-tablet:rounded-[1.5rem] max-tablet:py-[2rem]',
-            'max-mobile:left-0 max-mobile:bottom-0 max-mobile:w-full max-mobile:flex-col max-mobile:rounded-none max-mobile:rounded-t-[1rem]',
-            "max-mobile:relative max-mobile:z-[1]",
+        <Container className={cn(
+            "absolute left-0 bottom-0 z-[1] p-[1rem]",
             "transform transition-opacity duration-300",
             isBlockPopUp ? "opacity-0 pointer-events-none" : "opacity-100"
         )}>
-            <CardsIems />
-            <Price />
-        </div>
+            <div
+                className={cn(
+                    "flex justify-between items-center w-full bg-regalBlack rounded-[2.5rem] overflow-hidden py-[2rem] px-[2rem]",
+                    "max-tablet:rounded-[1.5rem] max-tablet:py-[2rem]",
+                )}
+            >
+                <CardsIems />
+                <Price />
+            </div>
+        </Container>
     );
 };
