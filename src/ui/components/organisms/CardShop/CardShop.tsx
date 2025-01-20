@@ -39,7 +39,7 @@ export const CardShop = () => {
                     <CircleChevronDown
                         className={cn(
                             "w-[3rem] h-[3rem] transition-transform duration-500 ease-in-out",
-                            isShow ? "rotate-180" : "rotate-0"
+                            isShow ? "rotate-0" : "rotate-180"
                         )} />
                 </div>
                 <div
