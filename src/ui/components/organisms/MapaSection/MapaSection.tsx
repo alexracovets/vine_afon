@@ -27,36 +27,32 @@ export const MapaSection = () => {
                         wrapperClass="w-[100vw] h-[100dvh] flex"
                         className="flex flex-col justify-start items-start relative flex-grow"> */}
                 <TransformWrapper
-                    smooth={false}
                     initialScale={1}
                     disabled={isBlockPopUp}
                     doubleClick={{ disabled: true }}
+
                 >
-                    <TransformComponent>
+                    <TransformComponent wrapperClass="flex flex-col justify-start items-start flex-grow relative touch-auto">
                         <div
-                            className="flex flex-col justify-start items-start flex-grow relative"
+                            className={cn(
+                                "flex-grow w-[100dvw] h-[calc(100dvh-8.2rem)] flex justify-center items-center mt-[8.2rem]",
+                                "max-mobile:flex-col-reverse",
+                            )}
                         >
-                            <div
-                                className={cn(
-                                    "flex-grow w-[100dvw] h-[calc(100dvh-8.2rem)] flex justify-center items-center mt-[8.2rem]",
-                                    "max-mobile:flex-col-reverse",
-                                )}
-                            >
-                                <div className={cn(
-                                    "w-[50%] h-full flex",
-                                    "max-mobile:w-full max-mobile:h-auto"
-                                )}>
-                                    <SVGTubes />
-                                </div>
-                                <div className={cn(
-                                    "w-[50%] h-full flex",
-                                    "max-mobile:w-full max-mobile:h-auto"
-                                )}>
-                                    <SVGBuilding />
-                                </div>
+                            <div className={cn(
+                                "w-[50%] h-full flex",
+                                "max-mobile:w-full max-mobile:h-auto"
+                            )}>
+                                <SVGTubes />
                             </div>
-                            <BlockPopUp />
-                        </div >
+                            <div className={cn(
+                                "w-[50%] h-full flex",
+                                "max-mobile:w-full max-mobile:h-auto"
+                            )}>
+                                <SVGBuilding />
+                            </div>
+                        </div>
+                        <BlockPopUp />
                     </TransformComponent>
                 </TransformWrapper >
                 {/* </Html>
