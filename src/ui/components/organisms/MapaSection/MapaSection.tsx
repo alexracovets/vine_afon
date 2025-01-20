@@ -38,7 +38,7 @@ export const MapaSection = () => {
                         >
                             <div
                                 className={cn(
-                                    "flex-grow w-[100dvw] h-[100dvh] flex justify-center items-center",
+                                    "flex-grow w-[100dvw] h-[calc(100dvh-8.2rem)] flex justify-center items-center mt-[8.2rem]",
                                     "max-mobile:flex-col-reverse",
                                 )}
                             >
