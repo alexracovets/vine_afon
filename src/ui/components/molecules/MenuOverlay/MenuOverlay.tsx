@@ -15,7 +15,7 @@ export const MenuOverlay = ({ isOpen, headerHeight, children }: MenuOverlayProps
             style={{ top: `${headerHeight}px`, height: `calc(100vh - ${headerHeight}px)` }}
             className={cn(
                 "transition-all duration-300 ease-in-out",
-                "fixed left-0 flex-grow w-full max-h-max bg-white z-1 flex",
+                "fixed left-0 flex-grow w-full max-h-max bg-white z-[10] flex",
                 isOpen ? "translate-x-0" : "translate-x-[150%]"
             )}
         >

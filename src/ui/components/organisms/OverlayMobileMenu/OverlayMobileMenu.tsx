@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-import { MenuOverlay } from "@/src/ui/components/molecules";
+import { MenuOverlay, Navigation } from "@/src/ui/components/molecules";
 import useMobileMenu from "@/store/useMobileMenu";
 import useResponsive from "@/store/useResponsive";
 import { useHeaderHeight } from "@/src/hooks";
@@ -22,7 +22,7 @@ export const OverlayMobileMenu = () => {
             isOpen={isOpenedMobileMenu}
             headerHeight={headerHeight}
         >
-            asdasd
+            <Navigation />
         </MenuOverlay>
     );
 };

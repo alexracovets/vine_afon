@@ -17,7 +17,7 @@ export const Header = () => {
                         <Link href="/#home">
                             <Logo isHeader />
                         </Link>
-                        {responsive !== "mobile" && <Navigation />}
+                        {(responsive === "desktop" || responsive === "tablet") && <Navigation />}
                         {responsive === "mobile" && <Burger />}
                     </HeaderWrapper>
                 </Container>
