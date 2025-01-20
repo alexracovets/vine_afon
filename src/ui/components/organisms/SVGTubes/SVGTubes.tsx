@@ -142,14 +142,10 @@ const currentActiveBlock = [
 ]
 
 import { cn } from "@/src/utils/cn";
-import { useEffect, useState } from "react";
-
-import useResponsive from '@/store/useResponsive';
 
 export const SVGTubes = () => {
-    const responsive = useResponsive(state => state.responsive);
-    const [viewBox, setViewBox] = useState("0 0 960 800");
-    const [mainTranslate, setMainTranslate] = useState("translate(0, 100)");
+    const viewBox = "0 0 960 800";
+    const mainTranslate = "translate(0, 100)";
 
     const midleTubeWidth = 50;
     const bendHeight = 35;
@@ -173,17 +169,6 @@ export const SVGTubes = () => {
         "fill-[#2d5b9d] stroke-[1.5px] stroke-[#091428]"
     );
     const activeTubesWidth = 1.3;
-
-
-    useEffect(() => {
-        if (responsive === "mobile") {
-            setViewBox("0 0 960 800");
-            setMainTranslate("translate(0, 0)");
-        } else {
-            setViewBox("0 0 960 800");
-            setMainTranslate("translate(0, 100)");
-        }
-    }, [responsive])
 
     return (
         <svg width="100%" height="100%" viewBox={viewBox} className="relative flex-grow h-full max-h-full overflow-visible z-[0]">

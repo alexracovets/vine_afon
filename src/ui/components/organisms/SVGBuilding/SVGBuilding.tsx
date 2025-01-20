@@ -1,27 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Building, DoorBuilding, DownBuilding, ActiveBlocks, BuildingBlocks, MainBlock } from "./AssetsBuilding";
-import useResponsive from '@/store/useResponsive';
 
 export const SVGBuilding = () => {
-    const responsive = useResponsive(state => state.responsive);
-    const [viewBox, setViewBox] = useState("0 0 960 540");
-    const [mainTranslate, setMainTranslate] = useState("translate(0, -250)");
-
-    useEffect(() => {
-        if (responsive === "mobile") {
-            console.log(responsive)
-            setViewBox("0 0 960 830");
-            setMainTranslate("translate(-50, 0)");
-        } else {
-            setViewBox("0 0 960 540");
-            setMainTranslate("translate(-50, -250)");
-        }
-    }, [responsive])
+    const viewBox = "0 0 960 800";
+    const mainTranslate = "translate(-50, -100)";
 
     return (
-        <svg width="100%" height="100%" viewBox={viewBox} className="flex-grow h-full max-h-full overflow-visible">
+        <svg width="100%" viewBox={viewBox} className="flex-grow h-full max-h-full overflow-visible">
             <g transform={mainTranslate}>
                 <g clipPath="url(#buildingClip)">
                     <BuildingBlocks />

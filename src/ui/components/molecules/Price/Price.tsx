@@ -33,17 +33,17 @@ export const Price = () => {
     return (
         <div
             className={cn(
-                "flex flex-col"
+                "flex flex-col gap-y-[1rem]",
+                "max-mobile:w-full"
             )}
         >
             <div className={cn(
-                'text-[3rem] text-regalWhite font-[300] mb-[1rem] leading-[1]',
-                'max-tablet:text-[1.6rem] max-tablet:mb-[1.2rem]',
-                'max-mobile:mb-[2.6rem]'
+                'text-[3rem] text-regalWhite font-[300] leading-[1]',
+                'max-tablet:text-[1.6rem]',
             )}>
                 Вартість: {priceTotal} $
             </div>
-            <Button variant={"destructive"} onClick={() => setActiveStatus(true)}>
+            <Button variant={"destructive"} onClick={() => setActiveStatus(true)} className="max-mobile:w-full">
                 Зробити внесок
             </Button>
         </div>

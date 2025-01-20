@@ -10,7 +10,7 @@ export const Header = () => {
     const responsive = useResponsive(state => state.responsive);
 
     return (
-        <header className='absolute left-0 top-0 w-full max-mobile:relative'>
+        <header className='absolute left-0 top-0 w-full'>
             <HeaderHeadroom>
                 <Container className="pt-[1rem] max-mobile:pt-0 max-mobile:px-0 relative">
                     <HeaderWrapper>

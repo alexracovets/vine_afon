@@ -1,6 +1,8 @@
 "use client";
 
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+// import { Canvas } from "@react-three/fiber";
+// import { Html } from "@react-three/drei";
 
 import { SVGTubes, SVGBuilding, BlockPopUp } from "@/src/ui/components/organisms";
 
@@ -14,7 +16,16 @@ export const MapaSection = () => {
         <div className="bg-[#96d55a]">
             <div
                 className="flex flex-col justify-start items-start relative flex-grow">
-
+                {/* <Canvas
+                    dpr={1}
+                >
+                    <Html
+                        as="div"
+                        zIndexRange={[0, -1]}
+                        fullscreen
+                        transform={false}
+                        wrapperClass="w-[100vw] h-[100dvh] flex"
+                        className="flex flex-col justify-start items-start relative flex-grow"> */}
                 <TransformWrapper
                     smooth={false}
                     initialScale={1}
@@ -28,18 +39,18 @@ export const MapaSection = () => {
                             <div
                                 className={cn(
                                     "flex-grow w-[100dvw] h-[100dvh] flex justify-center items-center",
-                                    "max-mobile:flex-col-reverse"
+                                    "max-mobile:flex-col-reverse",
                                 )}
                             >
                                 <div className={cn(
                                     "w-[50%] h-full flex",
-                                    "max-mobile:w-full max-mobile:h-[50dvh]"
+                                    "max-mobile:w-full max-mobile:h-auto"
                                 )}>
                                     <SVGTubes />
                                 </div>
                                 <div className={cn(
                                     "w-[50%] h-full flex",
-                                    "max-mobile:w-full max-mobile:h-[50dvh]"
+                                    "max-mobile:w-full max-mobile:h-auto"
                                 )}>
                                     <SVGBuilding />
                                 </div>
@@ -48,6 +59,8 @@ export const MapaSection = () => {
                         </div >
                     </TransformComponent>
                 </TransformWrapper >
+                {/* </Html>
+                </Canvas> */}
             </div>
         </div >
     );
