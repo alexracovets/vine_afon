@@ -19,6 +19,7 @@ export const MapaSection = () => {
                     as="div"
                     zIndexRange={[0, -1]}
                     fullscreen
+                    transform={false}
                     wrapperClass="w-full h-full flex"
                     className="flex flex-col justify-start items-start relative flex-grow">
 
@@ -26,7 +27,7 @@ export const MapaSection = () => {
                         smooth={false}
                         initialScale={1}
                         disabled={isBlockPopUp}
-                        doubleClick={{ disabled: true }} 
+                        doubleClick={{ disabled: true }}
                     >
                         <TransformComponent>
                             <div
