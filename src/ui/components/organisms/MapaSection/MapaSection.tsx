@@ -36,18 +36,18 @@ export const MapaSection = () => {
                                 <div
                                     className={cn(
                                         "flex-grow w-[100dvw] h-[100dvh] flex justify-center items-center",
-                                        "max-tablet:flex-col-reverse max-tablet:h-auto"
+                                        "max-tablet:flex-col-reverse"
                                     )}
                                 >
                                     <div className={cn(
                                         "w-[50%] h-full flex",
-                                        "max-tablet:w-full max-tablet:h-[65rem]"
+                                        "max-tablet:w-full max-tablet:h-[50dvh]"
                                     )}>
                                         <SVGTubes />
                                     </div>
                                     <div className={cn(
                                         "w-[50%] h-full flex",
-                                        "max-tablet:w-full max-tablet:h-[65rem]"
+                                        "max-tablet:w-full max-tablet:h-[50dvh]"
                                     )}>
                                         <SVGBuilding />
                                     </div>

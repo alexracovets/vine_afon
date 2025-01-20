@@ -178,8 +178,8 @@ export const SVGTubes = () => {
     useEffect(() => {
         if (responsive === "tablet" || responsive === "mobile") {
             console.log(responsive)
-            setViewBox("0 0 960 560");
-            setMainTranslate("translate(0, -50)");
+            setViewBox("0 0 960 700");
+            setMainTranslate("translate(0, 50)");
         } else {
             setViewBox("0 0 960 800");
             setMainTranslate("translate(0, 100)");
