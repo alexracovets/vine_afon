@@ -16,7 +16,7 @@ const formSchema = z.object({
 });
 
 export const FormModal = () => {
-    const setActiveStatus = useFormModal((state) => state.setActiveStatus);
+    const setResponseStatus = useFormModal((state) => state.setResponseStatus);
     const activeBlocks = useCardShop((state) => state.blocks);
     const activeLeafs = useCardShop((state) => state.leafs);
     const activeTubes = useCardShop((state) => state.tubes);
@@ -96,7 +96,7 @@ export const FormModal = () => {
         });
 
         if (response.ok) {
-            setActiveStatus(false);
+            setResponseStatus(true);
         } else {
             console.log(formData);
         }
@@ -137,7 +137,7 @@ export const FormModal = () => {
                 value={formData.message}
                 placeholder="Додаткова інформація"
             />
-            <Button variant='destructive' className='mx-auto'>Надіслати</Button>
+            <Button variant='destructive' className='mx-auto max-mobile:w-full'>Надіслати</Button>
         </form>
     );
 };
