@@ -30,8 +30,8 @@ export const FooterLinks = () => {
     const links = [
         {
             icon: <MdOutlineLocalPhone className={icoStyles} />,
-            name: "+38 (050) 352 52 36",
-            href: "tel:+380503525236"
+            name: "+38 (093) 157 57 37",
+            href: "tel:+380931575737"
         },
         {
             icon: <MdOutlineAlternateEmail className={icoStyles} />,
@@ -41,7 +41,7 @@ export const FooterLinks = () => {
         {
             icon: <IoPlanet className={icoStyles} />,
             name: "Web",
-            href: "http://www.ukraine-afon.com.ua/"
+            href: "http://www.vine-afon.com/"
         },
         {
             icon: <FaInstagram className={icoStyles} />,

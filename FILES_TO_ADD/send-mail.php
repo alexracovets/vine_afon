@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $blockList = !empty($data['blockList']) ? "<b>Цегла:</b><br>". $data['blockList'] ."<br>" : '';
     $tubesList = !empty($data['tubesList']) ? "<b>Труби:</b><br>". $data['tubesList'] ."<br>" : '';
     $leafList = !empty($data['leafList']) ? "<b>Лози:</b><br>". $data['leafList'] ."<br>" : '';
-    $mainBlock = !empty($data['mainBlock']) ? "<b>Головне міценатство :</b><br>". $data['mainBlock'] ."<br>" : '';
+    $mainBlock = !empty($data['mainBlock']) ? "<b>Головне меценатство :</b><br>". $data['mainBlock'] ."<br>" : '';
     $message = !empty($data['message']) ? "<b>Коментар:</b> ". $data['message'] ."<br>" : '';
 
     // Створюємо новий об'єкт PHPMailer

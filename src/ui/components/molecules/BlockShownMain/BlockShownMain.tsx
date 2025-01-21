@@ -88,7 +88,7 @@ export const BlockShownMain = ({ isShow, isActiveBlock, active, reserved, buyed,
                         className="flex flex-col items-center flex-grow justify-center w-full h-full gap-y-[3rem] max-mobile:gap-[2rem]"
                     >
                         <Text variant='activeBlockNumber' className="text-center leading-[1] max-mobile:text-[3rem]">
-                            Стати головним міценатом  - {price} €
+                            Стати головним меценатом  - {price} €
                         </Text>
                         {active && !isСhosen &&
                             <>
