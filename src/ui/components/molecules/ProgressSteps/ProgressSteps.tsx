@@ -12,7 +12,7 @@ export const ProgressSteps = () => {
         },
         {
             number: 2,
-            value: "Забронюй",
+            value: "Посади",
         },
         {
             number: 3,

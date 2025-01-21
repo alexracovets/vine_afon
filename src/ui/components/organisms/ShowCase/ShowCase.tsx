@@ -20,15 +20,67 @@ export const ShowCase = () => {
     const slides = [
         {
             name: "slide0",
-            image: "slide_0.jpg",
+            image: "0.jpg",
         },
         {
             name: "slide1",
-            image: "slide_1.jpg",
+            image: "1.jpg",
         },
         {
             name: "slide2",
-            image: "slide_2.jpg",
+            image: "2.jpg",
+        },
+        {
+            name: "slide3",
+            image: "3.jpg",
+        },
+        {
+            name: "slide4",
+            image: "4.jpg",
+        },
+        {
+            name: "slide5",
+            image: "5.jpg",
+        },
+        {
+            name: "slide6",
+            image: "6.jpg",
+        },
+        {
+            name: "slide7",
+            image: "7.jpg",
+        },
+        {
+            name: "slide8",
+            image: "8.jpg",
+        },
+        {
+            name: "slide9",
+            image: "9.jpg",
+        },
+        {
+            name: "slide10",
+            image: "10.jpg",
+        },
+        {
+            name: "slide11",
+            image: "11.jpg",
+        },
+        {
+            name: "slide12",
+            image: "12.jpg",
+        },
+        {
+            name: "slide13",
+            image: "13.jpg",
+        },
+        {
+            name: "slide14",
+            image: "14.jpg",
+        },
+        {
+            name: "slide15",
+            image: "15.jpg",
         }
     ];
 
