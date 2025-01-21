@@ -1,8 +1,6 @@
 "use client";
 
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-// import { Canvas } from "@react-three/fiber";
-// import { Html } from "@react-three/drei";
 
 import { SVGTubes, SVGBuilding, BlockPopUp } from "@/src/ui/components/organisms";
 
@@ -16,16 +14,6 @@ export const MapaSection = () => {
         <div className="bg-[#96d55a]" >
             <div
                 className="flex flex-col justify-start items-start relative flex-grow">
-                {/* <Canvas
-                    dpr={1}
-                >
-                    <Html
-                        as="div"
-                        zIndexRange={[0, -1]}
-                        fullscreen
-                        transform={false}
-                        wrapperClass="w-[100vw] h-[100dvh] flex"
-                        className="flex flex-col justify-start items-start relative flex-grow"> */}
                 <TransformWrapper
                     initialScale={1}
                     disabled={isBlockPopUp}
@@ -55,8 +43,6 @@ export const MapaSection = () => {
                         <BlockPopUp />
                     </TransformComponent>
                 </TransformWrapper >
-                {/* </Html>
-                </Canvas> */}
             </div>
         </div >
     );
