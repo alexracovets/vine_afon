@@ -12,3 +12,4 @@ export { type BlockPositionType } from './BlockPositionType';
 export { type MyFormData } from './MyFormData';
 export { type BlockActiveData } from './BlockActiveData';
 export { type MainBlockPositionType } from './MainBlockPositionType';
+export { type MainBlockData } from './MainBlockData';

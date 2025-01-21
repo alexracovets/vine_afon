@@ -8,16 +8,17 @@ export const CardsIems = () => {
     const activeTubes = useCardShop((state) => state.tubes);
     const activeLeafs = useCardShop((state) => state.leafs);
     const activeBlocks = useCardShop((state) => state.blocks);
+    const activeMainBlock = useCardShop((state) => state.mainBlock);
 
     return (
         <div className={cn(
             'flex justify-start items-center gap-[2rem]',
-            'max-tablet:gap-[1.2rem]',
-            'max-mobile:mb-[1rem] max-mobile:w-full max-mobile:gap-0 max-mobile:flex-wrap max-mobile:items-start'
+            'max-tablet:gap-[2rem] max-tablet:flex-wrap',
+            'max-mobile:mb-[1rem] max-mobile:w-full max-mobile:gap-0 max-mobile:items-start'
         )}>
             <CardItem
                 image={"/jpg/tube.jpg"}
-                alt="leaf"
+                alt="tube"
                 value={activeTubes}
             />
             <CardItem
@@ -27,8 +28,13 @@ export const CardsIems = () => {
             />
             <CardItem
                 image={"/jpg/block.jpg"}
-                alt="leaf"
+                alt="block"
                 value={activeBlocks}
+            />
+            <CardItem
+                image={"/jpg/cup.jpg"}
+                alt="cup"
+                value={activeMainBlock}
             />
         </div >
     );

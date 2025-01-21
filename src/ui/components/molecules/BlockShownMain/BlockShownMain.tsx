@@ -18,8 +18,9 @@ interface BlockShownMainProps {
 
 export const BlockShownMain = ({ isShow, isActiveBlock, active, reserved, buyed, closePopUp }: BlockShownMainProps) => {
     const price = useCardShop((state) => state.priceBlockMain);
-    const block = useCardShop((state) => state.mainBlock);
-    const setMainBlock = useCardShop((state) => state.setMainBlock);
+    const block = useCardShop((state) => state.mainBlock[0]);
+    const setMainBlock = useCardShop((state) => state.addMainBlock);
+    const removeBlock = useCardShop((state) => state.removeMainBlock);
     const [isСhosen, setIsСhosen] = useState(false);
     const [InputValue, setInputValue] = useState('');
     const [firstClick, setFirstClick] = useState(false);
@@ -55,6 +56,7 @@ export const BlockShownMain = ({ isShow, isActiveBlock, active, reserved, buyed,
             name: '',
             status: 'active',
         });
+        removeBlock();
         setIsСhosen(false);
         setFirstClick(false);
         setInputValue('');

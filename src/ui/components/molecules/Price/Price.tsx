@@ -12,9 +12,11 @@ export const Price = () => {
     const blocks = useCardShop((state) => state.blocks);
     const tubes = useCardShop((state) => state.tubes);
     const leafs = useCardShop((state) => state.leafs);
+    const mainBlock = useCardShop((state) => state.mainBlock);
     const priceBlock = useCardShop((state) => state.priceBlock);
     const priceTube = useCardShop((state) => state.priceTube);
     const priceLeaf = useCardShop((state) => state.priceLeaf);
+    const priceBlockMain = useCardShop((state) => state.priceBlockMain);
 
     const [priceTotal, setPriceTotal] = useState(0);
 
@@ -26,14 +28,16 @@ export const Price = () => {
         setPriceTotal(
             blocks.length * priceBlock +
             tubes.length * priceTube +
-            leafs.length * priceLeaf
+            leafs.length * priceLeaf +
+            mainBlock.length * priceBlockMain
         );
-    }, [blocks, tubes, leafs, priceBlock, priceTube, priceLeaf])
+    }, [blocks, tubes, leafs, mainBlock, priceBlock, priceTube, priceLeaf, priceBlockMain])
 
     return (
         <div
             className={cn(
                 "flex flex-col gap-y-[1rem]",
+                "max-tablet:w-[31.8rem]",
                 "max-mobile:w-full"
             )}
         >

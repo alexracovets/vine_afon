@@ -1,17 +1,12 @@
-import { LeafData, TubeData, BlockActiveData } from "@/src/types";
+import { LeafData, TubeData, BlockActiveData, MainBlockData } from "@/src/types";
 import { create } from "zustand";
-import { immer } from "zustand/middleware/immer";
-
-interface MainBlockData {
-    name: string;
-    status: 'active' | 'reserved' | 'buyed';
-}
+import { immer } from "zustand/middleware/immer"; 
 
 interface CardShopState {
     tubes: TubeData[];
     leafs: LeafData[];
     blocks: BlockActiveData[];
-    mainBlock: MainBlockData;
+    mainBlock: MainBlockData[];
     priceBlock: number;
     priceBlockMain: number;
     priceTube: number;
@@ -22,17 +17,15 @@ interface CardShopState {
     removeLeaf: (leaf: LeafData) => void;
     addBlock: (block: BlockActiveData) => void;
     removeBlock: (block: BlockActiveData) => void;
-    setMainBlock: (block: MainBlockData) => void;
+    addMainBlock: (block: MainBlockData) => void;
+    removeMainBlock: () => void;
 }
 
 const useCardShop = create<CardShopState>()(immer((set) => ({
     tubes: [],
     leafs: [],
     blocks: [],
-    mainBlock: {
-        name: '',
-        status: 'active',
-    },
+    mainBlock: [],
     priceBlock: 10000,
     priceBlockMain: 150000,
     priceTube: 500,
@@ -55,8 +48,11 @@ const useCardShop = create<CardShopState>()(immer((set) => ({
     removeBlock: (block) => set((state) => {
         state.blocks = state.blocks.filter((t) => t.id !== block.id);
     }),
-    setMainBlock: (block) => set((state) => {
-        state.mainBlock = block;
+    addMainBlock: (block) => set((state) => {
+        state.mainBlock.push(block);
+    }),
+    removeMainBlock: () => set((state) => {
+        state.mainBlock = [];
     })
 })))
 

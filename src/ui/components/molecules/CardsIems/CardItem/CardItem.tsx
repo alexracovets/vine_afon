@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 
 import { ImageAtom } from "@/src/ui/components/atoms";
 import { cn } from "@/src/utils/cn";
-import { BlockActiveData, LeafData, TubeData } from "@/src/types";
+import { BlockActiveData, LeafData, TubeData, MainBlockData } from "@/src/types";
 
 
 interface CardItemProps {
     image: string;
     alt: string;
-    value: LeafData[] | TubeData[] | BlockActiveData[];
+    value: LeafData[] | TubeData[] | BlockActiveData[] | MainBlockData[];
 };
 
 export const CardItem = ({ image, alt, value }: CardItemProps) => {
@@ -26,7 +26,7 @@ export const CardItem = ({ image, alt, value }: CardItemProps) => {
             <div
                 className={cn(
                     "flex justify-start items-center gap-x-[1rem] h-[9rem] min-w-[21rem]",
-                    "max-tablet:min-w-[13rem] max-tablet:h-[5rem]",
+                    "max-tablet:min-w-[15rem] max-tablet:h-[5rem]",
                     "max-mobile:w-[50%]"
                 )}
             >

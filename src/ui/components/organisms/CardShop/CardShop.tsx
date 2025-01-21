@@ -21,7 +21,8 @@ export const CardShop = () => {
     return (
         <Container className={cn(
             "absolute left-0 bottom-0 z-[1] p-[1rem] overflow-hidden pt-[5rem] pointer-events-none",
-            "max-mobile:p-0 max-mobile:pt-[5rem]",
+            "max-tablet:pb-0",
+            "max-mobile:pt-[5rem]",
             "transform transition-opacity duration-300",
             isBlockPopUp ? "opacity-0 pointer-events-none" : "opacity-100"
         )}>
