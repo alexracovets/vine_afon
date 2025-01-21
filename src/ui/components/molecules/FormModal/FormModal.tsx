@@ -20,6 +20,8 @@ export const FormModal = () => {
     const activeBlocks = useCardShop((state) => state.blocks);
     const activeLeafs = useCardShop((state) => state.leafs);
     const activeTubes = useCardShop((state) => state.tubes);
+    const activeBlockMain = useCardShop((state) => state.mainBlock);
+
     const [errors, setErrors] = useState<Record<string, string | undefined>>({});
 
     const [formData, setFormData] = useState<MyFormData>({
@@ -30,10 +32,11 @@ export const FormModal = () => {
         message: '',
         blockList: '',
         leafList: '',
-        tubesList: ''
+        tubesList: '',
+        mainBlock: '',
     });
 
-    useFormLists(activeBlocks, activeLeafs, activeTubes, setFormData);
+    useFormLists(activeBlocks, activeLeafs, activeTubes, activeBlockMain, setFormData);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = event.target;
@@ -87,7 +90,8 @@ export const FormModal = () => {
                 message: formData.message,
                 blockList: formData.blockList,
                 leafList: formData.leafList,
-                tubesList: formData.tubesList
+                tubesList: formData.tubesList,
+                mainBlock: formData.mainBlock
             }),
         });
 

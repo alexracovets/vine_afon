@@ -7,4 +7,5 @@ export interface MyFormData {
     blockList: string | null;
     leafList: string | null;
     tubesList: string | null;
+    mainBlock: string | null;
 }

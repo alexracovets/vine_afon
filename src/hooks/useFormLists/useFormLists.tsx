@@ -1,4 +1,4 @@
-import { MyFormData } from "@/src/types";
+import { MyFormData, MainBlockData } from "@/src/types";
 import { useEffect } from "react";
 
 interface BlockType {
@@ -8,11 +8,11 @@ interface BlockType {
     col?: number;
 }
 
-
 export function useFormLists(
     activeBlocks: BlockType[],
     activeLeafs: BlockType[],
     activeTubes: BlockType[],
+    activeBlockMain: MainBlockData[],
     setFormData: React.Dispatch<React.SetStateAction<MyFormData>>
 ) {
     useEffect(() => {
@@ -50,6 +50,22 @@ export function useFormLists(
         }
 
     }, [activeLeafs, setFormData]);
+
+    useEffect(() => {
+        if (activeBlockMain.length > 0) {
+            const mainBlock = `Користувач виявив бажання стати головним меценатом на Ім'я ${activeBlockMain[0].name}`;
+            setFormData((prev) => ({
+                ...prev,
+                mainBlock: mainBlock,
+            }));
+        } else {
+            setFormData((prev) => ({
+                ...prev,
+                mainBlock: null,
+            }));
+        }
+
+    }, [activeBlockMain, setFormData]);
 
     useEffect(() => {
         if (activeTubes.length > 0) {
