@@ -11,15 +11,9 @@ const config: Config = {
 				mobile: '768px'
 			},
 			fontFamily: {
-				dm: [
-					'var(--font-dm)'
+				montserrat: [
+					'var(--font-montserrat)'
 				],
-				bebas: [
-					'var(--font-bebas)'
-				],
-				brains: [
-					'var(--font-brains)'
-				]
 			},
 			colors: {
 				regalWhite: '#FFFFFF',

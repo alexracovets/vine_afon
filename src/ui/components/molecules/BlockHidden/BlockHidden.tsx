@@ -20,7 +20,7 @@ export const BlockHidden = ({ isActiveBlock, active, reserved, buyed }: BlockHid
                         isActiveBlock ? "opacity-0" : "opacity-100",
                     )}
                 >
-                    <Text variant={'activeBlock'} className={cn(
+                    <Text variant='activeBlock' className={cn(
                         "text-white",
                         "max-tablet:text-[.6rem]",
                         "max-mobile:text-[.4rem]"

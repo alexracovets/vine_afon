@@ -11,7 +11,7 @@ interface TextProps extends VariantProps<typeof textVariants> {
 }
 
 const textVariants = cva(
-    "",
+    "font-montserrat",
     {
         variants: {
             variant: {
@@ -51,7 +51,7 @@ const textVariants = cva(
                     "text-[5rem] font-[600] text-[#efbf04] leading-[1]",
                 ),
                 activeBlock: cn(
-                    "text-[1rem] font-[600] textShadow leading-[1]",
+                    "text-[1rem] font-[600] textShadow leading-[1] font-dm",
                 ),
                 activeBlockMain: cn(
                     "text-[2rem] font-[600] textShadow text-center leading-[1.2]",
