@@ -35,8 +35,8 @@ export const FooterLinks = () => {
         },
         {
             icon: <MdOutlineAlternateEmail className={icoStyles} />,
-            name: "pilgrimage_center@ukr.net",
-            href: "mailto:pilgrimage_center@ukr.net"
+            name: "Klimov.Sergiy@gmail.com",
+            href: "mailto:Klimov.Sergiy@gmail.com"
         },
         {
             icon: <IoPlanet className={icoStyles} />,
