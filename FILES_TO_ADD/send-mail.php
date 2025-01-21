@@ -33,19 +33,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
+    // $mail->Username = 'alexracovets@gmail.com';
+    // $mail->Password = 'mngv tbjw rzmv dspn';
     $mail->Username = 'ukraineafon@gmail.com';
     $mail->Password = 'jhpj bluv byzr retp';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 
     // Від кого лист 
-    $mail->setFrom('ukraineafon@gmail.com', ' GORA');
+    // $mail->setFrom('alexracovets@gmail.com', ' Vine of Athos');
+    $mail->setFrom('ukraineafon@gmail.com', ' Vine of Athos');
 
     // Кому лист
-    $mail->addAddress('ukraineafon@gmail.com', ' GORA');
+    // $mail->addAddress('alexracovets@gmail.com', ' Vine of Athos');
+    $mail->addAddress('ukraineafon@gmail.com', ' Vine of Athos');
 
     // Тема листа
-    $mail->Subject = 'Заявка з сайту GORA';
+    $mail->Subject = 'Заявка з сайту Vine of Athos';
 
     // Тіло листа
     $mail->Body =
