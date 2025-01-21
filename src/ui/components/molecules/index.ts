@@ -17,3 +17,4 @@ export { BlockHidden } from './BlockHidden';
 export { BlockShown } from './BlockShown';
 export { FormModal } from './FormModal';
 export { BlockHiddenMain } from './BlockHiddenMain';
+export { BlockShownMain } from './BlockShownMain';

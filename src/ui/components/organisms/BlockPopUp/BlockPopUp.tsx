@@ -86,7 +86,7 @@ export const BlockPopUp = () => {
                     )
                 })
             }
-            <BlockPopUpMain />
+            <BlockPopUpMain closePopUp={closePopUp} />
             <PopupBlockBG closePopUp={closePopUp} />
         </>
     );

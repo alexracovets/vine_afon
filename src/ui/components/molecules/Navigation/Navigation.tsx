@@ -28,8 +28,8 @@ export const Navigation = () => {
     ];
 
     return (
-        <nav>
-            <ul className="flex max-mobile:flex-col">
+        <nav className="max-mobile:w-full max-mobile:flex">
+            <ul className="flex max-mobile:flex-col max-mobile:w-full max-mobile:justify-center max-mobile:flex-grow">
                 {links.map((link, idx) => (
                     <NavigationLink key={idx} name={link.name} href={link.href} frame={link.frame} />
                 ))}

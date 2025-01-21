@@ -41,7 +41,7 @@ export const Price = () => {
                 'text-[3rem] text-regalWhite font-[300] leading-[1]',
                 'max-tablet:text-[1.6rem]',
             )}>
-                Вартість: {priceTotal} $
+                Вартість: {priceTotal} €
             </div>
             <Button variant={"destructive"} onClick={() => setActiveStatus(true)} className="max-mobile:w-full">
                 Зробити внесок

@@ -1,15 +1,6 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
-import { BlockPositionType } from "@/src/types";
-
-interface MainBlockPositionType {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    name: string;
-    status: string;
-}
+import { BlockPositionType, MainBlockPositionType } from "@/src/types";
 
 interface MobileMenuState {
     mainBlock: MainBlockPositionType;
@@ -30,7 +21,7 @@ const useBlockPosition = create<MobileMenuState>()(immer((set) => ({
         y: 0,
         width: 0,
         height: 0,
-        name: "Ваше Ім'я",
+        name: "",
         status: "active",
     },
     blocks: [],

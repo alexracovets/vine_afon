@@ -2,11 +2,18 @@ import { LeafData, TubeData, BlockActiveData } from "@/src/types";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
+interface MainBlockData {
+    name: string;
+    status: 'active' | 'reserved' | 'buyed';
+}
+
 interface CardShopState {
     tubes: TubeData[];
     leafs: LeafData[];
     blocks: BlockActiveData[];
+    mainBlock: MainBlockData;
     priceBlock: number;
+    priceBlockMain: number;
     priceTube: number;
     priceLeaf: number;
     addTube: (tube: TubeData) => void;
@@ -15,15 +22,21 @@ interface CardShopState {
     removeLeaf: (leaf: LeafData) => void;
     addBlock: (block: BlockActiveData) => void;
     removeBlock: (block: BlockActiveData) => void;
+    setMainBlock: (block: MainBlockData) => void;
 }
 
 const useCardShop = create<CardShopState>()(immer((set) => ({
     tubes: [],
     leafs: [],
     blocks: [],
-    priceBlock: 100,
-    priceTube: 200,
-    priceLeaf: 300,
+    mainBlock: {
+        name: '',
+        status: 'active',
+    },
+    priceBlock: 10000,
+    priceBlockMain: 150000,
+    priceTube: 500,
+    priceLeaf: 1000,
     addTube: (tube) => set((state) => {
         state.tubes.push(tube)
     }),
@@ -42,6 +55,9 @@ const useCardShop = create<CardShopState>()(immer((set) => ({
     removeBlock: (block) => set((state) => {
         state.blocks = state.blocks.filter((t) => t.id !== block.id);
     }),
+    setMainBlock: (block) => set((state) => {
+        state.mainBlock = block;
+    })
 })))
 
 export default useCardShop;

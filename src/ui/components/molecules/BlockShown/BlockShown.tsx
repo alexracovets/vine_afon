@@ -5,9 +5,8 @@ import { MdClose } from "react-icons/md";
 
 import { Text, Input, Button } from "@/src/ui/components/atoms";
 import { BlockPositionType } from "@/src/types";
-import { cn } from "@/src/utils/cn";
-
 import useCardShop from "@/store/useCardShop";
+import { cn } from "@/src/utils/cn";
 
 interface BlockShownProps {
     isShow: boolean;
@@ -22,6 +21,7 @@ interface BlockShownProps {
 
 export const BlockShown = ({ isShow, isActiveBlock, active, reserved, buyed, block, idx, closePopUp }: BlockShownProps) => {
     const blocks = useCardShop((state) => state.blocks);
+    const price = useCardShop((state) => state.priceBlock);
     const addBlock = useCardShop((state) => state.addBlock);
     const removeBlock = useCardShop((state) => state.removeBlock);
     const [InputValue, setInputValue] = useState('');
@@ -41,6 +41,14 @@ export const BlockShown = ({ isShow, isActiveBlock, active, reserved, buyed, blo
             setInputValue('');
         } else {
             setFirstClick(true);
+            if (InputValue.length >= 3) {
+                addBlock({
+                    name: InputValue,
+                    id: block.id,
+                });
+                setFirstClick(false);
+                setInputValue('');
+            }
         }
     }
 
@@ -70,6 +78,7 @@ export const BlockShown = ({ isShow, isActiveBlock, active, reserved, buyed, blo
                         "relative flex-grow h-full",
                         "transition-opacity duration-300 ease-in-out",
                         "px-[3rem] py-[2rem]",
+                        "max-mobile:p-[1rem]",
                         isActiveBlock ? "opacity-100" : "opacity-0"
                     )}
                 >
@@ -77,14 +86,14 @@ export const BlockShown = ({ isShow, isActiveBlock, active, reserved, buyed, blo
                         <MdClose color='#6a2841' className='w-[4rem] h-[4rem]' />
                     </button>
                     <div
-                        className="flex flex-col items-center flex-grow justify-center w-full h-full gap-y-[2rem]"
+                        className="flex flex-col items-center flex-grow justify-center w-full h-full gap-y-[3rem] max-mobile:gap-[2rem]"
                     >
-                        <Text variant='activeBlockNumber'>
-                            Комірка №{idx + 1}
+                        <Text variant='activeBlockNumber' className="text-center leading-[1] max-mobile:text-[3rem]">
+                            Цеглина №{idx + 1} - {price} €
                         </Text>
                         {active && !isСhosen &&
                             <>
-                                <Text variant='activeBlockName'>
+                                <Text variant='activeBlockName' className="text-center max-mobile:text-[2rem]">
                                     Введіть ім&#39;я для резерву:
                                 </Text>
                                 <form
@@ -92,14 +101,14 @@ export const BlockShown = ({ isShow, isActiveBlock, active, reserved, buyed, blo
                                     className="flex flex-col gap-y-[2rem] w-full justify-center items-center mt-[2rem]"
                                 >
                                     <Input type='text' placeholder='Ім`я' value={InputValue} onChange={(e) => setInputValue(e.target.value)} />
-                                    {isError && <Text variant='popUpError'>Ведіть будь-ласка Ім&#39;я</Text>}
+                                    {isError && <Text variant='popUpError'>Введіть будь-ласка Ім&#39;я</Text>}
                                     <Button variant={"destructive"} disabled={isError}>Зарезервувати</Button>
                                 </form>
                             </>
                         }
                         {
                             active && isСhosen && <>
-                                <Text variant='activeBlockName'>Дякуємо за вибір!</Text>
+                                <Text variant='activeBlockName'>Дякуємо за Ваш вклад!</Text>
                                 <Button variant={"destructive"} onClick={() => changeChose()}>Скасувати рішення?</Button>
                             </>
                         }

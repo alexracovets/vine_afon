@@ -1,23 +1,34 @@
 "use client";
 
+import { useControls } from "react-zoom-pan-pinch"; 
+
+import { BlockHiddenMain, BlockShownMain } from "@/src/ui/components/molecules";
 import { PopUpBlockWrapperMain } from "@/src/ui/components/atoms";
-import { BlockHiddenMain } from "@/src/ui/components/molecules";
 import useBlockPosition from "@/store/useBlockPosition";
 
-export const BlockPopUpMain = () => {
+interface BlockPopUpMainProps {
+    closePopUp: () => void;
+}
+
+export const BlockPopUpMain = ({ closePopUp }: BlockPopUpMainProps) => {
     const isActive = useBlockPosition((state) => state.isMainBlockActive);
     const mainBlock = useBlockPosition((state) => state.mainBlock);
     const openPopUp = useBlockPosition((state) => state.setMainBlockActive);
+    const popUpActiver = useBlockPosition((state) => state.isActive);
     const setBlockPopUp = useBlockPosition((state) => state.setIsActive);
+    const { resetTransform } = useControls();
 
     const active = mainBlock.status === 'active';
     const reserved = mainBlock.status === 'reserved';
     const buyed = mainBlock.status === 'buyed';
 
     const openBlockPopUp = () => {
-        setBlockPopUp(true);
         openPopUp(true);
-    }
+        resetTransform();
+        setTimeout(() => {
+            setBlockPopUp(true);
+        }, 500);
+    };
 
     return (
         <PopUpBlockWrapperMain
@@ -33,6 +44,14 @@ export const BlockPopUpMain = () => {
                 active={active}
                 reserved={reserved}
                 buyed={buyed}
+            />
+            <BlockShownMain
+                isShow={popUpActiver}
+                isActiveBlock={isActive}
+                active={active}
+                reserved={reserved}
+                buyed={buyed}
+                closePopUp={closePopUp}
             />
         </PopUpBlockWrapperMain>
     );

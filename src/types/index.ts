@@ -11,3 +11,4 @@ export { type BlockData } from './models';
 export { type BlockPositionType } from './models';
 export { type MyFormData } from './models';
 export { type BlockActiveData } from './models';
+export { type MainBlockPositionType } from './models';
