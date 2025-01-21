@@ -23,7 +23,7 @@ export const BlockHidden = ({ isActiveBlock, active, reserved, buyed }: BlockHid
                     <Text variant='activeBlock' className={cn(
                         "text-white",
                         "max-tablet:text-[.6rem]",
-                        "max-mobile:text-[.4rem]"
+                        "max-mobile:text-[.5rem]"
                     )}>
                         {active && "Доступно"}
                         {reserved && "Резерв"}
