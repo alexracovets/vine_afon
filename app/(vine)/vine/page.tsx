@@ -5,8 +5,8 @@ export default function Mapa() {
     <div
       className="h-[100dvh] overflow-hidden"
     >
-      <MapaSection />
-      <CardShop />
+      <MapaSection key="mapa-section" />
+      <CardShop key="card-shop" />
     </div>
   );
 };

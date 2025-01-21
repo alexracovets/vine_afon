@@ -3,7 +3,7 @@
 import { ReactNode } from "react";
 
 import { Footer, Header, OverlayMobileMenu, FormPopUp } from "@/src/ui/components/organisms";
-// import { Loader, } from "@/src/ui/components/organisms";
+import { Loader, } from "@/src/ui/components/organisms";
 import { useCheckModal, useCheckResponsive } from "@/src/hooks";
 import { montserrat } from "@/src/ui/foundation/fonts";
 
@@ -18,7 +18,7 @@ export const VinelandLayout = ({ children }: VinelandLayoutProps) => {
     return (
         <html lang="en">
             <body className={`${montserrat.variable} ${montserrat.className} antialiased`}>
-                {/* <Loader /> */}
+                <Loader />
                 <Header />
                 <main>
                     {children}

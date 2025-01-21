@@ -9,9 +9,10 @@ interface FillImageProps {
     alt: string;
     className?: string;
     cover?: boolean;
+    onLoad?: () => void;
 };
 
-export const ImageAtom = ({ src, alt, className, cover }: FillImageProps) => {
+export const ImageAtom = ({ src, alt, className, cover, onLoad }: FillImageProps) => {
     return (
         <Image
             src={src}
@@ -19,6 +20,7 @@ export const ImageAtom = ({ src, alt, className, cover }: FillImageProps) => {
             fill
             priority
             sizes="100%"
+            onLoad={onLoad}
             className={cn(
                 "object-center select-none pointer-events-none z-[-1]",
                 cover ? "object-cover" : "object-contain",

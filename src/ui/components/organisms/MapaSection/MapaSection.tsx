@@ -1,14 +1,24 @@
 "use client";
 
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { memo, useEffect } from "react";
 
 import { SVGTubes, SVGBuilding, BlockPopUp } from "@/src/ui/components/organisms";
 
 import useBlockPosition from "@/store/useBlockPosition";
+import useLoaderStore from '@/store/useLoaderStore';
 import { cn } from "@/src/utils/cn";
 
-export const MapaSection = () => {
+export const MapaSection = memo(() => {
     const isBlockPopUp = useBlockPosition((state) => state.isActive);
+    const setIsVineIsLoad = useLoaderStore(state => state.setIsVineIsLoad);
+
+    useEffect(() => {
+        setIsVineIsLoad(true);
+        return () => {
+            setIsVineIsLoad(false);
+        };
+    }, [setIsVineIsLoad]);
 
     return (
         <div className="bg-[#96d55a]" >
@@ -46,4 +56,6 @@ export const MapaSection = () => {
             </div>
         </div >
     );
-};
+});
+
+MapaSection.displayName = "MapaSection";
