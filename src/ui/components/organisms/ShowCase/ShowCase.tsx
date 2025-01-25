@@ -28,16 +28,7 @@ export const ShowCase = () => {
         { name: "slide3", image: "3.jpg" },
         { name: "slide4", image: "4.jpg" },
         { name: "slide5", image: "5.jpg" },
-        { name: "slide6", image: "6.jpg" },
-        { name: "slide7", image: "7.jpg" },
-        { name: "slide8", image: "8.jpg" },
-        { name: "slide9", image: "9.jpg" },
-        { name: "slide10", image: "10.jpg" },
-        { name: "slide11", image: "11.jpg" },
-        { name: "slide12", image: "12.jpg" },
-        { name: "slide13", image: "13.jpg" },
-        { name: "slide14", image: "14.jpg" },
-        { name: "slide15", image: "15.jpg" },
+        { name: "slide6", image: "6.jpg" }
     ];
 
     const handleImageLoad = () => {

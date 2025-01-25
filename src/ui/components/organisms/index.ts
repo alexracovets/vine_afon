@@ -1,3 +1,4 @@
+export { OrganizersSection } from './OrganizersSection';
 export { OverlayMobileMenu } from './OverlayMobileMenu';
 export { StartSection } from './StartSection';
 export { WorkSection } from './WorkSection';
