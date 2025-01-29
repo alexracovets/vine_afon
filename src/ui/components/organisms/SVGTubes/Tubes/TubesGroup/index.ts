@@ -1,1 +1,0 @@
-export { TubesGroup } from "./TubesGroup";

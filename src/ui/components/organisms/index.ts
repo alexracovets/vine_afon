@@ -12,8 +12,10 @@ export { Header } from './Header';
 export { Footer } from './Footer';
 export { Loader } from './Loader';
 
-export { SVGBuilding } from './SVGBuilding';
-export { SVGTubes } from './SVGTubes';
 export { CardShop } from './CardShop';
 export { FormPopUp } from './FormPopUp';
 export { BlockPopUpMain } from './BlockPopUpMain';
+
+
+export { TubesSection } from './TubesSection';
+export { HomeSection } from './HomeSection';

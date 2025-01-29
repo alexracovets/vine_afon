@@ -23,10 +23,10 @@ export const PopUpBlockWrapper = ({ openPopUp, isActiveBlock, block, active, res
     return (
         <dialog
             className={cn(
-                "absolute transition-[transform left top width height] ease-in flex justify-center items-center will-change-contents outline",
+                "absolute transition-all duration-500 ease-in flex justify-center items-center will-change-contents outline",
                 isActiveBlock ?
-                    "duration-500 z-[10] rounded-[2rem]  outline-[.5rem] outline-[#efbf04]" :
-                    "duration-300 z-[0] rounded-[.1rem] outline-[1px] outline-regalMain cursor-pointer",
+                    "z-[10] rounded-[2rem] outline-[.5rem] outline-[#efbf04]" :
+                    "z-[0] rounded-[.1rem] outline-[1px] outline-regalMain cursor-pointer",
                 active && "bg-[#247616]",
                 reserved && "bg-[#1f2b1d]",
                 buyed && "bg-[#7b8618]",

@@ -41,12 +41,12 @@ export const FooterLinks = () => {
         {
             icon: <IoPlanet className={icoStyles} />,
             name: "Web",
-            href: "http://www.vine-afon.com/"
+            href: "https://www.ukraine-afon.com.ua/"
         },
         {
             icon: <FaInstagram className={icoStyles} />,
             name: "Instagram",
-            href: "https://www.instagram.com/vvzbir_afon?igsh=cXFwanQ3Y3ByMnNo"
+            href: "https://www.instagram.com/vine.afon/?igsh=aHdvNXRsNG54dDFk#"
         }
     ];
 

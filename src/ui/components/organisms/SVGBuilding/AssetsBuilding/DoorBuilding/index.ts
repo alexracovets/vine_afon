@@ -1,1 +1,0 @@
-export { DoorBuilding } from './DoorBuilding';

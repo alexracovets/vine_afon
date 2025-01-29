@@ -93,3 +93,44 @@ html {
     inset 0px 0px 5px rgb(255 255 255 / 50%),
     0px 0px 5px rgb(76 71 28);
 }
+
+.wave {
+  position: relative;
+  outline: 0;
+  overflow: hidden;
+  background-color: rgb(73 131 255);
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    height: 300%;
+    width: 200%;
+    transition: all ease-out 5s;
+  }
+
+  &::after {
+    bottom: -50%;
+    left: -50%;
+    border-radius: 70%;
+    background: #f8f8f8be;
+    transform: scaleY(.5);
+  }
+
+  &::before {
+    bottom: -60%;
+    left: -60%;
+    border-radius: 50%;
+    background: #f8f8f862;
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+  100% {
+    transform: translateY(-100%) rotate(360deg);
+  }
+}

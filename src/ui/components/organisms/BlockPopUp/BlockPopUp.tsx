@@ -45,7 +45,6 @@ export const BlockPopUp = () => {
             resetTransform();
         }
     }, [isActive]);
-
     return (
         <>
             {

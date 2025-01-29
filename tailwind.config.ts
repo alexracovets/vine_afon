@@ -7,7 +7,7 @@ const config: Config = {
 	theme: {
 		extend: {
 			screens: {
-				tablet: '1030px',
+				tablet: '1025px',
 				mobile: '768px'
 			},
 			fontFamily: {
@@ -19,7 +19,14 @@ const config: Config = {
 				regalWhite: '#FFFFFF',
 				regalBlack: '#171717',
 				regalMain: '#6a2841',
-				bgDialog: 'rgba(55,65,81,.3)'
+				bgDialog: 'rgba(55,65,81,.3)',
+				tubes: {
+					normal: 'rgb(45, 91, 157)',
+					stroke: 'rgb(9, 20, 40)'
+				},
+				blocks: {
+					stroke: '#9E818C',
+				}
 			},
 			keyframes: {
 				'accordion-down': {
@@ -47,7 +54,10 @@ const config: Config = {
 				'svg': '3px 4px 4px #00000040',
 				'leaf': "2px 4px 0 #00000040",
 				'leaf-active': "2px 4px 0 #00000000"
-			}
+			},
+			backgroundImage: {
+				'dash-tube': 'linear-gradient(0deg, rgb(0 60 100) 0%, rgb(45, 91, 157) 30%, rgb(45, 91, 157) 70%, rgb(0 60 100) 100%)',
+			},
 		}
 	},
 	plugins: [tailwindcssAnimate],

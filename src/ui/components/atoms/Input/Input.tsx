@@ -5,7 +5,7 @@ import { cn } from "@/src/utils/cn";
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     type: string;
     placeholder: string;
-    value?: string;
+    value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     className?: string;
 }

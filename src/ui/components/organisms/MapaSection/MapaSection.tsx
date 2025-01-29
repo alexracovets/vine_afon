@@ -3,7 +3,7 @@
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { memo, useEffect } from "react";
 
-import { SVGTubes, SVGBuilding, BlockPopUp } from "@/src/ui/components/organisms";
+import { BlockPopUp, TubesSection, HomeSection } from "@/src/ui/components/organisms";
 
 import useBlockPosition from "@/store/useBlockPosition";
 import useLoaderStore from '@/store/useLoaderStore';
@@ -34,21 +34,11 @@ export const MapaSection = memo(() => {
                         <div
                             className={cn(
                                 "flex-grow w-[100dvw] h-[calc(100dvh-8.2rem)] flex justify-center items-center mt-[8.2rem]",
-                                "max-mobile:flex-col-reverse",
+                                "max-mobile:flex-col-reverse max-mobile:gap-y-[2rem]"
                             )}
                         >
-                            <div className={cn(
-                                "w-[50%] h-full flex",
-                                "max-mobile:w-full max-mobile:h-auto"
-                            )}>
-                                <SVGTubes />
-                            </div>
-                            <div className={cn(
-                                "w-[50%] h-full flex",
-                                "max-mobile:w-full max-mobile:h-auto"
-                            )}>
-                                <SVGBuilding />
-                            </div>
+                            <TubesSection />
+                            <HomeSection />
                         </div>
                         <BlockPopUp />
                     </TransformComponent>

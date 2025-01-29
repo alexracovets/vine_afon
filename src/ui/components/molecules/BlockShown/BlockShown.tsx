@@ -102,7 +102,7 @@ export const BlockShown = ({ isShow, isActiveBlock, active, reserved, buyed, blo
                                 >
                                     <Input type='text' placeholder='Ім`я' value={InputValue} onChange={(e) => setInputValue(e.target.value)} />
                                     {isError && <Text variant='popUpError'>Введіть будь-ласка Ім&#39;я</Text>}
-                                    <Button variant={"destructive"} disabled={isError}>Зарезервувати</Button>
+                                    <Button variant={"destructive"} type="submit" disabled={isError}>Зарезервувати</Button>
                                 </form>
                             </>
                         }
