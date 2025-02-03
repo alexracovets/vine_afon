@@ -1,16 +1,18 @@
 import { LeafData, TubeData, BlockActiveData, MainBlockData } from "@/src/types";
 import { create } from "zustand";
-import { immer } from "zustand/middleware/immer"; 
+import { immer } from "zustand/middleware/immer";
 
 interface CardShopState {
     tubes: TubeData[];
     leafs: LeafData[];
     blocks: BlockActiveData[];
     mainBlock: MainBlockData[];
+    isShowCard: boolean;
     priceBlock: number;
     priceBlockMain: number;
     priceTube: number;
     priceLeaf: number;
+    setIsShowCard: (value: boolean) => void;
     addTube: (tube: TubeData) => void;
     removeTube: (tube: TubeData) => void;
     addLeaf: (leaf: LeafData) => void;
@@ -26,10 +28,14 @@ const useCardShop = create<CardShopState>()(immer((set) => ({
     leafs: [],
     blocks: [],
     mainBlock: [],
+    isShowCard: false,
     priceBlock: 10000,
     priceBlockMain: 150000,
     priceTube: 500,
     priceLeaf: 1000,
+    setIsShowCard: (value) => set((state) => {
+        state.isShowCard = value;
+    }),
     addTube: (tube) => set((state) => {
         state.tubes.push(tube)
     }),

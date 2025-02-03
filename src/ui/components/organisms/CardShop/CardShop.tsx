@@ -1,22 +1,19 @@
 "use client";
 
+import { CircleChevronDown } from "lucide-react";
 import { useState } from "react";
 
 import { CardsIems, Price } from "@/src/ui/components/molecules";
-import useBlockPosition from "@/store/useBlockPosition";
 import { Container } from "@/src/ui/components/atoms";
+import useBlockPosition from "@/store/useBlockPosition";
+import useCardShop from "@/store/useCardShop";
 
 import { cn } from "@/src/utils/cn";
-import { CircleChevronDown } from "lucide-react";
-
 
 export const CardShop = () => {
     const isBlockPopUp = useBlockPosition((state) => state.isActive);
-    const [isShow, setIsShow] = useState(false);
-
-    const toggleShow = () => {
-        setIsShow(!isShow);
-    }
+    const isShowCard = useCardShop((state) => state.isShowCard);
+    const setIsShowCard = useCardShop((state) => state.setIsShowCard);
 
     return (
         <Container className={cn(
@@ -28,10 +25,10 @@ export const CardShop = () => {
         )}>
             <div className={cn(
                 "relative transition-transform duration-300 ease-in-out",
-                isShow ? "translate-y-0" : "translate-y-[100%]"
+                isShowCard ? "translate-y-0" : "translate-y-[100%]"
             )}>
                 <div
-                    onClick={toggleShow}
+                    onClick={() => setIsShowCard(!isShowCard)}
                     className={cn(
                         "absolute top-[.1rem] right-[3rem] z-[1] p-[1rem] cursor-pointer w-[5rem] h-[5rem] bg-regalBlack translate-y-[-100%] rounded-t-[1rem] text-white flex justify-center items-center",
                         isBlockPopUp ? "pointer-events-none" : "pointer-events-auto"
@@ -40,7 +37,7 @@ export const CardShop = () => {
                     <CircleChevronDown
                         className={cn(
                             "w-[3rem] h-[3rem] transition-transform duration-500 ease-in-out",
-                            isShow ? "rotate-0" : "rotate-180"
+                            isShowCard ? "rotate-0" : "rotate-180"
                         )} />
                 </div>
                 <div

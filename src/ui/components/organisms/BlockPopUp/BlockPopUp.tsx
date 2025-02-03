@@ -7,12 +7,14 @@ import { PopUpBlockWrapper, PopupBlockBG } from "@/src/ui/components/atoms";
 import { BlockHidden, BlockShown, } from "@/src/ui/components/molecules";
 import { BlockPopUpMain } from "@/src/ui/components/organisms";
 import useBlockPosition from "@/store/useBlockPosition";
+import useCardShop from "@/store/useCardShop";
 
 export const BlockPopUp = () => {
     const [isShow, setIsShow] = useState(false);
     const setIsActive = useBlockPosition((state) => state.setIsActive);
     const setMainBlockActive = useBlockPosition((state) => state.setMainBlockActive);
     const setCurrentActiveBlock = useBlockPosition((state) => state.setCurrentActiveBlock);
+    const setIsShowCard = useCardShop((state) => state.setIsShowCard);
     const currentActiveBlock = useBlockPosition((state) => state.currentActiveBlock);
     const currentArguments = useBlockPosition((state) => state.blocks);
     const isActive = useBlockPosition((state) => state.isActive);
@@ -27,6 +29,7 @@ export const BlockPopUp = () => {
         setCurrentActiveBlock(-1)
         setTimeout(() => {
             setIsShow(false);
+            setIsShowCard(true);
         }, 500);
     };
 
