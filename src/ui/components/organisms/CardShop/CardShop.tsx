@@ -12,7 +12,7 @@ import { CircleChevronDown } from "lucide-react";
 
 export const CardShop = () => {
     const isBlockPopUp = useBlockPosition((state) => state.isActive);
-    const [isShow, setIsShow] = useState(true);
+    const [isShow, setIsShow] = useState(false);
 
     const toggleShow = () => {
         setIsShow(!isShow);
