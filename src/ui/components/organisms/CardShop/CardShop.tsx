@@ -1,6 +1,7 @@
 "use client";
 
 import { CircleChevronDown } from "lucide-react";
+import { useEffect } from "react";
 
 import { CardsIems, Price } from "@/src/ui/components/molecules";
 import { Container } from "@/src/ui/components/atoms";
@@ -8,24 +9,34 @@ import useBlockPosition from "@/store/useBlockPosition";
 import useCardShop from "@/store/useCardShop";
 
 import { cn } from "@/src/utils/cn";
+import useResponsive from "@/store/useResponsive";
 
 export const CardShop = () => {
     const isBlockPopUp = useBlockPosition((state) => state.isActive);
     const isShowCard = useCardShop((state) => state.isShowCard);
     const setIsShowCard = useCardShop((state) => state.setIsShowCard);
+    const responsive = useResponsive((state) => state.responsive);
+
+    useEffect(() => {
+        if (responsive === "mobile") {
+            setIsShowCard(false);
+        }
+    }, [responsive])
 
     return (
-        <Container className={cn(
-            "absolute left-0 bottom-0 z-[1] p-[1rem] overflow-hidden pt-[5rem] pointer-events-none",
-            "max-tablet:pb-0",
-            "max-mobile:pt-[5rem] max-mobile:px-0",
-            "transform transition-opacity duration-300",
-            isBlockPopUp ? "opacity-0 pointer-events-none" : "opacity-100"
-        )}>
-            <div className={cn(
-                "relative transition-transform duration-300 ease-in-out",
-                isShowCard ? "translate-y-0" : "translate-y-[100%]"
+        <Container
+            className={cn(
+                "absolute left-0 bottom-0 z-[1] p-[1rem] overflow-hidden pt-[5rem] pointer-events-none",
+                "max-tablet:pb-0",
+                "max-mobile:pt-[5rem] max-mobile:px-0",
+                "transform transition-opacity duration-300",
+                isBlockPopUp ? "opacity-0 pointer-events-none" : "opacity-100"
             )}>
+            <div
+                className={cn(
+                    "relative transition-transform duration-300 ease-in-out",
+                    isShowCard ? "translate-y-0" : "translate-y-[100%] max-mobile:translate-y-[75%]"
+                )}>
                 <div
                     onClick={() => setIsShowCard(!isShowCard)}
                     className={cn(

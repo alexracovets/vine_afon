@@ -290,7 +290,7 @@ export const TubesSection = () => {
         <div
             className={cn(
                 "w-[50%] h-full mt-[5rem]",
-                "max-mobile:w-full max-mobile:h-auto max-mobile:pt-0"
+                "max-mobile:w-full max-mobile:h-auto max-mobile:mt-0"
             )}
         >
             <div

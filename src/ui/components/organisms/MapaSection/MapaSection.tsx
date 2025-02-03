@@ -34,7 +34,7 @@ export const MapaSection = memo(() => {
                         <div
                             className={cn(
                                 "flex-grow w-[100dvw] h-[calc(100dvh-8.2rem)] flex justify-center items-center mt-[8.2rem]",
-                                "max-mobile:flex-col-reverse max-mobile:gap-y-[2rem]"
+                                "max-mobile:flex-col-reverse max-mobile:gap-y-[1rem] max-mobile:h-[100dvh] max-mobile:mt-0"
                             )}
                         >
                             <TubesSection />

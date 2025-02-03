@@ -28,7 +28,7 @@ const useCardShop = create<CardShopState>()(immer((set) => ({
     leafs: [],
     blocks: [],
     mainBlock: [],
-    isShowCard: false,
+    isShowCard: true,
     priceBlock: 10000,
     priceBlockMain: 150000,
     priceTube: 500,

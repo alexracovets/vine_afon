@@ -10,8 +10,8 @@ const blocks = [
     {
         items: [
             {
-                status: "active",
-                name: "",
+                status: "buyed",
+                name: "Клімов С.",
                 id: 1
             }
         ]
