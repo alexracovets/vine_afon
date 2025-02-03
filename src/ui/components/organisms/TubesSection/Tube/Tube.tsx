@@ -3,7 +3,7 @@
 import { TubeData } from "@/src/types";
 import { cn } from "@/src/utils/cn";
 import useCardShop from "@/store/useCardShop";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 
 
@@ -19,23 +19,21 @@ export const Tube = ({ status, row, col, id }: TubeData) => {
         }
     }
 
+    const addItem = useCallback(() => {
+        addTube({ row, col, id, status: status });
+    }, [addTube, row, col, id, status]);
+
+    const removeItem = useCallback(() => {
+        removeTube({ row, col, id, status: status });
+    }, [removeTube, row, col, id, status]);
+
     useEffect(() => {
         if (isActive) {
-            addTube({
-                row,
-                col,
-                id,
-                status: status
-            })
+            addItem();
         } else {
-            removeTube({
-                row,
-                col,
-                id,
-                status: status
-            })
+            removeItem();
         }
-    }, [isActive, addTube, removeTube, status]);
+    }, [isActive, addItem, removeItem]);
 
     return (
         <div

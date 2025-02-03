@@ -19,8 +19,7 @@ export const ActiveBlock = ({ status, name, id, blocksWidth, blocksHeight }: Act
     const { resetTransform } = useControls();
     const blockRef = useRef<HTMLDivElement>(null);
 
-    const updatePosition = useCallback(() => {
-        resetTransform();
+    const getPosition = useCallback(() => {
         if (blockRef.current) {
             const rect = blockRef.current.getBoundingClientRect();
             setPosition({
@@ -33,8 +32,13 @@ export const ActiveBlock = ({ status, name, id, blocksWidth, blocksHeight }: Act
                 id: id
             });
         }
+    }, [setPosition, name, status, id]);
 
-    }, [setPosition]);
+    const updatePosition = useCallback(() => {
+        resetTransform();
+        getPosition();
+
+    }, [getPosition]);
 
     useEffect(() => {
         updatePosition();

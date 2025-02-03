@@ -1,7 +1,6 @@
 "use client";
 
 import { CircleChevronDown } from "lucide-react";
-import { useState } from "react";
 
 import { CardsIems, Price } from "@/src/ui/components/molecules";
 import { Container } from "@/src/ui/components/atoms";

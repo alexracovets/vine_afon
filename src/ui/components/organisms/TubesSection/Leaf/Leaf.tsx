@@ -4,7 +4,7 @@ import { LeafData } from "@/src/types";
 import { cn } from "@/src/utils/cn";
 import useCardShop from "@/store/useCardShop";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 
 
@@ -19,23 +19,21 @@ export const Leaf = ({ status, row, col, id }: LeafData) => {
         }
     }
 
+    const addItem = useCallback(() => {
+        addLeaf({ row, col, id, status: status });
+    }, [addLeaf, row, col, id, status]);
+
+    const removeItem = useCallback(() => {
+        removeLeaf({ row, col, id, status: status });
+    }, [removeLeaf, row, col, id, status]);
+
     useEffect(() => {
         if (isActive) {
-            addLeaf({
-                row,
-                col,
-                id,
-                status: status
-            })
+            addItem();
         } else {
-            removeLeaf({
-                row,
-                col,
-                id,
-                status: status
-            })
+            removeItem();
         }
-    }, [isActive, addLeaf, removeLeaf, status]);
+    }, [isActive, addItem, removeItem]);
 
     return (
         <div

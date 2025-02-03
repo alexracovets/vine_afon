@@ -12,24 +12,28 @@ export const MainBlock = () => {
     const blockRef = useRef<HTMLDivElement>(null);
     const { resetTransform } = useControls();
 
+    const getPosition = useCallback(() => {
+        if (blockRef.current) {
+            const rect = blockRef.current.getBoundingClientRect();
+
+            setMainBlockPosition({
+                x: rect.x,
+                y: rect.y,
+                width: rect.width,
+                height: rect.height,
+                name: mainBlock.name,
+                status: mainBlock.status
+            });
+        }
+    }, [setMainBlockPosition, mainBlock.name, mainBlock.status]);
+
     const updatePosition = useCallback(() => {
         resetTransform();
         setTimeout(() => {
-            if (blockRef.current) {
-                const rect = blockRef.current.getBoundingClientRect();
-
-                setMainBlockPosition({
-                    x: rect.x,
-                    y: rect.y,
-                    width: rect.width,
-                    height: rect.height,
-                    name: mainBlock.name,
-                    status: mainBlock.status
-                });
-            }
+            getPosition();
         }, 300)
 
-    }, [setMainBlockPosition]);
+    }, [getPosition]);
 
     useEffect(() => {
         updatePosition();
